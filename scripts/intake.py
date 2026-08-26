@@ -176,6 +176,13 @@ def oembed(link):
     return author.strip(), clean
 
 
+def canonical(url):
+    """A shared YouTube link carries a share token and often somebody else's
+    radio queue. Keep the video and drop the rest."""
+    match = YOUTUBE_ID.search(url)
+    return f"https://music.youtube.com/watch?v={match.group(1)}" if match else url
+
+
 def music_host(url):
     """True when the link points somewhere the track can be played."""
     host = urllib.parse.urlparse(url).netloc.lower().split(":")[0]
@@ -279,6 +286,8 @@ def handle_track(fields, number, author):
              "straight through.",
              "Bandcamp and some other sites publish nothing for this to read."],
         )
+
+    link = canonical(link)
 
     links = {}
     if link:

@@ -14,7 +14,9 @@ concurrency:
 
 jobs:
   file-it:
-    if: contains(github.event.issue.labels.*.name, 'submission')
+    if: >-
+      contains(github.event.issue.labels.*.name, 'submission') ||
+      contains(github.event.issue.body, '### A link to the track')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -69,6 +71,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Create the label if it is missing, otherwise --add-label fails and
+          # the issue never gets closed.
+          gh label create filed --repo "${{ github.repository }}" \
+            --description "Read into the repository" --color 0e8a16 2>/dev/null || true
           gh issue edit "${{ github.event.issue.number }}" \
             --repo "${{ github.repository }}" --add-label filed
           gh issue close "${{ github.event.issue.number }}" \
