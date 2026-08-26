@@ -3,33 +3,43 @@ date: '2026-09-28'
 number: 6
 title: Drop 006
 publish_at: '2026-09-28T12:01:00-04:00'
+reserved: 2
 target_minutes: null
 blurb: ''
 tracks:
-- artist: The Dead South
-  title: In Hell I'll Be in Good Company
+- artist: Paper Planes
+  title: Street Sweeper Social Club
   year: null
-  duration: '4:06'
+  duration: '2:54'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=4MSufMK1lvs
-- artist: DIE ANTWOORD
-  title: UGLY BOY
+    youtube: https://www.youtube.com/watch?v=AQFWAXNQzAA
+- artist: Human Nature
+  title: Runaround Sue
   year: null
-  duration: '4:53'
+  duration: '2:56'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=uMK0prafzw0
-- artist: Rainbow Kitten Surprise
-  title: Hide
+    youtube: https://www.youtube.com/watch?v=EupgJxxW0ZU
+- artist: Professor Elemental
+  title: I'm British
   year: null
-  duration: '3:13'
+  duration: '2:59'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=e8edMH8DgTA
+    youtube: https://www.youtube.com/watch?v=6kn9mCeCZzQ
+- artist: Middle Ages
+  title: Never Gonna Give You Up
+  year: null
+  duration: '3:18'
+  kind: unsorted
+  submitted_by: shanebivens
+  why: Pulled from the daily thirty minutes. No writeup yet.
+  links:
+    youtube: https://www.youtube.com/watch?v=lcOGtsfs1SA

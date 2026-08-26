@@ -3,10 +3,33 @@ name: writeups
 description: Write the story for the tracks in the next CrateDig drop and set each one to forgotten, obscure or sideways. Use when the user asks to do the writeups, prepare the next drop, or write up this week's picks.
 ---
 
-# Writing up a drop
+# The weekly pass
 
-Picks arrive from the playlist pull with `kind: unsorted` and a placeholder
-`why`. This turns them into something worth reading before the drop goes live.
+Everything that has to happen between one Monday and the next. Run it in order.
+
+## 1. Take in what people sent
+
+    python3 scripts/place_inbox.py
+
+This moves the two most recent submitted picks out of `inbox/` and into the next
+week, which holds two spots open for them. Submitted picks arrive with the
+submitter's own kind and writeup, so they need placing, not rewriting. Leave
+their words alone. Fix a typo, nothing more.
+
+If the inbox has a backlog, say so and offer `--oldest-first` or `--slots 0`.
+Do not silently place more than the two spots.
+
+## 2. Refresh the pool, if you can
+
+    YOUTUBE_API_KEY=... python3 scripts/pull_playlist.py
+
+Skip this when the key is not in the environment. The Monday workflow does it
+anyway, so a local skip costs nothing. Never ask the user to paste the key.
+
+## 3. Write up the rest
+
+Automatic picks arrive with `kind: unsorted` and a placeholder `why`. Turn them
+into something worth reading before the drop goes live.
 
 ## Find the work
 
@@ -83,6 +106,7 @@ Read the existing writeups in `drops/2026-08-26.yml` for the register.
 
 1. Run `python3 scripts/build.py` and clear any warning it raises about the file.
 2. Show the user each track: kind, the writeup, and where the facts came from.
+   Mark which came from a submission and which were pulled.
 3. Ask before committing. Do not push a drop the user has not read.
 
 The drop stays in `scheduled/` and goes live on its own Monday at 12:01pm

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Line up future weeks in scheduled/, one file per Monday.
 
-Each week gets two or three tracks from the pool, and nothing is ever handed
-out twice: seeding checks published drops and already-scheduled weeks together.
+Each week gets five to seven tracks from the pool, minus whatever is held open
+for people to fill. Nothing is ever handed out twice: seeding checks published
+drops and already-scheduled weeks together.
 
 Files here do not reach the site. scripts/publish_due.py moves one into drops/
 when its Monday arrives, so weeks appear one at a time.
@@ -41,6 +42,8 @@ def publish_at(day):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--weeks", type=int, default=8)
+    parser.add_argument("--reserve", type=int, default=2,
+                        help="spots per week held open for submitted picks")
     parser.add_argument("--start", default="", help="YYYY-MM-DD, defaults to today")
     parser.add_argument("--today", default="", help="override today, for testing")
     args = parser.parse_args()
@@ -62,6 +65,7 @@ def main():
         result = subprocess.run(
             [sys.executable, str(ROOT / "scripts" / "make_drop.py"),
              "--date", day,
+             "--reserve", str(args.reserve),
              "--out-dir", str(SCHEDULED),
              "--publish-at", publish_at(date.fromisoformat(day))],
             capture_output=True, text=True,

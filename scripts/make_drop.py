@@ -92,6 +92,8 @@ def main():
     parser.add_argument("--max-count", type=int, default=7)
     parser.add_argument("--max-seconds", type=int, default=600,
                         help="skip anything longer. Concerts and mixes are not tracks")
+    parser.add_argument("--reserve", type=int, default=0,
+                        help="hold this many spots open for submitted picks")
     parser.add_argument("--max-tracks", type=int, default=12,
                         help="stop here however short the drop is")
     parser.add_argument("--out-dir", default=str(DROPS),
@@ -151,6 +153,8 @@ def main():
     else:
         limit = rng.randint(min(args.min_count, args.max_count),
                             max(args.min_count, args.max_count))
+    if args.reserve:
+        limit = max(1, limit - args.reserve)
 
     picked = []
     seen_here = set()
@@ -204,6 +208,7 @@ def main():
                 "number": number,
                 "title": f"Drop {number:03d}",
                 "publish_at": args.publish_at or None,
+                "reserved": args.reserve or None,
                 "target_minutes": args.minutes if target else None,
                 "blurb": "",
                 "tracks": tracks,
@@ -216,8 +221,9 @@ def main():
     )
 
     total = sum(t["seconds"] or 0 for t in picked if isinstance(t.get("seconds"), int))
+    held = f", {args.reserve} spot(s) held open" if args.reserve else ""
     print(f"\nok. Wrote {path.relative_to(ROOT)} with {len(tracks)} track(s), "
-          f"about {total // 60}m{total % 60:02d}s.")
+          f"about {total // 60}m{total % 60:02d}s{held}.")
     for track in tracks:
         print(f"  {track['artist']} - {track['title']}")
     return 0

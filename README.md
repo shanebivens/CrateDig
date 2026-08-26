@@ -51,8 +51,12 @@ can revoke.
    closes it. Track picks land in `inbox/`. Playlists go straight into
    `submissions/`, since joining is self service. Your handle comes from your
    GitHub username, so nobody can claim someone else's.
-3. A curator moves inbox picks into the current file in `drops/`.
-4. Pushing that rebuilds `data/drops.json` and the site updates.
+3. Every week holds **two spots open** for submitted picks. On Monday,
+   `scripts/place_inbox.py` moves the two most recent out of `inbox/` and into
+   the next week ahead of anything the pull chose. Submissions arrive with the
+   submitter's own kind and writeup, so those go out in their words.
+4. Anything that does not fit keeps for the following week.
+5. Pushing rebuilds `data/drops.json` and the site updates.
 
 ## Mondays at 12:01pm Eastern
 
@@ -140,6 +144,7 @@ Leave it out and nothing breaks.
     scripts/pull_playlist.py reads participants' public YouTube playlists
     scripts/make_drop.py builds a drop without ever repeating a track
     scripts/seed_weeks.py lines up future Mondays in scheduled/
+    scripts/place_inbox.py puts submitted picks into the spots held for them
     scripts/publish_due.py releases a week once its moment has passed
     index.html        the site, served from the repository root
     submit.html       the submission form

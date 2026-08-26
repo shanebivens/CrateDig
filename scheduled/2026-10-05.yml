@@ -3,33 +3,43 @@ date: '2026-10-05'
 number: 7
 title: Drop 007
 publish_at: '2026-10-05T12:01:00-04:00'
+reserved: 2
 target_minutes: null
 blurb: ''
 tracks:
-- artist: PJ Morton
-  title: Smoke and Mirrors
+- artist: Caamp
+  title: By and By
   year: null
-  duration: '3:20'
+  duration: '4:42'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=XY8OzsxY7HU
-- artist: Nathaniel Rateliff
-  title: I Need Never Get Old
+    youtube: https://www.youtube.com/watch?v=d-aFQPEuIVY
+- artist: Yung Craka
+  title: Buy U
   year: null
-  duration: '4:14'
+  duration: '2:58'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=-FWrwbHqu5w
-- artist: The Teskey Brothers
-  title: That Bird
+    youtube: https://www.youtube.com/watch?v=tyKewixD-B4
+- artist: Rainbow Kitten Surprise
+  title: Hide
   year: null
-  duration: '4:47'
+  duration: '3:13'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=5WZQXtjKyns
+    youtube: https://www.youtube.com/watch?v=e8edMH8DgTA
+- artist: The Decemberists
+  title: Once In My Life
+  year: null
+  duration: '5:10'
+  kind: unsorted
+  submitted_by: shanebivens
+  why: Pulled from the daily thirty minutes. No writeup yet.
+  links:
+    youtube: https://www.youtube.com/watch?v=xEZV9tsV3dM

@@ -3,24 +3,34 @@ date: '2026-09-21'
 number: 5
 title: Drop 005
 publish_at: '2026-09-21T12:01:00-04:00'
+reserved: 2
 target_minutes: null
 blurb: ''
 tracks:
-- artist: Professor Elemental
-  title: I'm British
+- artist: Julian Velard
+  title: Love Again For The First Time
   year: null
-  duration: '2:59'
+  duration: '3:42'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=6kn9mCeCZzQ
-- artist: Kanga
-  title: Something Dangerous
+    youtube: https://www.youtube.com/watch?v=j1DwjYkbxGs
+- artist: Little Stranger
+  title: Kama Sumatra
   year: null
-  duration: '5:22'
+  duration: '2:18'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=pi-VvNMDbvA
+    youtube: https://www.youtube.com/watch?v=PhK6v47c4Cw
+- artist: Thomas Benjamin Wild Esq
+  title: Well This Is Shit
+  year: null
+  duration: '3:25'
+  kind: unsorted
+  submitted_by: shanebivens
+  why: Pulled from the daily thirty minutes. No writeup yet.
+  links:
+    youtube: https://www.youtube.com/watch?v=h8bJmealgtA

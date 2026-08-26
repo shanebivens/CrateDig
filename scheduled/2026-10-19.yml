@@ -3,33 +3,34 @@ date: '2026-10-19'
 number: 9
 title: Drop 009
 publish_at: '2026-10-19T12:01:00-04:00'
+reserved: 2
 target_minutes: null
 blurb: ''
 tracks:
-- artist: Ghoultown
-  title: Drink with the Living Dead
+- artist: The Dead South
+  title: In Hell I'll Be in Good Company
   year: null
-  duration: '6:12'
+  duration: '4:06'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=Zwjs45s8BSQ
-- artist: Paper Planes
-  title: Street Sweeper Social Club
+    youtube: https://www.youtube.com/watch?v=4MSufMK1lvs
+- artist: Big Yavo
+  title: Preach
   year: null
-  duration: '2:54'
+  duration: '3:08'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=AQFWAXNQzAA
-- artist: Rage Against The Machine
-  title: Guerrilla Radio
+    youtube: https://www.youtube.com/watch?v=kXeYLz_kWnM
+- artist: Tim Fite
+  title: Bully
   year: null
-  duration: '3:27'
+  duration: '3:18'
   kind: unsorted
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=FFMyMwjWqXs
+    youtube: https://www.youtube.com/watch?v=bNEo1qkNTIs

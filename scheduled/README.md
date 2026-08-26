@@ -9,5 +9,8 @@ Monday has passed. The `Monday drop` workflow runs it and tops the queue back up
 Seeding ahead is the point: you can set `kind` and write the real story for a
 track days before anyone sees it. Edit the file here and it goes out that way.
 
+Two spots a week are held open so submitted picks have somewhere to land.
+
     python3 scripts/seed_weeks.py --weeks 8
+    python3 scripts/place_inbox.py --dry-run
     python3 scripts/publish_due.py --dry-run
