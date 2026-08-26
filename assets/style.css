@@ -524,3 +524,91 @@ button.chip {
 }
 
 .footer .fine { font-size: 0.78rem; color: #97938a; }
+
+/* ---- the record itself ------------------------------------------------- */
+/* One disc, tucked behind the bin divider, the way somebody left it on top
+   of the crate. The only circle on the page, on purpose. */
+
+.record {
+  position: absolute;
+  top: -2.4rem;
+  right: 2.25rem;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  z-index: -1;
+  transform: rotate(-12deg);
+  background:
+    radial-gradient(circle,
+      var(--paper) 0 4px,            /* spindle hole */
+      var(--obscure) 4px 17px,       /* the label */
+      #15130f 17px 18px,
+      transparent 18px),
+    repeating-radial-gradient(circle,
+      #191713 0 1.6px,
+      #26221c 1.6px 3.2px);          /* the grooves */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* highlighter, not baby blue */
+::selection { background: var(--forgotten); color: #15150f; }
+
+/* the arrival stamp never goes on straight */
+.stamp { transform: rotate(-1.2deg); }
+
+/* a record glyph on the button that plays records */
+.chip--fall::before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.5em;
+  vertical-align: -0.1em;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: radial-gradient(circle,
+    currentColor 0 15%, transparent 15% 40%,
+    currentColor 40% 52%, transparent 52%);
+}
+
+/* reaching in also tilts the sleeve a hair */
+.sleeve:hover, .sleeve:focus-within { transform: translateX(10px) rotate(0.25deg); }
+
+/* photocopy grain. Black speckle at 4%, so it vanishes on the dark paper. */
+body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* the tag on the way out */
+.shop-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+}
+
+.barcode {
+  display: inline-block;
+  width: 78px;
+  height: 24px;
+  background: repeating-linear-gradient(90deg,
+    #b6b2a4 0 2px, transparent 2px 4px,
+    #b6b2a4 4px 5px, transparent 5px 8px,
+    #b6b2a4 8px 11px, transparent 11px 13px);
+}
+
+.shop-tag-text {
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #97938a;
+}
+
+@media (max-width: 34rem) {
+  .record { width: 72px; height: 72px; top: -1.4rem; right: 1.2rem; }
+  .sleeve:hover, .sleeve:focus-within { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sleeve:hover, .sleeve:focus-within { transform: none; }
+}
