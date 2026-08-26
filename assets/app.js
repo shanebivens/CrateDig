@@ -189,9 +189,19 @@
     head.appendChild(play);
 
     target.appendChild(head);
+
+    /* The records sit in the crate: lattice walls at the sides, open at the
+       top, and the molded stamp every milk crate carries on its front. */
+    var box = el("div", "crate-box");
     drop.tracks.forEach(function (track, index) {
-      target.appendChild(renderTrack(track, index, drop));
+      box.appendChild(renderTrack(track, index, drop));
     });
+    target.appendChild(box);
+
+    var front = el("div", "crate-front");
+    front.appendChild(el("span", null,
+      "Property of CrateDig \u00b7 return what you find"));
+    target.appendChild(front);
   }
 
   function renderArchive(drops, target) {

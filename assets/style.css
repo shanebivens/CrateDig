@@ -10,6 +10,7 @@
   --ink-faint:#8a877c;
   --rule:     #c9c5b8;
   --crate:    #201f1b;   /* looking down into the bin */
+  --lattice:  rgba(0, 0, 0, 0.30);
 
   --obscure:  #ff4e00;   /* day-glo orange */
   --forgotten:#ffd000;   /* day-glo yellow */
@@ -28,6 +29,7 @@
     --ink-faint:#6f6c61;
     --rule:     #38362f;
     --crate:    #0e0e0b;
+    --lattice:  rgba(236, 233, 223, 0.12);
   }
 }
 
@@ -161,8 +163,42 @@ a { color: inherit; }
   transition: transform 140ms ease;
 }
 
-/* the bottom of the bin */
-.sleeve:last-child { border-bottom-width: 8px; }
+/* ---- the milk crate ---------------------------------------------------- */
+
+.crate-box {
+  padding: 0 11px;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 7px, var(--lattice) 7px 9px),
+    repeating-linear-gradient(-45deg, transparent 0 7px, var(--lattice) 7px 9px),
+    var(--crate);
+}
+
+.crate-front {
+  background:
+    repeating-linear-gradient(45deg, transparent 0 7px, var(--lattice) 7px 9px),
+    repeating-linear-gradient(-45deg, transparent 0 7px, var(--lattice) 7px 9px),
+    var(--crate);
+  padding: 0.8rem 1rem 0.95rem;
+  text-align: center;
+}
+
+/* molded into the plastic, not printed on it */
+.crate-front span {
+  font-family: var(--display);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(228, 225, 216, 0.55);
+  background: var(--crate);
+  padding: 0.2rem 0.6rem;
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+  .crate-front span {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(228, 225, 216, 0.55);
+  }
+}
 
 .sleeve:hover, .sleeve:focus-within { transform: translateX(10px); }
 
