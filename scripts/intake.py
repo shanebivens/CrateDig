@@ -26,6 +26,9 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import kinds                                                    # noqa: E402
+
 try:
     import yaml
 except ImportError:
@@ -37,7 +40,6 @@ SUBMISSIONS = ROOT / "submissions"
 COMMENT = ROOT / ".intake-comment.md"
 
 NO_RESPONSE = "_No response_"
-KINDS = {"obscure", "forgotten", "sideways"}
 
 # Somewhere the track can actually be played or looked up. Keeps out search
 # pages, shortener links and whatever someone copied out of a chat window.
@@ -95,22 +97,26 @@ YOUTUBE_ID = re.compile(
 PLAYABILITY = re.compile(r'"playabilityStatus":\{"status":"([A-Z_]+)"')
 PLAY_REASON = re.compile(
     r'"playabilityStatus":\{"status":"[A-Z_]+","reason":"([^"]{0,140})"')
+VIEW_COUNT = re.compile(r'"viewCount":"(\d{1,12})"')
 
 
-def plays(url):
-    """For a YouTube link, whether a signed out visitor can actually watch it.
+def inspect(url):
+    """For a YouTube link: whether it plays, and how many have played it.
+
+    Returns (playable, views). The view count rides along on the same page, so
+    working out what kind of find this is costs no extra request.
 
     Fails open. YouTube treats datacenter addresses as bots and answers a CI
     runner with a sign-in challenge, so only an unambiguous refusal counts as
     dead. Turning away somebody's real submission is worse than letting a
     questionable one through, which check_links.py catches later anyway.
 
-    Everything else is taken on trust, since only YouTube exposes this. See
-    scripts/check_links.py for why the API and oembed are not good enough.
+    Anything that is not YouTube is taken on trust, since nothing else exposes
+    this. See scripts/check_links.py for why the API and oembed are not enough.
     """
     match = YOUTUBE_ID.search(url)
     if not match:
-        return True
+        return True, None
     request = urllib.request.Request(
         "https://www.youtube.com/watch?v=" + match.group(1),
         headers={"Accept-Language": "en-US,en;q=0.9",
@@ -120,16 +126,20 @@ def plays(url):
         with urllib.request.urlopen(request, timeout=25) as response:
             body = response.read().decode("utf-8", "replace")
     except Exception:                                          # noqa: BLE001
-        return True          # a network blip is not evidence the video is dead
+        return True, None    # a network blip is not evidence the video is dead
+
+    seen = VIEW_COUNT.search(body)
+    views = int(seen.group(1)) if seen else None
+
     found = PLAYABILITY.search(body)
     if not found or found.group(1) == "OK":
-        return True
+        return True, views
 
     reason_match = PLAY_REASON.search(body)
     reason = (reason_match.group(1) if reason_match else "").lower()
     if "not a bot" in reason:
-        return True                # the checker is being challenged, not the video
-    return found.group(1) not in ("UNPLAYABLE", "ERROR", "LOGIN_REQUIRED")
+        return True, views         # the checker is being challenged, not the video
+    return found.group(1) not in ("UNPLAYABLE", "ERROR", "LOGIN_REQUIRED"), views
 
 
 NOISE = re.compile(
@@ -250,9 +260,6 @@ def handle_track(fields, number, author):
              "cannot be left out."],
         )
 
-    kind = clean(fields.get("Which kind of find is this")).lower()
-    if kind not in KINDS:
-        kind = "obscure"
 
     year = clean(fields.get("Year"))
     match = re.search(r"(1[89]\d{2}|20\d{2})", year)
@@ -273,7 +280,8 @@ def handle_track(fields, number, author):
              "needs the track itself to build the doorway."],
         )
 
-    if not plays(link):
+    playable, views = inspect(link)
+    if not playable:
         return fail(
             "That video will not play for anyone who is not signed in.",
             ["It works for you because it is in your library. Signed out, "
@@ -302,6 +310,14 @@ def handle_track(fields, number, author):
         )
 
     link = canonical(link)
+
+    # Optional on the form. Reach settles the clear cases and nothing else does,
+    # so anything in between waits for whoever writes the track up.
+    kind = clean(fields.get("Which kind of find is this")).lower()
+    guessed = ""
+    if kind not in kinds.KINDS or kind == "unsorted":
+        kind = kinds.guess(views)
+        guessed = kinds.explain(kind, views or 0)
 
     links = {}
     if link:
@@ -342,6 +358,8 @@ def handle_track(fields, number, author):
     })
 
     note = ""
+    if guessed:
+        note += "\n" + guessed + " Say so on this issue if that is wrong."
     if looked_up:
         note += ("\nThe " + " and ".join(looked_up) +
                  " came from the link. Say so on this issue if it got them wrong.")

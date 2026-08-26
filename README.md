@@ -54,6 +54,13 @@ on the way in, so a submission made of nothing but a URL still arrives complete.
 YouTube, Spotify and SoundCloud answer; Bandcamp and most others publish
 nothing, so those need the two fields typed.
 
+Which kind of find it is gets worked out too. The view count comes back on the
+same page the playability check already loads, so it costs nothing: under
+twenty five thousand plays is `obscure`, over two million is `sideways`, and
+anything in between is left `unsorted` for whoever writes the track up.
+`forgotten` is never guessed, because it means a record was popular once and is
+not now, which a view count cannot tell you. See `scripts/kinds.py`.
+
 **One track at a time, on purpose.** Playlists are not accepted. A pick should be
 something you chose and have something to say about, not something a machine
 pulled out of your listening. It also means your writeup goes out in your words

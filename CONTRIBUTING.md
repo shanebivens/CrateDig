@@ -46,7 +46,9 @@ an issue with the submission template and someone will place it.
 Fields:
 
 - `kind` is `forgotten`, `obscure` or `sideways`. See the README for the
-  difference. `unsorted` means an automatic pick nobody has judged yet.
+  difference. `unsorted` means nobody has judged it yet. You do not have to set
+  it: reach settles the clear cases on the way in, and a person settles the
+  rest at writeup time.
 - `year` is the recording or release year, whichever tells the better story.
 - `duration` is `M:SS`. Leave it `null` if you do not know it yet, the
   validator will tell you which tracks are missing one.

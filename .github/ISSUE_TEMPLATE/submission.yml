@@ -46,13 +46,15 @@ body:
     id: kind
     attributes:
       label: Which kind of find is this
+      description: >
+        Optional. Leave it on the first option and it gets worked out from how
+        many people have played it, or left for whoever writes the track up.
       options:
+        - work it out for me
         - obscure
         - forgotten
         - sideways
       default: 0
-    validations:
-      required: true
 
   - type: textarea
     id: why

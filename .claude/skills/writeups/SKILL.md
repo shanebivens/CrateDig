@@ -72,8 +72,13 @@ something is true, leave it out or attribute it: "the story goes that".
 
 ## Set the kind
 
+Intake makes a first guess from reach alone: under twenty five thousand plays
+is `obscure`, over two million is `sideways`, and anything between is left
+`unsorted`. Treat that as provisional. It has no idea about history and it never
+guesses `forgotten`, so change it whenever the research says otherwise.
+
 - `forgotten` — it was popular once and nobody plays it now. Needs evidence it
-  actually landed at some point.
+  actually landed at some point. Only ever set by a person, never guessed.
 - `obscure` — it never surfaced. Private press, tiny label, self-released, a few
   hundred copies, an upload with four figures of views after fifteen years.
 - `sideways` — not rare at all, just never crossed the listener's path. A big

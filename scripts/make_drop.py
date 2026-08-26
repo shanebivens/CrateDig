@@ -23,6 +23,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import kinds                                                    # noqa: E402
+
 try:
     import yaml
 except ImportError:
@@ -199,7 +202,7 @@ def main():
             "title": track.get("title", ""),
             "year": None,
             "duration": duration,
-            "kind": "unsorted",
+            "kind": kinds.guess(track.get("views")),
             "submitted_by": track.get("submitted_by", "curator"),
             "why": PLACEHOLDER,
             "links": {"youtube": track["url"]},
