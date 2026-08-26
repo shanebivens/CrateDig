@@ -1,0 +1,35 @@
+# Pulled automatically. Set kind and write a real why before this lands.
+date: '2026-08-31'
+number: 2
+title: Drop 002
+publish_at: '2026-08-31T12:01:00-04:00'
+target_minutes: null
+blurb: ''
+tracks:
+- artist: NPR Music
+  title: 'Nile Rodgers & CHIC: Tiny Desk Concert'
+  year: null
+  duration: '30:09'
+  kind: unsorted
+  submitted_by: shanebivens
+  why: Pulled from the daily thirty minutes. No writeup yet.
+  links:
+    youtube: https://www.youtube.com/watch?v=pRERgcQe-fQ
+- artist: Murder by Death
+  title: Brother
+  year: null
+  duration: '3:49'
+  kind: unsorted
+  submitted_by: shanebivens
+  why: Pulled from the daily thirty minutes. No writeup yet.
+  links:
+    youtube: https://www.youtube.com/watch?v=r0uPjg63XmQ
+- artist: The Decemberists
+  title: Once In My Life
+  year: null
+  duration: '5:10'
+  kind: unsorted
+  submitted_by: shanebivens
+  why: Pulled from the daily thirty minutes. No writeup yet.
+  links:
+    youtube: https://www.youtube.com/watch?v=xEZV9tsV3dM

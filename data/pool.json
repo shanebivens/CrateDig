@@ -1,0 +1,894 @@
+{
+  "tracks": [
+    {
+      "video_id": "LXyjfMkw5zU",
+      "artist": "Y2K",
+      "title": "Lalala",
+      "seconds": 161,
+      "views": 136345719,
+      "submitted_by": "shanebivens",
+      "position": 0,
+      "url": "https://www.youtube.com/watch?v=LXyjfMkw5zU"
+    },
+    {
+      "video_id": "ZP_m4W38p0s",
+      "artist": "Trampled By Turtles",
+      "title": "Codeine",
+      "seconds": 190,
+      "views": 5176941,
+      "submitted_by": "shanebivens",
+      "position": 1,
+      "url": "https://www.youtube.com/watch?v=ZP_m4W38p0s"
+    },
+    {
+      "video_id": "DH4B5VOH_J8",
+      "artist": "Zebra Katz",
+      "title": "MOOR",
+      "seconds": 144,
+      "views": 10403,
+      "submitted_by": "shanebivens",
+      "position": 2,
+      "url": "https://www.youtube.com/watch?v=DH4B5VOH_J8"
+    },
+    {
+      "video_id": "rzinvvhMrbA",
+      "artist": "Portico Quartet",
+      "title": "Ruins",
+      "seconds": 335,
+      "views": 189119,
+      "submitted_by": "shanebivens",
+      "position": 3,
+      "url": "https://www.youtube.com/watch?v=rzinvvhMrbA"
+    },
+    {
+      "video_id": "CKFQ8ZMBOwI",
+      "artist": "GoGo Penguin",
+      "title": "Protest (Live from Studio 2, Abbey Road Studios, London / 2020)",
+      "seconds": 286,
+      "views": 58698,
+      "submitted_by": "shanebivens",
+      "position": 4,
+      "url": "https://www.youtube.com/watch?v=CKFQ8ZMBOwI"
+    },
+    {
+      "video_id": "k2szSrVx5lo",
+      "artist": "Mötley Crüe",
+      "title": "Dr. Feelgood",
+      "seconds": 291,
+      "views": 384542,
+      "submitted_by": "shanebivens",
+      "position": 5,
+      "url": "https://www.youtube.com/watch?v=k2szSrVx5lo"
+    },
+    {
+      "video_id": "v_AptpX8pzU",
+      "artist": "Lil Dicky",
+      "title": "Pillow Talking (feat. Brain)",
+      "seconds": 646,
+      "views": 4082122,
+      "submitted_by": "shanebivens",
+      "position": 6,
+      "url": "https://www.youtube.com/watch?v=v_AptpX8pzU"
+    },
+    {
+      "video_id": "7n5tsC2pqOQ",
+      "artist": "Leo",
+      "title": "Take Me to Church (Metal Cover)",
+      "seconds": 262,
+      "views": 855428,
+      "submitted_by": "shanebivens",
+      "position": 7,
+      "url": "https://www.youtube.com/watch?v=7n5tsC2pqOQ"
+    },
+    {
+      "video_id": "88XhEqgmRhM",
+      "artist": "Modest Mouse",
+      "title": "Float On",
+      "seconds": 209,
+      "views": 80763398,
+      "submitted_by": "shanebivens",
+      "position": 8,
+      "url": "https://www.youtube.com/watch?v=88XhEqgmRhM"
+    },
+    {
+      "video_id": "X13vbOnFR8Q",
+      "artist": "Bars of Death",
+      "title": "Boombap Kanuragan",
+      "seconds": 129,
+      "views": 26534,
+      "submitted_by": "shanebivens",
+      "position": 9,
+      "url": "https://www.youtube.com/watch?v=X13vbOnFR8Q"
+    },
+    {
+      "video_id": "Lotl7IdXfcM",
+      "artist": "Talking Heads",
+      "title": "Burning Down the House",
+      "seconds": 244,
+      "views": 5798564,
+      "submitted_by": "shanebivens",
+      "position": 10,
+      "url": "https://www.youtube.com/watch?v=Lotl7IdXfcM"
+    },
+    {
+      "video_id": "FFMyMwjWqXs",
+      "artist": "Rage Against The Machine",
+      "title": "Guerrilla Radio",
+      "seconds": 207,
+      "views": 35321816,
+      "submitted_by": "shanebivens",
+      "position": 11,
+      "url": "https://www.youtube.com/watch?v=FFMyMwjWqXs"
+    },
+    {
+      "video_id": "e2Z0sON2UPc",
+      "artist": "Cage The Elephant",
+      "title": "Ain't No Rest for the Wicked",
+      "seconds": 176,
+      "views": 162588261,
+      "submitted_by": "shanebivens",
+      "position": 12,
+      "url": "https://www.youtube.com/watch?v=e2Z0sON2UPc"
+    },
+    {
+      "video_id": "Hq_J-XVOucg",
+      "artist": "KONGOS",
+      "title": "Come with Me Now",
+      "seconds": 212,
+      "views": 101158965,
+      "submitted_by": "shanebivens",
+      "position": 13,
+      "url": "https://www.youtube.com/watch?v=Hq_J-XVOucg"
+    },
+    {
+      "video_id": "0_gr7atGlQk",
+      "artist": "Orgy",
+      "title": "Stitches",
+      "seconds": 199,
+      "views": 3366530,
+      "submitted_by": "shanebivens",
+      "position": 14,
+      "url": "https://www.youtube.com/watch?v=0_gr7atGlQk"
+    },
+    {
+      "video_id": "tyKewixD-B4",
+      "artist": "Yung Craka",
+      "title": "Buy U",
+      "seconds": 178,
+      "views": 55688246,
+      "submitted_by": "shanebivens",
+      "position": 15,
+      "url": "https://www.youtube.com/watch?v=tyKewixD-B4"
+    },
+    {
+      "video_id": "pi-VvNMDbvA",
+      "artist": "Kanga",
+      "title": "Something Dangerous",
+      "seconds": 322,
+      "views": 17368,
+      "submitted_by": "shanebivens",
+      "position": 16,
+      "url": "https://www.youtube.com/watch?v=pi-VvNMDbvA"
+    },
+    {
+      "video_id": "d-aFQPEuIVY",
+      "artist": "Caamp",
+      "title": "By and By",
+      "seconds": 282,
+      "views": 5279391,
+      "submitted_by": "shanebivens",
+      "position": 17,
+      "url": "https://www.youtube.com/watch?v=d-aFQPEuIVY"
+    },
+    {
+      "video_id": "KOnEEKv9__0",
+      "artist": "Matt Maeson",
+      "title": "Hallucinogenics (feat. Lana Del Rey)",
+      "seconds": 187,
+      "views": 5327224,
+      "submitted_by": "shanebivens",
+      "position": 18,
+      "url": "https://www.youtube.com/watch?v=KOnEEKv9__0"
+    },
+    {
+      "video_id": "AQFWAXNQzAA",
+      "artist": "Paper Planes",
+      "title": "Street Sweeper Social Club",
+      "seconds": 174,
+      "views": 532640,
+      "submitted_by": "shanebivens",
+      "position": 19,
+      "url": "https://www.youtube.com/watch?v=AQFWAXNQzAA"
+    },
+    {
+      "video_id": "BGNVOr-LIGE",
+      "artist": "Obzesion",
+      "title": "Mi Trokita Cumbia",
+      "seconds": 142,
+      "views": 87611934,
+      "submitted_by": "shanebivens",
+      "position": 20,
+      "url": "https://www.youtube.com/watch?v=BGNVOr-LIGE"
+    },
+    {
+      "video_id": "EupgJxxW0ZU",
+      "artist": "Human Nature",
+      "title": "Runaround Sue",
+      "seconds": 176,
+      "views": 1117638,
+      "submitted_by": "shanebivens",
+      "position": 21,
+      "url": "https://www.youtube.com/watch?v=EupgJxxW0ZU"
+    },
+    {
+      "video_id": "Zwjs45s8BSQ",
+      "artist": "Ghoultown",
+      "title": "Drink with the Living Dead",
+      "seconds": 372,
+      "views": 3490903,
+      "submitted_by": "shanebivens",
+      "position": 22,
+      "url": "https://www.youtube.com/watch?v=Zwjs45s8BSQ"
+    },
+    {
+      "video_id": "-FWrwbHqu5w",
+      "artist": "Nathaniel Rateliff",
+      "title": "I Need Never Get Old",
+      "seconds": 254,
+      "views": 12241029,
+      "submitted_by": "shanebivens",
+      "position": 23,
+      "url": "https://www.youtube.com/watch?v=-FWrwbHqu5w"
+    },
+    {
+      "video_id": "yWCcLW08dsU",
+      "artist": "Raise A Little Hell",
+      "title": "Reverend Peyton's Big Damn Band",
+      "seconds": 300,
+      "views": 8226588,
+      "submitted_by": "shanebivens",
+      "position": 24,
+      "url": "https://www.youtube.com/watch?v=yWCcLW08dsU"
+    },
+    {
+      "video_id": "201k02yBgS4",
+      "artist": "Nitty Gritty Dirt Band",
+      "title": "Fishin' in the Dark",
+      "seconds": 203,
+      "views": 44515282,
+      "submitted_by": "shanebivens",
+      "position": 25,
+      "url": "https://www.youtube.com/watch?v=201k02yBgS4"
+    },
+    {
+      "video_id": "Tzc28s9qaW8",
+      "artist": "Surfaces",
+      "title": "Sunday Best",
+      "seconds": 159,
+      "views": 48717755,
+      "submitted_by": "shanebivens",
+      "position": 26,
+      "url": "https://www.youtube.com/watch?v=Tzc28s9qaW8"
+    },
+    {
+      "video_id": "5TPpIQSxVVg",
+      "artist": "Superhumanoids",
+      "title": "March of the Pigs",
+      "seconds": 173,
+      "views": 4176,
+      "submitted_by": "shanebivens",
+      "position": 27,
+      "url": "https://www.youtube.com/watch?v=5TPpIQSxVVg"
+    },
+    {
+      "video_id": "GCEo5vbabt8",
+      "artist": "Brother Dege (AKA Dege Legg)",
+      "title": "Too Old to Die Young",
+      "seconds": 225,
+      "views": 34463866,
+      "submitted_by": "shanebivens",
+      "position": 28,
+      "url": "https://www.youtube.com/watch?v=GCEo5vbabt8"
+    },
+    {
+      "video_id": "A2KOc2F6-1M",
+      "artist": "Sleigh Bells",
+      "title": "Infinity Guitars",
+      "seconds": 152,
+      "views": 172741,
+      "submitted_by": "shanebivens",
+      "position": 29,
+      "url": "https://www.youtube.com/watch?v=A2KOc2F6-1M"
+    },
+    {
+      "video_id": "9ZNkPA_zUd4",
+      "artist": "LCD Soundsystem",
+      "title": "Dance Yrself Clean",
+      "seconds": 537,
+      "views": 9921681,
+      "submitted_by": "shanebivens",
+      "position": 30,
+      "url": "https://www.youtube.com/watch?v=9ZNkPA_zUd4"
+    },
+    {
+      "video_id": "VnQMbeXrjbQ",
+      "artist": "David Dondero",
+      "title": "Brownsville Revival",
+      "seconds": 184,
+      "views": 865,
+      "submitted_by": "shanebivens",
+      "position": 31,
+      "url": "https://www.youtube.com/watch?v=VnQMbeXrjbQ"
+    },
+    {
+      "video_id": "kZ1-TNCpWlg",
+      "artist": "Catfish Haven",
+      "title": "Tell Me",
+      "seconds": 210,
+      "views": 1114,
+      "submitted_by": "shanebivens",
+      "position": 32,
+      "url": "https://www.youtube.com/watch?v=kZ1-TNCpWlg"
+    },
+    {
+      "video_id": "5_Wa7ZptsFQ",
+      "artist": "Tim Fite",
+      "title": "Big Mistake (feat. Christian Ulmen, Bonaparte)",
+      "seconds": 208,
+      "views": 193,
+      "submitted_by": "shanebivens",
+      "position": 33,
+      "url": "https://www.youtube.com/watch?v=5_Wa7ZptsFQ"
+    },
+    {
+      "video_id": "XbmSsAXUYkw",
+      "artist": "Princess Nokia",
+      "title": "Harley Quinn",
+      "seconds": 144,
+      "views": 1977371,
+      "submitted_by": "shanebivens",
+      "position": 34,
+      "url": "https://www.youtube.com/watch?v=XbmSsAXUYkw"
+    },
+    {
+      "video_id": "4MSufMK1lvs",
+      "artist": "The Dead South",
+      "title": "In Hell I'll Be in Good Company",
+      "seconds": 246,
+      "views": 53891994,
+      "submitted_by": "shanebivens",
+      "position": 35,
+      "url": "https://www.youtube.com/watch?v=4MSufMK1lvs"
+    },
+    {
+      "video_id": "SqD8gGubMiY",
+      "artist": "Juan Arias",
+      "title": "Cobra Funk",
+      "seconds": 278,
+      "views": 31,
+      "submitted_by": "shanebivens",
+      "position": 36,
+      "url": "https://www.youtube.com/watch?v=SqD8gGubMiY"
+    },
+    {
+      "video_id": "M3QOVGzFLLI",
+      "artist": "Julian Velard",
+      "title": "Something's Gotta Be Wrong",
+      "seconds": 179,
+      "views": 413,
+      "submitted_by": "shanebivens",
+      "position": 37,
+      "url": "https://www.youtube.com/watch?v=M3QOVGzFLLI"
+    },
+    {
+      "video_id": "0a5BJxrarL0",
+      "artist": "Dubioza kolektiv",
+      "title": "Dubioza kolektiv \"U.S.A.\"",
+      "seconds": 213,
+      "views": 28182011,
+      "submitted_by": "shanebivens",
+      "position": 38,
+      "url": "https://www.youtube.com/watch?v=0a5BJxrarL0"
+    },
+    {
+      "video_id": "JuFttYWy3yk",
+      "artist": "Daf",
+      "title": "Co Co Pino",
+      "seconds": 206,
+      "views": 7199,
+      "submitted_by": "shanebivens",
+      "position": 39,
+      "url": "https://www.youtube.com/watch?v=JuFttYWy3yk"
+    },
+    {
+      "video_id": "uDlEYegta-8",
+      "artist": "Panic! At The Disco",
+      "title": "(Fuck A) Silver Lining",
+      "seconds": 169,
+      "views": 3210221,
+      "submitted_by": "shanebivens",
+      "position": 40,
+      "url": "https://www.youtube.com/watch?v=uDlEYegta-8"
+    },
+    {
+      "video_id": "e8edMH8DgTA",
+      "artist": "Rainbow Kitten Surprise",
+      "title": "Hide",
+      "seconds": 193,
+      "views": 443996,
+      "submitted_by": "shanebivens",
+      "position": 41,
+      "url": "https://www.youtube.com/watch?v=e8edMH8DgTA"
+    },
+    {
+      "video_id": "w7S9ZC8YGRc",
+      "artist": "John Denver",
+      "title": "Take Me Home, Country Roads (Original Version)",
+      "seconds": 191,
+      "views": 1357620,
+      "submitted_by": "shanebivens",
+      "position": 42,
+      "url": "https://www.youtube.com/watch?v=w7S9ZC8YGRc"
+    },
+    {
+      "video_id": "j1DwjYkbxGs",
+      "artist": "Julian Velard",
+      "title": "Love Again For The First Time",
+      "seconds": 222,
+      "views": 2909,
+      "submitted_by": "shanebivens",
+      "position": 43,
+      "url": "https://www.youtube.com/watch?v=j1DwjYkbxGs"
+    },
+    {
+      "video_id": "netD-sgSz4s",
+      "artist": "Tyler Childers",
+      "title": "Whitehouse Road (OurVinyl Sessions)",
+      "seconds": 268,
+      "views": 11710612,
+      "submitted_by": "shanebivens",
+      "position": 44,
+      "url": "https://www.youtube.com/watch?v=netD-sgSz4s"
+    },
+    {
+      "video_id": "epbOHloSpZM",
+      "artist": "Tesla",
+      "title": "Signs (Live At The Trocadero / 1990)",
+      "seconds": 190,
+      "views": 5801675,
+      "submitted_by": "shanebivens",
+      "position": 45,
+      "url": "https://www.youtube.com/watch?v=epbOHloSpZM"
+    },
+    {
+      "video_id": "bqTZFqScPDs",
+      "artist": "The Dead South",
+      "title": "Broken Cowboy",
+      "seconds": 381,
+      "views": 18331778,
+      "submitted_by": "shanebivens",
+      "position": 46,
+      "url": "https://www.youtube.com/watch?v=bqTZFqScPDs"
+    },
+    {
+      "video_id": "peQhtPQ2Kzk",
+      "artist": "The Builders and the Butchers",
+      "title": "Bringin' Home the Rain",
+      "seconds": 397,
+      "views": 7086120,
+      "submitted_by": "shanebivens",
+      "position": 47,
+      "url": "https://www.youtube.com/watch?v=peQhtPQ2Kzk"
+    },
+    {
+      "video_id": "zkoyRsRJgwc",
+      "artist": "Trampled By Turtles",
+      "title": "Wait so Long",
+      "seconds": 207,
+      "views": 6467356,
+      "submitted_by": "shanebivens",
+      "position": 48,
+      "url": "https://www.youtube.com/watch?v=zkoyRsRJgwc"
+    },
+    {
+      "video_id": "SAXpWirKJbQ",
+      "artist": "Goodnight, Texas",
+      "title": "Moonshiners",
+      "seconds": 213,
+      "views": 2932389,
+      "submitted_by": "shanebivens",
+      "position": 49,
+      "url": "https://www.youtube.com/watch?v=SAXpWirKJbQ"
+    },
+    {
+      "video_id": "-bATjVI0gNM",
+      "artist": "Uncle Lucius",
+      "title": "Keep The Wolves Away",
+      "seconds": 276,
+      "views": 107350051,
+      "submitted_by": "shanebivens",
+      "position": 50,
+      "url": "https://www.youtube.com/watch?v=-bATjVI0gNM"
+    },
+    {
+      "video_id": "rqR1cjuPXUg",
+      "artist": "Colter Wall",
+      "title": "The Devil Wears a Suit and Tie",
+      "seconds": 237,
+      "views": 43046098,
+      "submitted_by": "shanebivens",
+      "position": 51,
+      "url": "https://www.youtube.com/watch?v=rqR1cjuPXUg"
+    },
+    {
+      "video_id": "BL1NNW5RWWw",
+      "artist": "Tracy Chapman",
+      "title": "Give Me One Reason",
+      "seconds": 269,
+      "views": 67989271,
+      "submitted_by": "shanebivens",
+      "position": 52,
+      "url": "https://www.youtube.com/watch?v=BL1NNW5RWWw"
+    },
+    {
+      "video_id": "To_Nz9nNiKw",
+      "artist": "Quaker City Night Hawks",
+      "title": "Some Of Adam's Blues",
+      "seconds": 327,
+      "views": 15711980,
+      "submitted_by": "shanebivens",
+      "position": 53,
+      "url": "https://www.youtube.com/watch?v=To_Nz9nNiKw"
+    },
+    {
+      "video_id": "uMK0prafzw0",
+      "artist": "DIE ANTWOORD",
+      "title": "UGLY BOY",
+      "seconds": 293,
+      "views": 218224112,
+      "submitted_by": "shanebivens",
+      "position": 54,
+      "url": "https://www.youtube.com/watch?v=uMK0prafzw0"
+    },
+    {
+      "video_id": "kOdzV3B8GWQ",
+      "artist": "Hopsin",
+      "title": "Witch Doctor",
+      "seconds": 280,
+      "views": 15796502,
+      "submitted_by": "shanebivens",
+      "position": 55,
+      "url": "https://www.youtube.com/watch?v=kOdzV3B8GWQ"
+    },
+    {
+      "video_id": "wIZLMDX2nz0",
+      "artist": "SonReal",
+      "title": "Can I Get a Witness",
+      "seconds": 197,
+      "views": 6114124,
+      "submitted_by": "shanebivens",
+      "position": 56,
+      "url": "https://www.youtube.com/watch?v=wIZLMDX2nz0"
+    },
+    {
+      "video_id": "NwANOZs-zvk",
+      "artist": "Aloe Blacc",
+      "title": "The Man",
+      "seconds": 255,
+      "views": 8012221,
+      "submitted_by": "shanebivens",
+      "position": 57,
+      "url": "https://www.youtube.com/watch?v=NwANOZs-zvk"
+    },
+    {
+      "video_id": "kXeYLz_kWnM",
+      "artist": "Big Yavo",
+      "title": "Preach",
+      "seconds": 188,
+      "views": 988582,
+      "submitted_by": "shanebivens",
+      "position": 58,
+      "url": "https://www.youtube.com/watch?v=kXeYLz_kWnM"
+    },
+    {
+      "video_id": "i6EDytKu8IU",
+      "artist": "JMB Juvie",
+      "title": "Wicked (Acapella)",
+      "seconds": 86,
+      "views": 2719334,
+      "submitted_by": "shanebivens",
+      "position": 59,
+      "url": "https://www.youtube.com/watch?v=i6EDytKu8IU"
+    },
+    {
+      "video_id": "h8bJmealgtA",
+      "artist": "Thomas Benjamin Wild Esq",
+      "title": "Well This Is Shit",
+      "seconds": 205,
+      "views": 1983338,
+      "submitted_by": "shanebivens",
+      "position": 60,
+      "url": "https://www.youtube.com/watch?v=h8bJmealgtA"
+    },
+    {
+      "video_id": "oX1Usoy7lfQ",
+      "artist": "Eilen Jewell",
+      "title": "One of Those Days",
+      "seconds": 237,
+      "views": 808306,
+      "submitted_by": "shanebivens",
+      "position": 61,
+      "url": "https://www.youtube.com/watch?v=oX1Usoy7lfQ"
+    },
+    {
+      "video_id": "4ieohPq9HTg",
+      "artist": "Trampsta",
+      "title": "Slow Down",
+      "seconds": 322,
+      "views": 968907,
+      "submitted_by": "shanebivens",
+      "position": 62,
+      "url": "https://www.youtube.com/watch?v=4ieohPq9HTg"
+    },
+    {
+      "video_id": "xEZV9tsV3dM",
+      "artist": "The Decemberists",
+      "title": "Once In My Life",
+      "seconds": 310,
+      "views": 421382,
+      "submitted_by": "shanebivens",
+      "position": 63,
+      "url": "https://www.youtube.com/watch?v=xEZV9tsV3dM"
+    },
+    {
+      "video_id": "jJ8zlkmYptM",
+      "artist": "Sickick",
+      "title": "I Can Feel It",
+      "seconds": 245,
+      "views": 923173,
+      "submitted_by": "shanebivens",
+      "position": 64,
+      "url": "https://www.youtube.com/watch?v=jJ8zlkmYptM"
+    },
+    {
+      "video_id": "TNw98SoNAeo",
+      "artist": "THE ANXIETY",
+      "title": "Meet Me At Our Spot",
+      "seconds": 163,
+      "views": 36661264,
+      "submitted_by": "shanebivens",
+      "position": 65,
+      "url": "https://www.youtube.com/watch?v=TNw98SoNAeo"
+    },
+    {
+      "video_id": "vDb8H14B7x0",
+      "artist": "Rainbow Kitten Surprise",
+      "title": "Devil Like Me",
+      "seconds": 189,
+      "views": 4873952,
+      "submitted_by": "shanebivens",
+      "position": 66,
+      "url": "https://www.youtube.com/watch?v=vDb8H14B7x0"
+    },
+    {
+      "video_id": "JOKn33-q4Ao",
+      "artist": "Funkadelic",
+      "title": "Maggot Brain",
+      "seconds": 624,
+      "views": 17291811,
+      "submitted_by": "shanebivens",
+      "position": 67,
+      "url": "https://www.youtube.com/watch?v=JOKn33-q4Ao"
+    },
+    {
+      "video_id": "dDyyy-hpFYQ",
+      "artist": "HOLY MOLY",
+      "title": "Hillbillies Can't Drive on Meth",
+      "seconds": 214,
+      "views": 3116529,
+      "submitted_by": "shanebivens",
+      "position": 68,
+      "url": "https://www.youtube.com/watch?v=dDyyy-hpFYQ"
+    },
+    {
+      "video_id": "bNEo1qkNTIs",
+      "artist": "Tim Fite",
+      "title": "Bully",
+      "seconds": 198,
+      "views": 1414,
+      "submitted_by": "shanebivens",
+      "position": 69,
+      "url": "https://www.youtube.com/watch?v=bNEo1qkNTIs"
+    },
+    {
+      "video_id": "6kn9mCeCZzQ",
+      "artist": "Professor Elemental",
+      "title": "I'm British",
+      "seconds": 179,
+      "views": 145624,
+      "submitted_by": "shanebivens",
+      "position": 70,
+      "url": "https://www.youtube.com/watch?v=6kn9mCeCZzQ"
+    },
+    {
+      "video_id": "NKNLqoZJ-ZM",
+      "artist": "Schaffer The Darklord",
+      "title": "F*ck This Song",
+      "seconds": 273,
+      "views": 98424,
+      "submitted_by": "shanebivens",
+      "position": 71,
+      "url": "https://www.youtube.com/watch?v=NKNLqoZJ-ZM"
+    },
+    {
+      "video_id": "EWMPVn1kgIQ",
+      "artist": "Da Vinci's Notebook",
+      "title": "Enormous Penis",
+      "seconds": 165,
+      "views": 23352683,
+      "submitted_by": "shanebivens",
+      "position": 72,
+      "url": "https://www.youtube.com/watch?v=EWMPVn1kgIQ"
+    },
+    {
+      "video_id": "wPEUEkGPClo",
+      "artist": "Ethan Bortnick",
+      "title": "engravings",
+      "seconds": 174,
+      "views": 14205910,
+      "submitted_by": "shanebivens",
+      "position": 73,
+      "url": "https://www.youtube.com/watch?v=wPEUEkGPClo"
+    },
+    {
+      "video_id": "fT9RydqGPD0",
+      "artist": "Man Man",
+      "title": "Whalebones",
+      "seconds": 435,
+      "views": 109369,
+      "submitted_by": "shanebivens",
+      "position": 74,
+      "url": "https://www.youtube.com/watch?v=fT9RydqGPD0"
+    },
+    {
+      "video_id": "5WZQXtjKyns",
+      "artist": "The Teskey Brothers",
+      "title": "That Bird",
+      "seconds": 287,
+      "views": 2810004,
+      "submitted_by": "shanebivens",
+      "position": 75,
+      "url": "https://www.youtube.com/watch?v=5WZQXtjKyns"
+    },
+    {
+      "video_id": "sO9K7G9qUZc",
+      "artist": "AJR",
+      "title": "Bang!",
+      "seconds": 171,
+      "views": 27272317,
+      "submitted_by": "shanebivens",
+      "position": 76,
+      "url": "https://www.youtube.com/watch?v=sO9K7G9qUZc"
+    },
+    {
+      "video_id": "3AnggyYDdF4",
+      "artist": "Bars of Death",
+      "title": "Pecahan Tengkorak",
+      "seconds": 386,
+      "views": 46206,
+      "submitted_by": "shanebivens",
+      "position": 77,
+      "url": "https://www.youtube.com/watch?v=3AnggyYDdF4"
+    },
+    {
+      "video_id": "lcOGtsfs1SA",
+      "artist": "Middle Ages",
+      "title": "Never Gonna Give You Up",
+      "seconds": 198,
+      "views": 208576,
+      "submitted_by": "shanebivens",
+      "position": 78,
+      "url": "https://www.youtube.com/watch?v=lcOGtsfs1SA"
+    },
+    {
+      "video_id": "8gyLR4NfMiI",
+      "artist": "Chris Brown",
+      "title": "Look at Me Now ft. Lil Wayne, Busta Rhymes",
+      "seconds": 249,
+      "views": 590390848,
+      "submitted_by": "shanebivens",
+      "position": 79,
+      "url": "https://www.youtube.com/watch?v=8gyLR4NfMiI"
+    },
+    {
+      "video_id": "wDjeBNv6ip0",
+      "artist": "LP",
+      "title": "Lost On You (Live)",
+      "seconds": 309,
+      "views": 1678469693,
+      "submitted_by": "shanebivens",
+      "position": 80,
+      "url": "https://www.youtube.com/watch?v=wDjeBNv6ip0"
+    },
+    {
+      "video_id": "XY8OzsxY7HU",
+      "artist": "PJ Morton",
+      "title": "Smoke and Mirrors",
+      "seconds": 200,
+      "views": 22675,
+      "submitted_by": "shanebivens",
+      "position": 81,
+      "url": "https://www.youtube.com/watch?v=XY8OzsxY7HU"
+    },
+    {
+      "video_id": "UbJeA8Ifi8s",
+      "artist": "Little Stranger",
+      "title": "God at a Festival",
+      "seconds": 191,
+      "views": 216014,
+      "submitted_by": "shanebivens",
+      "position": 82,
+      "url": "https://www.youtube.com/watch?v=UbJeA8Ifi8s"
+    },
+    {
+      "video_id": "sLZMHfyDXng",
+      "artist": "Little Stranger",
+      "title": "Fly Guy",
+      "seconds": 195,
+      "views": 9485,
+      "submitted_by": "shanebivens",
+      "position": 83,
+      "url": "https://www.youtube.com/watch?v=sLZMHfyDXng"
+    },
+    {
+      "video_id": "PhK6v47c4Cw",
+      "artist": "Little Stranger",
+      "title": "Kama Sumatra",
+      "seconds": 138,
+      "views": 7126,
+      "submitted_by": "shanebivens",
+      "position": 84,
+      "url": "https://www.youtube.com/watch?v=PhK6v47c4Cw"
+    },
+    {
+      "video_id": "r0uPjg63XmQ",
+      "artist": "Murder by Death",
+      "title": "Brother",
+      "seconds": 229,
+      "views": 176981,
+      "submitted_by": "shanebivens",
+      "position": 86,
+      "url": "https://www.youtube.com/watch?v=r0uPjg63XmQ"
+    },
+    {
+      "video_id": "BI8njtbPwdk",
+      "artist": "Between The Buried And Me",
+      "title": "Bicycle Race",
+      "seconds": 190,
+      "views": 84173,
+      "submitted_by": "shanebivens",
+      "position": 87,
+      "url": "https://www.youtube.com/watch?v=BI8njtbPwdk"
+    },
+    {
+      "video_id": "pRERgcQe-fQ",
+      "artist": "NPR Music",
+      "title": "Nile Rodgers & CHIC: Tiny Desk Concert",
+      "seconds": 1809,
+      "views": 10797644,
+      "submitted_by": "shanebivens",
+      "position": 88,
+      "url": "https://www.youtube.com/watch?v=pRERgcQe-fQ"
+    },
+    {
+      "video_id": "Qce4YXw_9IA",
+      "artist": "Matan Even",
+      "title": "Matan Confronts Jillian Michaels For Being a G*y Zionist",
+      "seconds": 2411,
+      "views": 530537,
+      "submitted_by": "shanebivens",
+      "position": 89,
+      "url": "https://www.youtube.com/watch?v=Qce4YXw_9IA"
+    }
+  ]
+}
