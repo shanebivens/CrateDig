@@ -1,35 +1,65 @@
-# Pulled automatically. Set kind and write a real why before this lands.
+# Written up by hand. Ready to go.
 date: '2026-08-31'
 number: 2
 title: Drop 002
 publish_at: '2026-08-31T12:01:00-04:00'
 target_minutes: null
-blurb: ''
+blurb: Five doorways. One of them has been played thirty one times in its entire life.
 tracks:
-- artist: NPR Music
-  title: 'Nile Rodgers & CHIC: Tiny Desk Concert'
+- artist: Juan Arias
+  title: Cobra Funk
   year: null
-  duration: '30:09'
-  kind: unsorted
+  duration: '4:38'
+  kind: obscure
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: 'Thirty one views. Searching turns up nothing: no label, no band page, no interview,
+    not even a wrong answer. Whatever this is, you are one of a few dozen people alive who
+    have heard it. Start here and see where the machine takes you, because it has almost nothing
+    to go on.'
   links:
-    youtube: https://www.youtube.com/watch?v=pRERgcQe-fQ
-- artist: Murder by Death
-  title: Brother
+    youtube: https://www.youtube.com/watch?v=SqD8gGubMiY
+- artist: Superhumanoids
+  title: March of the Pigs
   year: null
-  duration: '3:49'
-  kind: unsorted
+  duration: '2:53'
+  kind: obscure
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: A Los Angeles synth pop band covering the most abrasive single Nine Inch Nails ever
+    released, and filing it away as a B side. The original is all teeth. This one keeps the
+    panic and takes the distortion off, which somehow makes it worse.
   links:
-    youtube: https://www.youtube.com/watch?v=r0uPjg63XmQ
-- artist: The Decemberists
-  title: Once In My Life
+    youtube: https://www.youtube.com/watch?v=5TPpIQSxVVg
+- artist: Bars of Death
+  title: Boombap Kanuragan
+  year: 2020
+  duration: '2:09'
+  kind: obscure
+  submitted_by: shanebivens
+  why: 'Bandung, Indonesia. Three former members of Homicide got back together in 2014 meaning
+    to cut an EP, then took six years to finish it. Morbid Funk came out on Grimloc Records
+    in 2020: hardcore bars over sample heavy boom bap, and turntablism with no interest in
+    being tasteful.'
+  links:
+    youtube: https://www.youtube.com/watch?v=X13vbOnFR8Q
+- artist: GoGo Penguin
+  title: Protest (Live at Abbey Road)
+  year: 2020
+  duration: '4:46'
+  kind: sideways
+  submitted_by: shanebivens
+  why: A Manchester piano trio playing what sounds like electronic music performed by hand,
+    recorded in the room where the Beatles made most of their records. Not rare, just quietly
+    skipped by anyone who has decided they do not like jazz.
+  links:
+    youtube: https://www.youtube.com/watch?v=CKFQ8ZMBOwI
+- artist: Schaffer The Darklord
+  title: F*ck This Song
   year: null
-  duration: '5:10'
-  kind: unsorted
+  duration: '4:33'
+  kind: obscure
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: Nerdcore, the corner of rap that grew out of conventions and message boards rather
+    than any city's scene. It is a joke record that is genuinely well built, which is the
+    harder of the two things to pull off.
   links:
-    youtube: https://www.youtube.com/watch?v=xEZV9tsV3dM
+    youtube: https://www.youtube.com/watch?v=NKNLqoZJ-ZM

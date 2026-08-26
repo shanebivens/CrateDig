@@ -5,8 +5,10 @@ Nothing that has appeared in any file in drops/ can be picked again. That is
 checked two ways, by YouTube video id and by artist and title, so the same song
 cannot slip back in through a different upload.
 
-By default a drop is two or three tracks, decided from the date so a rerun for
-the same day lands on the same answer. Pass --minutes to fill a runtime instead.
+By default a drop is five to seven tracks, decided from the date so a rerun for
+the same day lands on the same answer. Each one is meant as a starting point
+rather than a serving, so the count matters more than the runtime. Pass --minutes
+to fill a runtime instead.
 
     python3 scripts/make_drop.py --date 2026-08-31
     python3 scripts/make_drop.py --date 2026-08-31 --minutes 30
@@ -86,8 +88,10 @@ def main():
                         help="fill roughly this many minutes instead of counting tracks")
     parser.add_argument("--count", type=int, default=0,
                         help="pick exactly this many tracks")
-    parser.add_argument("--min-count", type=int, default=2)
-    parser.add_argument("--max-count", type=int, default=3)
+    parser.add_argument("--min-count", type=int, default=5)
+    parser.add_argument("--max-count", type=int, default=7)
+    parser.add_argument("--max-seconds", type=int, default=600,
+                        help="skip anything longer. Concerts and mixes are not tracks")
     parser.add_argument("--max-tracks", type=int, default=12,
                         help="stop here however short the drop is")
     parser.add_argument("--out-dir", default=str(DROPS),
@@ -113,11 +117,22 @@ def main():
     pool = json.loads(POOL.read_text(encoding="utf-8")).get("tracks", [])
     used_ids, used_keys = already_used()
 
-    fresh = [
-        track for track in pool
-        if track.get("video_id") not in used_ids
-        and track_key(track.get("artist", ""), track.get("title", "")) not in used_keys
-    ]
+    def usable(track):
+        if track.get("video_id") in used_ids:
+            return False
+        if track_key(track.get("artist", ""), track.get("title", "")) in used_keys:
+            return False
+        seconds = track.get("seconds")
+        # A half hour video is a concert, a mix or a full album, not a track.
+        if isinstance(seconds, int) and seconds > args.max_seconds:
+            return False
+        return True
+
+    oversize = len([t for t in pool if isinstance(t.get("seconds"), int)
+                    and t["seconds"] > args.max_seconds])
+    fresh = [track for track in pool if usable(track)]
+    if oversize:
+        print(f"{oversize} too long to be a track, skipped.")
 
     print(f"{len(pool)} in the pool, {len(pool) - len(fresh)} already used, {len(fresh)} left.")
     if not fresh:

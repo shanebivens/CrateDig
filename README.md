@@ -22,6 +22,8 @@ Drops separate picks into two categories, because they are different pleasures.
   rotation in 1979 and never came back.
 - **Obscure.** It never surfaced in the first place. Private press, a cassette
   someone made for their friends, a record that sold two hundred copies.
+- **Sideways.** Not rare at all, just never crossed your path, or it did and you
+  wrote it off. Weird, mainstream, sideways, all of it counts.
 
 A deep cut by a famous band is usually neither. If most people know the artist,
 it probably belongs somewhere else.
@@ -54,8 +56,8 @@ can revoke.
 
 ## Mondays at 12:01pm Eastern
 
-Weeks are lined up in advance in `scheduled/`, two or three tracks each, pulled
-from participants' public YouTube playlists. Nothing there reaches the site. At
+Weeks are lined up in advance in `scheduled/`, five to seven tracks each,
+pulled from participants' public YouTube playlists. Nothing there reaches the site. At
 12:01pm Eastern on its Monday, one week moves into `drops/` and appears. One at
 a time, never the whole queue at once.
 
@@ -76,8 +78,8 @@ Listening stays daily. That is what the playlist is for.
 file in `drops/` *and* `scheduled/` and rules out anything already used or
 already lined up, matching both on YouTube video ID and on a normalized artist
 and title, so the same song cannot come back through a different upload or a
-remaster. At two or three a week, a ninety track playlist is about eight months
-of Mondays, and it keeps growing faster than that.
+remaster. Anything longer than ten minutes is skipped as well, since a concert
+recording or a full album upload is not a track.
 
 Automatic picks land as `kind: unsorted` with no writeup, which the validator
 flags until a curator calls it forgotten or obscure and writes the story.
@@ -100,6 +102,16 @@ MusicBrainz release dates) rather than raw view counts, since a track uploaded
 last week has few views without being rare at all.
 
 Each drop targets about thirty minutes of runtime, not a fixed track count.
+
+## Every pick is a doorway
+
+A drop is not a playlist to sit through. Each track links to its YouTube mix,
+`watch?v=<id>&list=RD<id>`, which plays the song and then keeps going into
+whatever the recommender thinks it resembles. One song becomes an afternoon of
+music you have never heard, which is the entire point.
+
+That is why a drop is five to seven tracks rather than a fixed runtime. You are
+being handed starting points, and you are not expected to use all of them.
 
 ## Playing a whole drop
 

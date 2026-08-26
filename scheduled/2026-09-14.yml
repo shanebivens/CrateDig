@@ -1,26 +1,62 @@
-# Pulled automatically. Set kind and write a real why before this lands.
+# Written up by hand. Ready to go.
 date: '2026-09-14'
 number: 4
 title: Drop 004
 publish_at: '2026-09-14T12:01:00-04:00'
 target_minutes: null
-blurb: ''
+blurb: Two you may know, three you almost certainly do not.
 tracks:
-- artist: Human Nature
-  title: Runaround Sue
+- artist: Hopsin
+  title: Witch Doctor
   year: null
-  duration: '2:56'
-  kind: unsorted
+  duration: '4:40'
+  kind: sideways
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: Rap about rap, which is either the most tedious subgenre going or the funniest, depending
+    entirely on execution. Worth hearing once before you decide which.
   links:
-    youtube: https://www.youtube.com/watch?v=EupgJxxW0ZU
-- artist: Da Vinci's Notebook
-  title: Enormous Penis
+    youtube: https://www.youtube.com/watch?v=kOdzV3B8GWQ
+- artist: Modest Mouse
+  title: Float On
   year: null
-  duration: '2:45'
-  kind: unsorted
+  duration: '3:29'
+  kind: sideways
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: Eighty million views and somehow still underplayed. If you only know this one from
+    an advert, the album around it is a far odder record than this track lets on.
   links:
-    youtube: https://www.youtube.com/watch?v=EWMPVn1kgIQ
+    youtube: https://www.youtube.com/watch?v=88XhEqgmRhM
+- artist: David Dondero
+  title: Brownsville Revival
+  year: null
+  duration: '3:04'
+  kind: obscure
+  submitted_by: shanebivens
+  why: Eight hundred and sixty five views. A folk singer who has spent decades touring the
+    country out of a van, admired by people who went on to sell many more records than he
+    ever has. The gap between how good this is and how few have played it is the whole reason
+    this list exists.
+  links:
+    youtube: https://www.youtube.com/watch?v=VnQMbeXrjbQ
+- artist: Between The Buried And Me
+  title: Bicycle Race
+  year: null
+  duration: '3:10'
+  kind: obscure
+  submitted_by: shanebivens
+  why: A progressive metal band covering Queen, seriously rather than as a gag. The bicycle
+    bells are still in there. It sits on a covers record most of their own listeners have
+    never bothered with.
+  links:
+    youtube: https://www.youtube.com/watch?v=BI8njtbPwdk
+- artist: PJ Morton
+  title: Smoke and Mirrors
+  year: null
+  duration: '3:20'
+  kind: obscure
+  submitted_by: shanebivens
+  why: Twenty two thousand views for a man who plays keys in one of the biggest bands in the
+    world and has won Grammys under his own name. The solo work lives in a completely different
+    room from the day job.
+  links:
+    youtube: https://www.youtube.com/watch?v=XY8OzsxY7HU

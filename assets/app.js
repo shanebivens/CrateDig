@@ -69,6 +69,17 @@
     if (track.why) body.appendChild(el("p", "track-why", track.why));
 
     var links = el("div", "track-links");
+
+    var radio = safeHref(track.radio);
+    if (radio) {
+      var hole = el("a", "is-radio", "Fall in");
+      hole.href = radio;
+      hole.rel = "noopener";
+      hole.target = "_blank";
+      hole.title = "Plays this, then keeps going into whatever it leads to";
+      links.appendChild(hole);
+    }
+
     var services = Object.keys(track.links || {});
     if (services.length && services.some(function (s) { return safeHref(track.links[s]); })) {
       services.forEach(function (service) {
@@ -81,7 +92,7 @@
         links.appendChild(anchor);
       });
     } else {
-      var search = el("a", "is-search", "Search for it");
+      var search = el("a", "is-search", radio ? "Find it elsewhere" : "Search for it");
       search.href = searchUrl(track);
       search.rel = "noopener";
       search.target = "_blank";
@@ -127,7 +138,7 @@
     var play = el("div", "play-row");
     var queue = safeHref(drop.queue_url);
     if (queue) {
-      var all = el("a", "button button-play", "Play the whole drop");
+      var all = el("a", "button button-play", "Play them back to back");
       all.href = queue;
       all.rel = "noopener";
       all.target = "_blank";

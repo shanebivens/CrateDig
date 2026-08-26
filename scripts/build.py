@@ -25,7 +25,7 @@ DROPS = ROOT / "drops"
 OUT = ROOT / "data" / "drops.json"
 
 TARGET_SECONDS = 30 * 60
-KINDS = {"forgotten", "obscure", "unsorted"}
+KINDS = {"forgotten", "obscure", "sideways", "unsorted"}
 PLACEHOLDER_WHY = "Pulled from the daily thirty minutes. No writeup yet."
 SERVICES = {
     "youtube-music", "youtube", "spotify", "apple-music",
@@ -41,6 +41,9 @@ YOUTUBE_ID_RE = re.compile(
 # youtube.com/watch_videos builds a temporary queue from video ids, with no
 # account and no playlist created. Fifty is as many as it accepts.
 QUEUE_URL = "https://www.youtube.com/watch_videos?video_ids="
+# The point of a pick is where it leads. RD<id> is YouTube's mix, which keeps
+# playing things it thinks are like the seed once the seed finishes.
+RADIO_URL = "https://www.youtube.com/watch?v={id}&list=RD{id}"
 QUEUE_LIMIT = 50
 
 errors = []
@@ -228,10 +231,13 @@ def load_drops(people):
             for service, url in list(links.items()):
                 if not check_url(f"{spot} {service}", url):
                     links.pop(service)
+            radio = ""
             for url in links.values():
                 found = youtube_id(url)
-                if found and found not in video_ids:
-                    video_ids.append(found)
+                if found:
+                    radio = radio or RADIO_URL.format(id=found)
+                    if found not in video_ids:
+                        video_ids.append(found)
 
             clean_tracks.append({
                 "artist": artist,
@@ -243,6 +249,7 @@ def load_drops(people):
                 "submitted_by": by,
                 "why": why,
                 "links": links,
+                "radio": radio,
             })
 
         for who, count in per_person.items():

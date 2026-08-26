@@ -1,26 +1,63 @@
-# Pulled automatically. Set kind and write a real why before this lands.
+# Written up by hand. Ready to go.
 date: '2026-09-07'
 number: 3
 title: Drop 003
 publish_at: '2026-09-07T12:01:00-04:00'
 target_minutes: null
-blurb: ''
+blurb: A hundred million views next to ten thousand. Both are doors.
 tracks:
-- artist: Daf
-  title: Co Co Pino
+- artist: KONGOS
+  title: Come with Me Now
   year: null
-  duration: '3:26'
-  kind: unsorted
+  duration: '3:32'
+  kind: sideways
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: Four brothers, born in London, raised in South Africa. Their father is John Kongos,
+    who had two hits in Britain in 1971, one of which got sampled into a completely different
+    hit twenty years later. Follow that thread instead of this one if you want the stranger
+    trip.
   links:
-    youtube: https://www.youtube.com/watch?v=JuFttYWy3yk
-- artist: Nitty Gritty Dirt Band
-  title: Fishin' in the Dark
+    youtube: https://www.youtube.com/watch?v=Hq_J-XVOucg
+- artist: Murder by Death
+  title: Brother
   year: null
-  duration: '3:23'
-  kind: unsorted
+  duration: '3:49'
+  kind: obscure
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: An Indiana band named after a 1976 murder mystery film, playing something closer to
+    gothic country than the name suggests. The cello is doing most of the work here.
   links:
-    youtube: https://www.youtube.com/watch?v=201k02yBgS4
+    youtube: https://www.youtube.com/watch?v=r0uPjg63XmQ
+- artist: Zebra Katz
+  title: MOOR
+  year: null
+  duration: '2:24'
+  kind: obscure
+  submitted_by: shanebivens
+  why: Zebra Katz got noticed when a fashion designer played an earlier track on repeat through
+    a Paris runway show and the room started asking what it was. This comes from the album
+    that arrived years after that moment, colder and stranger than the thing that made his
+    name.
+  links:
+    youtube: https://www.youtube.com/watch?v=DH4B5VOH_J8
+- artist: Eilen Jewell
+  title: One of Those Days
+  year: null
+  duration: '3:57'
+  kind: sideways
+  submitted_by: shanebivens
+  why: Retro country blues played straight, with no wink about it. If your idea of this music
+    is stadium country, this is the other branch, the one that never got the radio money.
+  links:
+    youtube: https://www.youtube.com/watch?v=oX1Usoy7lfQ
+- artist: Dubioza kolektiv
+  title: U.S.A.
+  year: null
+  duration: '3:33'
+  kind: sideways
+  submitted_by: shanebivens
+  why: A Bosnian band playing ska, punk and dub, a lot of it about how hard it is to get a
+    visa when you carry the wrong passport. Twenty eight million views and almost nobody in
+    America has heard of them.
+  links:
+    youtube: https://www.youtube.com/watch?v=0a5BJxrarL0

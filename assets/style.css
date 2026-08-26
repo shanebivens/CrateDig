@@ -480,3 +480,14 @@ button.button { border: 0; cursor: pointer; font-family: var(--mono); }
 .handoff .fine { font-size: 0.85rem; color: var(--ink-faint); line-height: 1.6; }
 
 .tag-kind.unsorted { color: var(--ink-faint); }
+
+.tag-kind.sideways { color: var(--accent); }
+
+.track-links a.is-radio {
+  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 500;
+}
+
+.track-links a.is-radio:hover { background: var(--ink); border-color: var(--ink); }

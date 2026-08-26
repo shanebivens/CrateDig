@@ -1,7 +1,8 @@
 .DS_Store
 
-# Local Claude Code preview config
-.claude/
+# Local Claude Code preview config, but skills belong to the project
+.claude/*
+!.claude/skills/
 
 __pycache__/
 *.pyc
