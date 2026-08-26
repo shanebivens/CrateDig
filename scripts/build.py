@@ -33,6 +33,14 @@ SERVICES = {
 HANDLE_RE = re.compile(r"^[a-z0-9][a-z0-9-]{1,38}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 DURATION_RE = re.compile(r"^(?:(\d+):)?([0-5]?\d):([0-5]\d)$")
+YOUTUBE_ID_RE = re.compile(
+    r"(?:youtube\.com/watch\?(?:[^#]*&)?v=|youtu\.be/|youtube\.com/embed/)"
+    r"([A-Za-z0-9_-]{11})"
+)
+# youtube.com/watch_videos builds a temporary queue from video ids, with no
+# account and no playlist created. Fifty is as many as it accepts.
+QUEUE_URL = "https://www.youtube.com/watch_videos?video_ids="
+QUEUE_LIMIT = 50
 
 errors = []
 warnings = []
@@ -71,6 +79,11 @@ def check_url(where, url):
         err(where, f"not a usable link: {url!r}")
         return False
     return True
+
+
+def youtube_id(url):
+    match = YOUTUBE_ID_RE.search(url or "")
+    return match.group(1) if match else ""
 
 
 def load_submissions():
@@ -153,6 +166,7 @@ def load_drops(people):
         clean_tracks = []
         total = 0
         unknown_durations = 0
+        video_ids = []
 
         for index, track in enumerate(tracks, start=1):
             spot = f"{where} track {index}"
@@ -172,7 +186,7 @@ def load_drops(people):
 
             by = track.get("submitted_by", "curator")
             if by != "curator" and by not in people:
-                err(spot, f"submitted_by '{by}' has no file in submissions/")
+                warn(spot, f"submitted_by '{by}' has no file in submissions/ yet")
             per_person[by] = per_person.get(by, 0) + 1
 
             why = (track.get("why") or "").strip()
@@ -203,6 +217,10 @@ def load_drops(people):
             for service, url in list(links.items()):
                 if not check_url(f"{spot} {service}", url):
                     links.pop(service)
+            for url in links.values():
+                found = youtube_id(url)
+                if found and found not in video_ids:
+                    video_ids.append(found)
 
             clean_tracks.append({
                 "artist": artist,
@@ -220,6 +238,22 @@ def load_drops(people):
             if who != "curator" and count > 3:
                 warn(where, f"{who} has {count} picks, three per drop keeps it varied")
 
+        # One link that plays the whole drop, built from whatever YouTube links
+        # the tracks carry. Anything else has to be a real playlist someone made
+        # by hand, so it comes from the drop file.
+        queue_url = ""
+        if len(video_ids) >= 2:
+            queue_url = QUEUE_URL + ",".join(video_ids[:QUEUE_LIMIT])
+            if len(video_ids) > QUEUE_LIMIT:
+                warn(where, f"queue link covers the first {QUEUE_LIMIT} tracks only")
+        elif len(clean_tracks) >= 2:
+            warn(where, "no queue link yet, tracks need YouTube links for that")
+
+        made_playlists = {}
+        for service, url in (data.get("playlists") or {}).items():
+            if check_url(f"{where} playlist {service}", url):
+                made_playlists[service] = url
+
         drops.append({
             "date": date,
             "number": data.get("number"),
@@ -228,6 +262,8 @@ def load_drops(people):
             "tracks": clean_tracks,
             "seconds": total,
             "unknown_durations": unknown_durations,
+            "queue_url": queue_url,
+            "playlists": made_playlists,
         })
 
         if unknown_durations:
@@ -259,6 +295,10 @@ def main():
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    waiting = len([path for path in (ROOT / "inbox").glob("*.yml")])
+    if waiting:
+        print(f"\n{waiting} pick(s) waiting in inbox/ to be placed in a drop.")
 
     total_tracks = sum(len(drop["tracks"]) for drop in drops)
     print(

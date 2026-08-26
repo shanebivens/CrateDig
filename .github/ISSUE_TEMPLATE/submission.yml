@@ -1,25 +1,27 @@
 name: Submit a track
 description: A record almost nobody has heard, or nobody has played in years.
-title: "[pick] ARTIST - TITLE"
+title: "[pick] Artist - Title"
 labels: ["submission"]
 body:
   - type: markdown
     attributes:
       value: |
-        No account access, no credentials, ever. Public links only.
-        By submitting you agree to [CLA.md](https://github.com/shanebivens/CrateDig/blob/main/CLA.md).
+        Public links only. No account access, no credentials, ever.
+        Submitting means you agree to [CLA.md](https://github.com/shanebivens/CrateDig/blob/main/CLA.md).
 
   - type: input
     id: artist
     attributes:
       label: Artist
+      placeholder: Connie Converse
     validations:
       required: true
 
   - type: input
-    id: title
+    id: track
     attributes:
-      label: Track title
+      label: Track or album
+      placeholder: Talkin' Like You (Two Tall Mountains)
     validations:
       required: true
 
@@ -28,14 +30,16 @@ body:
     attributes:
       label: Year
       description: Recording or release year, whichever tells the better story.
+      placeholder: "1954"
 
   - type: dropdown
     id: kind
     attributes:
-      label: Which kind of find is this?
+      label: Which kind of find is this
       options:
-        - obscure (it never surfaced in the first place)
-        - forgotten (it was popular once and nobody plays it now)
+        - obscure
+        - forgotten
+      default: 0
     validations:
       required: true
 
@@ -51,11 +55,12 @@ body:
     id: link
     attributes:
       label: A public link
-      description: Bandcamp if the artist sells it directly, otherwise whatever works.
+      description: Bandcamp if the artist sells it directly, otherwise whatever works. Leave it blank and the site links to a search instead.
+      placeholder: https://
 
   - type: checkboxes
     id: stake
     attributes:
       label: Disclosure
       options:
-        - label: I have a stake in this track (my band, my label, a friend's record). Saying so is allowed and encouraged.
+        - label: I have a stake in this record (my band, my label, a friend's record). Saying so is allowed and encouraged.

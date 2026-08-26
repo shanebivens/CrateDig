@@ -85,9 +85,24 @@
         }
       ],
       "seconds": 0,
-      "unknown_durations": 7
+      "unknown_durations": 7,
+      "queue_url": "",
+      "playlists": {}
     }
   ],
-  "participants": [],
+  "participants": [
+    {
+      "handle": "shanebivens",
+      "joined": "2026-08-26",
+      "bio": "Thirty minutes a day of something I have never heard, or have not heard in years.",
+      "playlists": [
+        {
+          "url": "https://music.youtube.com/playlist?list=PLXYIJ_ZHHnov6ogntr2l4cyE-m26vJ-wc",
+          "service": "youtube-music",
+          "note": "The running list. Everything from the daily thirty minutes goes here."
+        }
+      ]
+    }
+  ],
   "target_seconds": 1800
 }

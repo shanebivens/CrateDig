@@ -1,0 +1,49 @@
+name: Add my playlist
+description: Put yourself on the participant list with a public playlist.
+title: "[playlist] add me"
+labels: ["playlist"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Your handle is taken from your GitHub username, so nobody can claim
+        someone else's. The playlist has to be public or nobody else can open it.
+
+        Submitting means you agree to [CLA.md](https://github.com/shanebivens/CrateDig/blob/main/CLA.md).
+
+  - type: input
+    id: url
+    attributes:
+      label: Playlist link
+      placeholder: https://music.youtube.com/playlist?list=
+    validations:
+      required: true
+
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service
+      options:
+        - youtube-music
+        - youtube
+        - spotify
+        - apple-music
+        - bandcamp
+        - soundcloud
+        - tidal
+        - other
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: note
+    attributes:
+      label: What is this playlist
+      placeholder: Running list of everything from my daily thirty minutes.
+
+  - type: input
+    id: bio
+    attributes:
+      label: One line about what you dig for
+      description: Optional. It helps people recognize your picks when they show up in a drop.

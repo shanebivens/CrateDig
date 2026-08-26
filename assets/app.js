@@ -37,6 +37,11 @@
     return minutes + "m " + (rest < 10 ? "0" : "") + rest + "s";
   }
 
+  function safeHref(url) {
+    /* Submissions come from strangers. Only http(s) is allowed near an href. */
+    return /^https?:\/\//i.test(String(url || "")) ? String(url) : "";
+  }
+
   function searchUrl(track) {
     var query = track.artist + " " + track.title;
     return "https://music.youtube.com/search?q=" + encodeURIComponent(query);
@@ -65,10 +70,12 @@
 
     var links = el("div", "track-links");
     var services = Object.keys(track.links || {});
-    if (services.length) {
+    if (services.length && services.some(function (s) { return safeHref(track.links[s]); })) {
       services.forEach(function (service) {
+        var href = safeHref(track.links[service]);
+        if (!href) return;
         var anchor = el("a", null, SERVICE_LABELS[service] || service);
-        anchor.href = track.links[service];
+        anchor.href = href;
         anchor.rel = "noopener";
         anchor.target = "_blank";
         links.appendChild(anchor);
@@ -113,6 +120,27 @@
       runtime.appendChild(bar);
     }
     head.appendChild(runtime);
+
+    var play = el("div", "play-row");
+    var queue = safeHref(drop.queue_url);
+    if (queue) {
+      var all = el("a", "button button-play", "Play the whole drop");
+      all.href = queue;
+      all.rel = "noopener";
+      all.target = "_blank";
+      play.appendChild(all);
+    }
+    Object.keys(drop.playlists || {}).forEach(function (service) {
+      var href = safeHref(drop.playlists[service]);
+      if (!href) return;
+      var anchor = el("a", "button button-quiet button-play", SERVICE_LABELS[service] || service);
+      anchor.href = href;
+      anchor.rel = "noopener";
+      anchor.target = "_blank";
+      play.appendChild(anchor);
+    });
+    if (play.childNodes.length) head.appendChild(play);
+
     target.appendChild(head);
 
     drop.tracks.forEach(function (track, index) {

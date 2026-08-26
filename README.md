@@ -28,20 +28,29 @@ it probably belongs somewhere else.
 
 ## How to join
 
-1. Fork this repository.
-2. Copy `submissions/EXAMPLE.yml` to `submissions/your-handle.yml` and fill it in.
-3. Open a pull request. Add `I have read CLA.md and I agree to it.` to the
-   description.
+**[Fill in the form](https://shanebivens.github.io/CrateDig/submit.html).** Four
+fields for a track, one for a playlist. It hands you a filled-out submission,
+you press one button, and a bot files it into this repository and replies within
+a minute. No git, no pull request, nothing to learn.
 
-Your file holds public playlist links, not credentials. Nothing here ever asks
-for a password, a cookie, or access to your account, and it never will. If a
-future version reads listening history, it will do it through something you
-control and can revoke.
+If you would rather do it by hand, copy `submissions/EXAMPLE.yml` to
+`submissions/your-handle.yml` and open a pull request. Both routes end in the
+same place.
 
-Not comfortable with git? Open an issue using the submission template instead
-and it gets picked up the same way.
+You send public links, nothing else. Nothing here ever asks for a password, a
+cookie, or access to your listening account, and it never will. If a future
+version reads listening history, it will do it through something you control and
+can revoke.
 
-## How a drop gets made
+## How a submission becomes a drop
+
+1. Someone submits through the form, which opens a prefilled issue.
+2. The `Intake` workflow parses it, writes a file, replies on the issue, and
+   closes it. Track picks land in `inbox/`. Playlists go straight into
+   `submissions/`, since joining is self service. Your handle comes from your
+   GitHub username, so nobody can claim someone else's.
+3. A curator moves inbox picks into the current file in `drops/`.
+4. Pushing that rebuilds `data/drops.json` and the site updates.
 
 Picks are chosen by hand right now. Automated scoring comes later, once there
 are enough submissions to tune it against. When it arrives, the plan is to
@@ -51,13 +60,31 @@ last week has few views without being rare at all.
 
 Each drop targets about thirty minutes of runtime, not a fixed track count.
 
+## Playing a whole drop
+
+If the tracks in a drop carry YouTube links, the build script collects the video
+IDs into a single `watch_videos` link that plays the drop straight through. It
+creates no playlist and needs no account or API key.
+
+Nothing equivalent exists for Spotify or Apple Music, where a real playlist has
+to be made by someone signed in. Make one by hand and add it to the drop file
+and a button appears:
+
+    playlists:
+      spotify: https://open.spotify.com/playlist/...
+
+Leave it out and nothing breaks.
+
 ## Repository layout
 
-    submissions/     one YAML file per participant
-    drops/           one YAML file per published drop
-    data/drops.json  built from drops/, read by the site
-    scripts/build.py validates everything and builds data/drops.json
-    index.html       the site, served from the repository root
+    submissions/      one YAML file per participant
+    inbox/            submitted picks waiting to be placed in a drop
+    drops/            one YAML file per published drop
+    data/drops.json   built from drops/, read by the site
+    scripts/build.py  validates everything and builds data/drops.json
+    scripts/intake.py turns a submitted issue into a file in the repository
+    index.html        the site, served from the repository root
+    submit.html       the submission form
 
 Build the site data locally:
 

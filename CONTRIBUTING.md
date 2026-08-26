@@ -2,6 +2,13 @@
 
 Most contributions here are music, not code. Both are welcome.
 
+## The short way
+
+[Use the form](https://shanebivens.github.io/CrateDig/submit.html). It hands you
+a prefilled issue, you press one button, and the `Intake` workflow files it,
+replies, and closes the issue within a minute. Everything below is for people
+who would rather edit the files themselves.
+
 Before your first pull request, read [`CLA.md`](CLA.md) and add this line to the
 pull request description:
 

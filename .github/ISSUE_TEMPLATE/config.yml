@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Submit without opening GitHub first
+    url: https://shanebivens.github.io/CrateDig/submit.html
+    about: Fill in the form on the site and it hands you a filled-out issue.

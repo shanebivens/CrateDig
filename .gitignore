@@ -8,3 +8,6 @@ __pycache__/
 .venv/
 venv/
 node_modules/
+
+# written by the intake workflow, never committed
+.intake-comment.md

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit | CrateDig</title>
+<meta name="description" content="Send in a record almost nobody has heard, or a playlist to pull from.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead masthead-slim">
+  <div class="wrap">
+    <a class="wordmark wordmark-small" href="./">
+      <span class="wordmark-crate">Crate</span><span class="wordmark-dig">Dig</span>
+    </a>
+    <p class="tagline">Send one in</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="tabs" role="tablist">
+    <button class="tab is-active" id="tab-track" role="tab" aria-selected="true" aria-controls="panel-track">A track</button>
+    <button class="tab" id="tab-playlist" role="tab" aria-selected="false" aria-controls="panel-playlist">A playlist</button>
+  </div>
+
+  <section id="panel-track" class="panel" role="tabpanel" aria-labelledby="tab-track">
+    <p class="panel-intro">
+      A record almost nobody has heard, or nobody has played in years. It does
+      not have to be great, and it does not have to be something you like.
+    </p>
+
+    <form id="form-track" novalidate>
+      <label class="field">
+        <span class="field-label">Artist</span>
+        <input name="artist" required autocomplete="off" placeholder="Connie Converse">
+      </label>
+
+      <label class="field">
+        <span class="field-label">Track or album</span>
+        <input name="track" required autocomplete="off" placeholder="Talkin' Like You (Two Tall Mountains)">
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span class="field-label">Year <span class="field-hint">optional</span></span>
+          <input name="year" inputmode="numeric" autocomplete="off" placeholder="1954">
+        </label>
+
+        <label class="field">
+          <span class="field-label">Which kind of find</span>
+          <select name="kind">
+            <option value="obscure">Obscure, it never surfaced</option>
+            <option value="forgotten">Forgotten, it was popular once</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="field-label">Why this one</span>
+        <textarea name="why" rows="4" required placeholder="What is the story, why did it disappear, what should someone listen for. Two sentences beats two paragraphs."></textarea>
+      </label>
+
+      <label class="field">
+        <span class="field-label">A public link <span class="field-hint">optional</span></span>
+        <input name="link" type="url" autocomplete="off" placeholder="https://">
+        <span class="field-note">
+          A YouTube link also feeds the play-the-whole-drop button. Bandcamp is
+          better when the artist sells it directly. Leave it blank and the site
+          links to a search instead.
+        </span>
+      </label>
+
+      <button class="button" type="submit">Send it in</button>
+    </form>
+  </section>
+
+  <section id="panel-playlist" class="panel is-hidden" role="tabpanel" aria-labelledby="tab-playlist">
+    <p class="panel-intro">
+      Put yourself on the participant list. Picks pulled from your playlist
+      credit you when they land in a drop.
+    </p>
+
+    <form id="form-playlist" novalidate>
+      <label class="field">
+        <span class="field-label">Playlist link</span>
+        <input name="url" type="url" required autocomplete="off" placeholder="https://music.youtube.com/playlist?list=">
+        <span class="field-note">
+          It has to be public. A private or unlisted link opens for nobody but you.
+        </span>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Service</span>
+        <select name="service">
+          <option value="youtube-music">YouTube Music</option>
+          <option value="youtube">YouTube</option>
+          <option value="spotify">Spotify</option>
+          <option value="apple-music">Apple Music</option>
+          <option value="bandcamp">Bandcamp</option>
+          <option value="soundcloud">SoundCloud</option>
+          <option value="tidal">Tidal</option>
+          <option value="other">Something else</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">What is this playlist <span class="field-hint">optional</span></span>
+        <input name="note" autocomplete="off" placeholder="Running list of everything from my daily thirty minutes.">
+      </label>
+
+      <label class="field">
+        <span class="field-label">One line about what you dig for <span class="field-hint">optional</span></span>
+        <input name="bio" autocomplete="off" placeholder="Mostly 60s and 70s private press.">
+      </label>
+
+      <button class="button" type="submit">Add me</button>
+    </form>
+  </section>
+
+  <div class="handoff">
+    <h2>What happens next</h2>
+    <ol>
+      <li>The form hands you a GitHub issue with every field already filled in.</li>
+      <li>You press <strong>Create</strong>. That is the only step on their side.</li>
+      <li>A bot reads it, files it into the repository, and replies within a minute.</li>
+    </ol>
+    <p class="fine">
+      Submitting needs a free GitHub account, which is the one piece of friction
+      left. Nothing here ever asks for a password to a music service, a cookie,
+      or access to your listening account.
+    </p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>
+      CrateDig links to music. It does not host it or copy it. Every recording
+      belongs to whoever made it.
+    </p>
+    <p class="fine">
+      <a href="./">Back to the latest drop</a> &nbsp;/&nbsp;
+      <a href="https://github.com/shanebivens/CrateDig">Source</a>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/submit.js"></script>
+</body>
+</html>
