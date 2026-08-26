@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Build today's drop from the pool, never reusing a track.
+"""Build a drop from the pool, never reusing a track.
 
 Nothing that has appeared in any file in drops/ can be picked again. That is
 checked two ways, by YouTube video id and by artist and title, so the same song
 cannot slip back in through a different upload.
 
-    python3 scripts/make_drop.py --date 2026-08-27 --count 2
+Picks fill a runtime rather than a track count, since the whole idea is thirty
+minutes of music.
+
+    python3 scripts/make_drop.py --date 2026-08-30 --minutes 30
+    python3 scripts/make_drop.py --date 2026-08-30 --count 2
 
 Writes drops/<date>.yml and does nothing if that file already exists.
 """
@@ -71,7 +75,12 @@ def next_number():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", required=True, help="YYYY-MM-DD")
-    parser.add_argument("--count", type=int, default=2)
+    parser.add_argument("--minutes", type=int, default=30,
+                        help="fill roughly this many minutes of runtime")
+    parser.add_argument("--count", type=int, default=0,
+                        help="pick exactly this many tracks instead of filling a runtime")
+    parser.add_argument("--max-tracks", type=int, default=12,
+                        help="stop here however short the drop is")
     args = parser.parse_args()
 
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", args.date):
@@ -103,15 +112,32 @@ def main():
     # Seeded on the date, so a rerun for the same day picks the same tracks.
     random.Random(args.date).shuffle(fresh)
 
+    target = 0 if args.count else max(0, args.minutes) * 60
+    limit = args.count or args.max_tracks
+
     picked = []
     seen_here = set()
+    running = 0
     for track in fresh:
         key = track_key(track.get("artist", ""), track.get("title", ""))
         if key in seen_here:
             continue
+        # A missing duration is rare, since the API supplies them. Four minutes
+        # is a fair guess so one gap cannot stretch a drop to twice its length.
+        seconds = track.get("seconds")
+        length = seconds if isinstance(seconds, int) and seconds > 0 else 240
+
+        # Near the end, skip anything that would overshoot badly. One ten minute
+        # outlier should not decide how long the whole drop runs.
+        if target and running >= target * 0.7 and running + length > target + 300:
+            continue
+
         seen_here.add(key)
         picked.append(track)
-        if len(picked) == args.count:
+        running += length
+        if len(picked) >= limit:
+            break
+        if target and running >= target:
             break
 
     tracks = []
@@ -139,6 +165,7 @@ def main():
                 "date": args.date,
                 "number": number,
                 "title": f"Drop {number:03d}",
+                "target_minutes": args.minutes if target else None,
                 "blurb": "",
                 "tracks": tracks,
             },

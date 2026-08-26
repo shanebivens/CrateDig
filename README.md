@@ -52,12 +52,19 @@ can revoke.
 3. A curator moves inbox picks into the current file in `drops/`.
 4. Pushing that rebuilds `data/drops.json` and the site updates.
 
-## The daily pull
+## The weekly drop
 
-A scheduled workflow builds a drop every day from participants' public
-YouTube playlists, two tracks by default. It reads them through the official
-YouTube Data API with a plain API key: public playlist data only, no OAuth and
-no listening history.
+A scheduled workflow builds a drop every Sunday from participants' public
+YouTube playlists, filling about thirty minutes of runtime rather than a fixed
+number of tracks. It reads them through the official YouTube Data API with a
+plain API key: public playlist data only, no OAuth and no listening history.
+
+Weekly, not daily, for a plain reason: the work is the writing. Two picks a day
+is fourteen writeups a week and the page fills with "no writeup yet" the first
+week you get busy. One sitting a week is a thing a person actually keeps doing,
+and it makes the name literal.
+
+Listening stays daily. That is what the playlist is for.
 
 **Nothing ever repeats.** Before picking, `scripts/make_drop.py` reads every
 file in `drops/` and rules out anything already used, matching both on YouTube
@@ -66,6 +73,10 @@ through a different upload or a remaster.
 
 Automatic picks land as `kind: unsorted` with no writeup, which the validator
 flags until a curator calls it forgotten or obscure and writes the story.
+
+Build one by hand any time:
+
+    python3 scripts/make_drop.py --date 2026-08-30 --minutes 30
 
 To turn it on, create an API key at
 [console.cloud.google.com](https://console.cloud.google.com) with the YouTube
@@ -105,7 +116,7 @@ Leave it out and nothing breaks.
     scripts/build.py  validates everything and builds data/drops.json
     scripts/intake.py turns a submitted issue into a file in the repository
     scripts/pull_playlist.py reads participants' public YouTube playlists
-    scripts/make_drop.py builds a day's drop without ever repeating a track
+    scripts/make_drop.py builds a drop without ever repeating a track
     index.html        the site, served from the repository root
     submit.html       the submission form
 

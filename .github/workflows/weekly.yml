@@ -1,24 +1,24 @@
-name: Daily drop
+name: Weekly drop
 
 on:
   schedule:
-    # 12:00 UTC. Change this line to move what time the drop lands.
-    - cron: "0 12 * * *"
+    # Sunday 12:00 UTC. Change this line to move when the drop lands.
+    - cron: "0 12 * * 0"
   workflow_dispatch:
     inputs:
       date:
         description: "Which day to build, YYYY-MM-DD. Blank means today."
         required: false
-      count:
-        description: "How many tracks to pull."
+      minutes:
+        description: "How much runtime to fill."
         required: false
-        default: "2"
+        default: "30"
 
 permissions:
   contents: write
 
 concurrency:
-  group: daily-drop
+  group: weekly-drop
   cancel-in-progress: false
 
 jobs:
@@ -39,13 +39,13 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/pull_playlist.py
 
-      - name: Build today's drop
+      - name: Build the drop
         run: |
           DAY="${{ github.event.inputs.date }}"
           if [ -z "$DAY" ]; then DAY="$(date -u +%F)"; fi
-          COUNT="${{ github.event.inputs.count }}"
-          if [ -z "$COUNT" ]; then COUNT=2; fi
-          python scripts/make_drop.py --date "$DAY" --count "$COUNT"
+          MINUTES="${{ github.event.inputs.minutes }}"
+          if [ -z "$MINUTES" ]; then MINUTES=30; fi
+          python scripts/make_drop.py --date "$DAY" --minutes "$MINUTES"
 
       - name: Rebuild site data
         run: python scripts/build.py
@@ -53,12 +53,12 @@ jobs:
       - name: Commit
         run: |
           if [ -z "$(git status --porcelain --untracked-files=all drops data)" ]; then
-            echo "Nothing new today."
+            echo "Nothing new this week."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add drops data
-          git commit -m "Daily drop for $(date -u +%F)"
+          git commit -m "Weekly drop for $(date -u +%F)"
           git pull --rebase --autostash origin main
           git push
