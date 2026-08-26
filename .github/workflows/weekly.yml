@@ -36,7 +36,7 @@ jobs:
       - name: Publish anything whose Monday has come
         run: python scripts/publish_due.py
 
-      - name: Refresh the pool from participants' public playlists
+      - name: Refresh the pool from the playlist marked for it
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/pull_playlist.py

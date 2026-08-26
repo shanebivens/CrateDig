@@ -179,12 +179,14 @@
     });
   }
 
-  function renderParticipants(people, target) {
+  function renderContributors(people, target) {
     if (!people || !people.length) return;
     var box = el("p", "participants-list");
-    box.appendChild(el("span", null, "Digging so far: "));
+    box.appendChild(el("span", null, "Picks so far from: "));
     box.appendChild(document.createTextNode(
-      people.map(function (person) { return person.handle; }).join(", ")
+      people.map(function (person) {
+        return person.handle + (person.picks > 1 ? " (" + person.picks + ")" : "");
+      }).join(", ")
     ));
     target.appendChild(box);
   }
@@ -211,7 +213,7 @@
       }
       renderDrop(drops[0], document.getElementById("latest-drop"));
       renderArchive(drops.slice(1), document.getElementById("archive-list"));
-      renderParticipants(data.participants, document.getElementById("participants"));
+      renderContributors(data.contributors, document.getElementById("participants"));
     })
     .catch(function () {
       fail("Could not load the drops. Run scripts/build.py to rebuild data/drops.json.");

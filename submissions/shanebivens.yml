@@ -2,6 +2,11 @@
 
 handle: shanebivens
 joined: 2026-08-26
+
+# The well the site draws from when there are not enough submissions to fill a
+# week. Only playlists marked this way are ever pulled from, and this one is the
+# maintainer's own. Everyone else sends in single tracks they chose on purpose.
+pool: true
 bio: Thirty minutes a day of something I have never heard, or have not heard in years.
 
 playlists:

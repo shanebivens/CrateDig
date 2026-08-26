@@ -40,64 +40,29 @@
     box.textContent = message;
   }
 
-  function wire(form, build) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      var missing = firstEmptyRequired(form);
-      if (missing) {
-        flash(form, "Fill in " + missing.previousElementSibling.textContent.replace(" optional", "").toLowerCase() + " first.");
-        missing.focus();
-        return;
-      }
-      var target = build(values(form));
-      window.open(target, "_blank", "noopener");
-    });
-  }
+  var form = document.getElementById("form-track");
+  if (!form) return;
 
-  var trackForm = document.getElementById("form-track");
-  if (trackForm) {
-    wire(trackForm, function (data) {
-      var title = "[pick] " + data.artist + " - " + data.track;
-      return issueUrl("submission.yml", title, {
-        artist: data.artist,
-        track: data.track,
-        year: data.year,
-        kind: data.kind,
-        why: data.why,
-        link: data.link
-      });
-    });
-  }
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  var playlistForm = document.getElementById("form-playlist");
-  if (playlistForm) {
-    wire(playlistForm, function (data) {
-      return issueUrl("playlist.yml", "[playlist] add me", {
-        url: data.url,
-        service: data.service,
-        note: data.note,
-        bio: data.bio
-      });
-    });
-  }
+    var missing = firstEmptyRequired(form);
+    if (missing) {
+      var label = missing.previousElementSibling.textContent
+        .replace(" optional", "").trim().toLowerCase();
+      flash(form, "Fill in " + label + " first.");
+      missing.focus();
+      return;
+    }
 
-  /* tabs */
-  var tabs = [
-    { button: document.getElementById("tab-track"), panel: document.getElementById("panel-track") },
-    { button: document.getElementById("tab-playlist"), panel: document.getElementById("panel-playlist") }
-  ];
-
-  tabs.forEach(function (entry) {
-    if (!entry.button) return;
-    entry.button.addEventListener("click", function () {
-      tabs.forEach(function (other) {
-        var active = other === entry;
-        other.button.classList.toggle("is-active", active);
-        other.button.setAttribute("aria-selected", active ? "true" : "false");
-        other.panel.classList.toggle("is-hidden", !active);
-      });
-    });
+    var data = values(form);
+    window.open(issueUrl("submission.yml", "[pick] " + data.artist + " - " + data.track, {
+      artist: data.artist,
+      track: data.track,
+      year: data.year,
+      kind: data.kind,
+      why: data.why,
+      link: data.link
+    }), "_blank", "noopener");
   });
-
-  if (location.hash === "#playlist" && tabs[1].button) tabs[1].button.click();
 })();

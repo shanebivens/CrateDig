@@ -14,24 +14,16 @@ pull request description:
 
     I have read CLA.md and I agree to it.
 
-## Submitting yourself as a participant
+## Playlists are not accepted
 
-Copy `submissions/EXAMPLE.yml` to `submissions/your-handle.yml`, where
-`your-handle` matches the `handle` field inside the file. Fill in one or more
-public playlist links.
+One track at a time. A pick should be something you chose and can say something
+about. A playlist means a script picks for you, publishes it under your name,
+and nobody has written a word about why it is worth hearing.
 
-    handle: your-handle
-    joined: 2026-08-26
-    playlists:
-      - url: https://music.youtube.com/playlist?list=XXXXXXXX
-        service: youtube-music
-        note: what this playlist is
-
-Make the playlist public. A private or unlisted link is useless to everyone
-else and the validator cannot check it.
-
-Do not put your email, your real name, or anything else you would not post in
-public into these files. The repository is public and git history is forever.
+The site does draw on one playlist, the maintainer's, to fill weeks that
+submissions do not. It is marked `pool: true` in its file, and that flag is the
+only thing that makes a playlist readable. Nothing else in `submissions/` is
+touched.
 
 ## Submitting a pick for a drop
 
@@ -52,13 +44,15 @@ an issue with the submission template and someone will place it.
 
 Fields:
 
-- `kind` is `forgotten` or `obscure`. See the README for the difference.
+- `kind` is `forgotten`, `obscure` or `sideways`. See the README for the
+  difference. `unsorted` means an automatic pick nobody has judged yet.
 - `year` is the recording or release year, whichever tells the better story.
 - `duration` is `M:SS`. Leave it `null` if you do not know it yet, the
   validator will tell you which tracks are missing one.
 - `why` is the part people actually read. Two sentences beats two paragraphs.
-- `links` needs at least one. Prefer a link where the artist gets paid, such as
-  Bandcamp, when one exists.
+- `links` needs at least one. A YouTube link also becomes the doorway, since
+  the site turns it into a mix that keeps playing past the track. Prefer a link
+  where the artist gets paid, such as Bandcamp, when one exists.
 
 If you have a stake in the track, say so in `why`. Submitting your own band is
 allowed and it is more interesting than pretending otherwise.
@@ -67,8 +61,8 @@ allowed and it is more interesting than pretending otherwise.
 
 - Links to recordings hosted without permission.
 - Anything that requires an account, a cookie, or a credential to read.
-- A wall of submissions from one person in a single drop. Three per drop keeps
-  it varied.
+- A wall of submissions from one person at once. Two spots a week go to
+  submitted picks, newest first, and the rest keep for the following week.
 - Picks with no `why`. The writeup is the reason anyone plays it.
 
 ## Code contributions

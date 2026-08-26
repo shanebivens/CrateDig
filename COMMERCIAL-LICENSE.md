@@ -42,7 +42,7 @@ CrateDig links to music. It does not host, stream, or redistribute recordings,
 and it claims no rights in them. Every track listed here belongs to whoever
 made it. The license above applies to the code and the site, not to the music.
 
-Submitted playlist links and the picks people write up are contributed under
+Submitted picks and the writeups people send with them are contributed under
 [`CLA.md`](CLA.md) as well, so a drop can be republished as part of the project.
 
 ## Contact

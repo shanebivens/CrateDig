@@ -31,26 +31,29 @@ it probably belongs somewhere else.
 ## How to join
 
 **[Fill in the form](https://shanebivens.github.io/CrateDig/submit.html).** Four
-fields for a track, one for a playlist. It hands you a filled-out submission,
-you press one button, and a bot files it into this repository and replies within
-a minute. No git, no pull request, nothing to learn.
+fields. It hands you a filled-out submission, you press one button, and a bot
+files it into this repository and replies within a minute. No git, no pull
+request, nothing to learn.
 
-If you would rather do it by hand, copy `submissions/EXAMPLE.yml` to
-`submissions/your-handle.yml` and open a pull request. Both routes end in the
-same place.
+**One track at a time, on purpose.** Playlists are not accepted. A pick should be
+something you chose and have something to say about, not something a machine
+pulled out of your listening. It also means your writeup goes out in your words
+rather than a placeholder, and a place on the contributor list is earned by
+sending something in.
+
+The site keeps one playlist of its own, the maintainer's, as the well it draws
+from when submissions do not fill a week. Only a playlist marked `pool: true` is
+ever read, and nobody else's is.
 
 You send public links, nothing else. Nothing here ever asks for a password, a
-cookie, or access to your listening account, and it never will. If a future
-version reads listening history, it will do it through something you control and
-can revoke.
+cookie, or access to your listening account, and it never will.
 
 ## How a submission becomes a drop
 
 1. Someone submits through the form, which opens a prefilled issue.
-2. The `Intake` workflow parses it, writes a file, replies on the issue, and
-   closes it. Track picks land in `inbox/`. Playlists go straight into
-   `submissions/`, since joining is self service. Your handle comes from your
-   GitHub username, so nobody can claim someone else's.
+2. The `Intake` workflow parses it, writes the pick into `inbox/`, replies on
+   the issue, and closes it. Your handle comes from your GitHub username, so
+   nobody can claim someone else's.
 3. Every week holds **two spots open** for submitted picks. On Monday,
    `scripts/place_inbox.py` moves the two most recent out of `inbox/` and into
    the next week ahead of anything the pull chose. Submissions arrive with the
@@ -60,8 +63,9 @@ can revoke.
 
 ## Mondays at 12:01pm Eastern
 
-Weeks are lined up in advance in `scheduled/`, five to seven tracks each,
-pulled from participants' public YouTube playlists. Nothing there reaches the site. At
+Weeks are lined up in advance in `scheduled/`, five to seven tracks each. Two
+spots go to submitted picks and the rest are pulled from the maintainer's
+playlist so a week is never empty. Nothing there reaches the site. At
 12:01pm Eastern on its Monday, one week moves into `drops/` and appears. One at
 a time, never the whole queue at once.
 
@@ -134,7 +138,7 @@ Leave it out and nothing breaks.
 
 ## Repository layout
 
-    submissions/      one YAML file per participant
+    submissions/      the playlist the site draws from when a week is short
     inbox/            submitted picks waiting to be placed in a drop
     scheduled/        weeks lined up but not yet published
     drops/            one YAML file per published drop

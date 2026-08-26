@@ -141,6 +141,7 @@ def load_submissions():
             "handle": handle,
             "joined": str(joined),
             "bio": data.get("bio", ""),
+            "pool": bool(data.get("pool")),
             "playlists": clean,
         }
     return people
@@ -197,8 +198,8 @@ def load_drops(people):
                 warn(spot, "still needs to be called forgotten or obscure")
 
             by = track.get("submitted_by", "curator")
-            if by != "curator" and by not in people:
-                warn(spot, f"submitted_by '{by}' has no file in submissions/ yet")
+            if by != "curator" and not HANDLE_RE.match(str(by)):
+                err(spot, f"submitted_by '{by}' is not a usable handle")
             per_person[by] = per_person.get(by, 0) + 1
 
             why = (track.get("why") or "").strip()
@@ -252,8 +253,12 @@ def load_drops(people):
                 "radio": radio,
             })
 
+        # The pool owner fills whatever submissions do not, so the variety cap
+        # is about submitters crowding a drop, not about them.
         for who, count in per_person.items():
-            if who != "curator" and count > 3:
+            if who in ("curator",) or people.get(who, {}).get("pool"):
+                continue
+            if count > 3:
                 warn(where, f"{who} has {count} picks, three per drop keeps it varied")
 
         # One link that plays the whole drop, built from whatever YouTube links
@@ -308,9 +313,21 @@ def main():
         print(f"\n{len(errors)} problem(s) found. Nothing was written.")
         return 1
 
+    # Everyone whose pick has actually gone out, most picks first.
+    counts = {}
+    for drop in drops:
+        for track in drop["tracks"]:
+            who = track.get("submitted_by")
+            if who and who != "curator":
+                counts[who] = counts.get(who, 0) + 1
+    contributors = [
+        {"handle": handle, "picks": count}
+        for handle, count in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
+    ]
+
     payload = {
         "drops": drops,
-        "participants": sorted(people.values(), key=lambda person: person["handle"]),
+        "contributors": contributors,
         "target_seconds": TARGET_SECONDS,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -329,7 +346,7 @@ def main():
     total_tracks = sum(len(drop["tracks"]) for drop in drops)
     print(
         f"\nok. {len(drops)} drop(s), {total_tracks} track(s), "
-        f"{len(people)} participant(s). Wrote {OUT.relative_to(ROOT)}."
+        f"{len(contributors)} contributor(s). Wrote {OUT.relative_to(ROOT)}."
     )
     return 0
 

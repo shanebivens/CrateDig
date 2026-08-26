@@ -1,21 +1,21 @@
-# Copy this file to submissions/<your-handle>.yml and edit it.
-# The filename must match the handle below.
+# submissions/ is not a sign-up sheet. There is one file here, the maintainer's,
+# and it names the playlist the site falls back on when submitted picks do not
+# fill a week.
 #
-# Everything here is public. No emails, no real names, nothing you would not
-# post on a forum. Playlists must be public or nobody else can open them.
+# To take part, send in a single track:
+#   https://shanebivens.github.io/CrateDig/submit.html
+#
+# The shape of the file, for reference:
 
 handle: example-handle
-
-# The day you joined in. YYYY-MM-DD.
 joined: 2026-08-26
+bio: One line about what you tend to dig for.
 
-# One line about what you tend to dig for. Optional, but it helps people
-# recognize your picks when they show up in a drop.
-bio: Mostly 60s and 70s private press, plus whatever the algorithm refuses to show me.
+# Only a file marked this way is ever read by scripts/pull_playlist.py. Without
+# it a playlist listed here is left completely alone.
+pool: false
 
-# Public playlist links. Add as many as you want.
-# service: youtube-music | spotify | apple-music | bandcamp | soundcloud | other
 playlists:
   - url: https://music.youtube.com/playlist?list=PLxxxxxxxxxxxxxxxxxxxxxxxx
     service: youtube-music
-    note: Running list of everything from my daily thirty minutes.
+    note: What this playlist is.

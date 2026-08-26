@@ -151,6 +151,11 @@ def main():
             continue
         data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         handle = data.get("handle") or path.stem
+        # Only playlists deliberately marked for mining. A playlist that turns up
+        # any other way is listed, never pulled from, because nobody signed up to
+        # have a random track of theirs published under their name.
+        if not data.get("pool"):
+            continue
         for entry in data.get("playlists") or []:
             url = (entry or {}).get("url", "")
             list_id = playlist_id(url)
@@ -158,7 +163,7 @@ def main():
                 sources.append((handle, list_id))
 
     if not sources:
-        print("No YouTube playlists in submissions/ yet.")
+        print("No playlist in submissions/ is marked pool: true, so nothing to pull.")
         return 0
 
     tracks = {}
