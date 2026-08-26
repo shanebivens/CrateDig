@@ -18,6 +18,7 @@ submission cannot be used.
 """
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -117,6 +118,64 @@ def plays(url):
     return found.group(1) == "OK" if found else True
 
 
+NOISE = re.compile(
+    r"\s*[\(\[][^)\]]*(official|video|audio|lyric|visuali[sz]er|hd|hq|4k|"
+    r"remaster|full album|m/v|explicit|audio only)[^)\]]*[\)\]]",
+    re.IGNORECASE,
+)
+TOPIC = re.compile(r"\s-\sTopic$")
+
+
+def tidy(text):
+    return re.sub(r"\s{2,}", " ", NOISE.sub("", text or "")).strip()
+
+
+def oembed(link):
+    """Ask the service what the track is. Returns (artist, title), either blank.
+
+    The same read the form does in the browser, repeated here so a submission
+    that arrives with only a link still comes out filled in. Bandcamp and the
+    rest publish nothing, which is why either half can come back empty.
+    """
+    host = urllib.parse.urlparse(link).netloc.lower().split(":")[0]
+    host = host[4:] if host.startswith("www.") else host
+
+    if host in ("youtube.com", "music.youtube.com", "youtu.be"):
+        endpoint = "https://www.youtube.com/oembed?format=json&url="
+    elif host in ("open.spotify.com", "spotify.com"):
+        endpoint = "https://open.spotify.com/oembed?url="
+    elif host == "soundcloud.com":
+        endpoint = "https://soundcloud.com/oembed?format=json&url="
+    else:
+        return "", ""
+
+    try:
+        request = urllib.request.Request(
+            endpoint + urllib.parse.quote(link, safe=""),
+            headers={"Accept": "application/json"})
+        with urllib.request.urlopen(request, timeout=20) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except Exception:                                          # noqa: BLE001
+        return "", ""
+
+    raw = str(data.get("title") or "")
+    author = str(data.get("author_name") or "")
+
+    if host == "soundcloud.com":
+        head, sep, tail = raw.rpartition(" by ")
+        return (tail.strip(), tidy(head)) if sep else ("", tidy(raw))
+    if "spotify" in host:
+        return "", tidy(raw)                    # Spotify names no artist
+    if TOPIC.search(author):
+        return TOPIC.sub("", author).strip(), tidy(raw)
+
+    clean = tidy(raw)
+    left, sep, right = clean.partition(" - ")
+    if sep and left.strip() and right.strip():
+        return left.strip(), right.strip()
+    return author.strip(), clean
+
+
 def music_host(url):
     """True when the link points somewhere the track can be played."""
     host = urllib.parse.urlparse(url).netloc.lower().split(":")[0]
@@ -160,17 +219,6 @@ def handle_track(fields, number, author):
     title = clean(fields.get("Track or album"))
     why = clean(fields.get("Why this one"), "long")   # optional
 
-    missing = [
-        name for name, value in
-        (("Artist", artist), ("Track or album", title))
-        if not value
-    ]
-    if missing:
-        return fail(
-            "Some required fields came through empty.",
-            [f"Fill in **{name}**." for name in missing],
-        )
-
     raw_link = (fields.get("A link to the track") or "").strip()
     if not raw_link:
         return fail(
@@ -213,6 +261,25 @@ def handle_track(fields, number, author):
              "Spotify link instead."],
         )
 
+    # A link on its own is a complete submission. Fill in whatever was left out.
+    looked_up = []
+    if link and not (artist and title):
+        found_artist, found_title = oembed(link)
+        if found_artist and not artist:
+            artist = clean(found_artist)
+            looked_up.append("artist")
+        if found_title and not title:
+            title = clean(found_title)
+            looked_up.append("title")
+
+    if not artist or not title:
+        return fail(
+            "Could not work out what the track is from that link alone.",
+            ["Add the **Artist** and **Track or album** by hand and it goes "
+             "straight through.",
+             "Bandcamp and some other sites publish nothing for this to read."],
+        )
+
     links = {}
     if link:
         service = "other"
@@ -251,9 +318,12 @@ def handle_track(fields, number, author):
         "source_issue": number,
     })
 
-    note = "" if why else (
-        "\nNo writeup came with it, so one gets written before it goes out."
-    )
+    note = ""
+    if looked_up:
+        note += ("\nThe " + " and ".join(looked_up) +
+                 " came from the link. Say so on this issue if it got them wrong.")
+    if not why:
+        note += "\nNo writeup came with it, so one gets written before it goes out."
     write_comment([
         f"Filed as `{path.relative_to(ROOT)}`.",
         "",

@@ -43,10 +43,16 @@ it probably belongs somewhere else.
 
 ## How to join
 
-**[Fill in the form](https://shanebivens.github.io/CrateDig/submit.html).** Four
-fields. It hands you a filled-out submission, you press one button, and a bot
-files it into this repository and replies within a minute. No git, no pull
-request, nothing to learn.
+**[Fill in the form](https://shanebivens.github.io/CrateDig/submit.html).** Paste
+a link and the rest fills itself in. It hands you a filled-out submission, you
+press one button, and a bot files it into this repository and replies within a
+minute. No git, no pull request, nothing to learn.
+
+A link is the only thing genuinely required. The artist and track are read from
+it through oEmbed, in the browser as you paste and again in `scripts/intake.py`
+on the way in, so a submission made of nothing but a URL still arrives complete.
+YouTube, Spotify and SoundCloud answer; Bandcamp and most others publish
+nothing, so those need the two fields typed.
 
 **One track at a time, on purpose.** Playlists are not accepted. A pick should be
 something you chose and have something to say about, not something a machine

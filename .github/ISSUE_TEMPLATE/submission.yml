@@ -25,17 +25,15 @@ body:
     id: artist
     attributes:
       label: Artist
+      description: Leave it blank and it gets read from the link.
       placeholder: Connie Converse
-    validations:
-      required: true
 
   - type: input
     id: track
     attributes:
       label: Track or album
+      description: Leave it blank and it gets read from the link.
       placeholder: Talkin' Like You (Two Tall Mountains)
-    validations:
-      required: true
 
   - type: input
     id: year

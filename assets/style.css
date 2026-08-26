@@ -443,3 +443,5 @@ button.chip { cursor: pointer; font-family: var(--type); }
   text-transform: uppercase;
   color: var(--obscure);
 }
+
+.field-note.lookup { color: var(--obscure); min-height: 1.2em; }
