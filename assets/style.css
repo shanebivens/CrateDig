@@ -211,6 +211,51 @@ a { color: inherit; }
   color: var(--ink-faint);
 }
 
+.sleeve--empty {
+  display: block;
+  background: transparent;               /* the crate shows through the gap */
+  border: 2px dashed rgba(228, 225, 216, 0.5);
+  border-left-width: 2px;                /* no spine, there is no record here */
+  text-decoration: none;
+  color: #e4e1d8;
+}
+
+.sleeve--empty:hover, .sleeve--empty:focus-visible {
+  border-color: var(--obscure);
+  transform: translateX(10px) rotate(0.25deg);
+}
+
+.sleeve--empty .sleeve-artist { color: #e4e1d8; }
+
+.slot-label {
+  display: inline-block;
+  border: 1px dashed rgba(228, 225, 216, 0.55);
+  color: rgba(228, 225, 216, 0.75);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  margin-bottom: 0.9rem;
+}
+
+.slot-line {
+  margin: 0.6rem 0 1.1rem;
+  max-width: 30rem;
+  color: rgba(228, 225, 216, 0.8);
+}
+
+.slot-go {
+  display: inline-block;
+  background: var(--obscure);
+  color: #15150f;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.1rem;
+}
+
+.sleeve--empty:hover .slot-go { background: #e4e1d8; }
+
 /* stuck over the top edge, the way a price gun leaves it */
 .sticker {
   position: absolute;
@@ -483,8 +528,21 @@ form button.chip {
 }
 
 .mantra a + a { padding-left: 1rem; border-left: 1px solid var(--rule); }
-.mantra a:last-child { color: var(--obscure); }
 .mantra a:hover { border-bottom-color: var(--obscure); }
+
+.mantra a:last-child {
+  background: var(--obscure);
+  color: #15150f;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-grow: 0;
+}
+
+.mantra a:last-child:hover {
+  background: var(--ink);
+  color: var(--card);
+  border-bottom-color: transparent;
+}
 
 .pitch-lead { font-size: 1.05rem; }
 .pitch-lead b, .pitch b { font-weight: 400; background: var(--forgotten);

@@ -196,6 +196,19 @@
     drop.tracks.forEach(function (track, index) {
       box.appendChild(renderTrack(track, index, drop));
     });
+
+    /* The last slot in the crate is empty on purpose. It is the ask, placed
+       at the exact moment somebody has just flipped through the records. */
+    var slot = document.createElement("a");
+    slot.className = "sleeve sleeve--empty";
+    slot.href = "submit.html";
+    slot.appendChild(el("span", "slot-label", "empty"));
+    slot.appendChild(el("h3", "sleeve-artist", "This slot is yours"));
+    slot.appendChild(el("p", "slot-line",
+      "Found one almost nobody plays? Bring it back, and somebody else falls into it."));
+    slot.appendChild(el("span", "slot-go", "Bring one back"));
+    box.appendChild(slot);
+
     target.appendChild(box);
 
     var front = el("div", "crate-front");
