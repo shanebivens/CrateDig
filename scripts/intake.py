@@ -22,6 +22,7 @@ import os
 import re
 import sys
 import urllib.parse
+import urllib.request
 from pathlib import Path
 
 try:
@@ -84,6 +85,36 @@ def safe_link(value):
     if len(url) > 500 or any(char in url for char in "<>\"'\\ "):
         return ""
     return url
+
+
+YOUTUBE_ID = re.compile(
+    r"(?:(?:music\.|www\.)?youtube\.com/watch\?(?:[^#\s]*&)?v=|youtu\.be/)"
+    r"([A-Za-z0-9_-]{11})"
+)
+PLAYABILITY = re.compile(r'"playabilityStatus":\{"status":"([A-Z_]+)"')
+
+
+def plays(url):
+    """For a YouTube link, whether a signed out visitor can actually watch it.
+
+    Everything else is taken on trust, since only YouTube exposes this. See
+    scripts/check_links.py for why the API and oembed are not good enough.
+    """
+    match = YOUTUBE_ID.search(url)
+    if not match:
+        return True
+    request = urllib.request.Request(
+        "https://www.youtube.com/watch?v=" + match.group(1),
+        headers={"Accept-Language": "en-US,en;q=0.9",
+                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36"})
+    try:
+        with urllib.request.urlopen(request, timeout=25) as response:
+            body = response.read().decode("utf-8", "replace")
+    except Exception:                                          # noqa: BLE001
+        return True          # a network blip is not evidence the video is dead
+    found = PLAYABILITY.search(body)
+    return found.group(1) == "OK" if found else True
 
 
 def music_host(url):
@@ -171,6 +202,15 @@ def handle_track(fields, number, author):
              "Discogs or Archive.org.",
              "A search page or a shortened link will not work, since the site "
              "needs the track itself to build the doorway."],
+        )
+
+    if not plays(link):
+        return fail(
+            "That video will not play for anyone who is not signed in.",
+            ["It works for you because it is in your library. Signed out, "
+             "YouTube returns it as unavailable.",
+             "Try a different upload of the same track, or send a Bandcamp or "
+             "Spotify link instead."],
         )
 
     links = {}
