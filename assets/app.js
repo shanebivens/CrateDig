@@ -45,11 +45,6 @@
       (MONTHS[parseInt(parts[1], 10) - 1] || parts[1]) + " " + parts[0];
   }
 
-  function formatRuntime(seconds) {
-    var minutes = Math.floor(seconds / 60);
-    return minutes + "m " + (seconds % 60 < 10 ? "0" : "") + (seconds % 60) + "s";
-  }
-
   function searchUrl(track) {
     return "https://music.youtube.com/search?q=" +
       encodeURIComponent(track.artist + " " + track.title);
@@ -93,7 +88,11 @@
     }
 
     var services = Object.keys(track.links || {}).filter(function (service) {
-      return safeHref(track.links[service]);
+      if (!safeHref(track.links[service])) return false;
+      /* Fall in already goes here, and without the radio it stops after one
+         track, which is the opposite of the point. */
+      if (radio && service === "youtube-music") return false;
+      return true;
     });
     services.forEach(function (service) {
       links.appendChild(link("chip", SERVICE_LABELS[service] || service,
@@ -125,19 +124,10 @@
     head.appendChild(el("h2", "crate-title", drop.title || "In the crate"));
     if (drop.blurb) head.appendChild(el("p", "crate-blurb", drop.blurb));
 
-    var runtime = el("p", "crate-runtime");
-    if (drop.unknown_durations === drop.tracks.length) {
-      runtime.textContent = "Runtime not measured";
-    } else if (drop.unknown_durations) {
-      runtime.textContent = formatRuntime(drop.seconds) + " so far, " +
-        drop.unknown_durations + " unmeasured";
-    } else {
-      runtime.textContent = formatRuntime(drop.seconds) +
-        " end to end, and a great deal longer if you fall in";
-    }
-    head.appendChild(runtime);
-    head.appendChild(el("p", "crate-cadence",
-      drop.tracks.length + " tracks. One a day carries you to the next drop."));
+    /* Total runtime is a red herring here. You are not sitting through the
+       drop, you are taking one track and letting its radio run. Each track
+       carries its own length in the line under the title. */
+    head.appendChild(el("p", "crate-cadence", "One a day until Monday."));
 
     /* No play-it-all link on purpose. Each track opens its own radio, and
        queueing the drop stops any of them from starting. */

@@ -60,11 +60,11 @@ a { color: inherit; }
 
 .divider {
   position: relative;
-  margin: 3.5rem auto 0;
+  margin: 2.5rem auto 0;
   max-width: 44rem;
   background: var(--card);
   border: 2px solid var(--ink);
-  padding: 2.25rem 1.5rem 1.5rem;
+  padding: 1.6rem 1.5rem 1.1rem;
 }
 
 .divider::before {
@@ -84,8 +84,8 @@ a { color: inherit; }
 .wordmark {
   display: block;
   font-family: var(--display);
-  font-size: clamp(3.2rem, 15vw, 6.5rem);
-  line-height: 0.82;
+  font-size: clamp(2.6rem, 11vw, 4.6rem);
+  line-height: 0.85;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   text-decoration: none;
@@ -101,8 +101,8 @@ a { color: inherit; }
 }
 
 .nav {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
+  margin-top: 1.1rem;
+  padding-top: 0.8rem;
   border-top: 1px solid var(--rule);
   display: flex;
   flex-wrap: wrap;
@@ -404,7 +404,7 @@ button.chip { cursor: pointer; font-family: var(--type); }
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  margin: 2.75rem 0 2.5rem;
+  margin: 2rem 0 2rem;
   border-top: 2px solid var(--ink);
   border-bottom: 2px solid var(--ink);
 }
@@ -448,3 +448,52 @@ button.chip { cursor: pointer; font-family: var(--type); }
 }
 
 .field-note.lookup { color: var(--obscure); min-height: 1.2em; }
+
+/* the lede: the instruction, before anything explains itself */
+
+.lede {
+  margin: 0 0 2.75rem;
+  max-width: 34rem;
+}
+
+.lede p {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.05rem, 3.4vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.lede-turn {
+  margin-top: 1.1rem !important;
+  font-family: var(--display);
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* the one rule, given its own weight */
+
+.rule {
+  margin: 3rem 0 0;
+  border-left: 4px solid var(--obscure);
+  padding: 0.2rem 0 0.2rem 1rem;
+  max-width: 32rem;
+  color: var(--ink);
+}
+
+.footer-close {
+  font-size: 1.05rem;
+  color: #e4e1d8;
+  max-width: 30rem;
+  margin-bottom: 1rem !important;
+}
+
+.footer-mantra {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--obscure);
+  margin-bottom: 2rem !important;
+}
+
+.footer .fine { font-size: 0.78rem; color: #97938a; }
