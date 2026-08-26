@@ -52,31 +52,40 @@ can revoke.
 3. A curator moves inbox picks into the current file in `drops/`.
 4. Pushing that rebuilds `data/drops.json` and the site updates.
 
-## The weekly drop
+## Mondays at 12:01pm Eastern
 
-A scheduled workflow builds a drop every Sunday from participants' public
-YouTube playlists, filling about thirty minutes of runtime rather than a fixed
-number of tracks. It reads them through the official YouTube Data API with a
-plain API key: public playlist data only, no OAuth and no listening history.
+Weeks are lined up in advance in `scheduled/`, two or three tracks each, pulled
+from participants' public YouTube playlists. Nothing there reaches the site. At
+12:01pm Eastern on its Monday, one week moves into `drops/` and appears. One at
+a time, never the whole queue at once.
 
-Weekly, not daily, for a plain reason: the work is the writing. Two picks a day
-is fourteen writeups a week and the page fills with "no writeup yet" the first
-week you get busy. One sitting a week is a thing a person actually keeps doing,
-and it makes the name literal.
+Playlists are read through the official YouTube Data API with a plain API key:
+public playlist data only, no OAuth and no listening history.
+
+Daylight saving is worked out from the real Eastern clock rather than a cron
+line, so nothing shifts by an hour twice a year. The workflow fires at both
+16:01 and 17:01 UTC and whichever run is early publishes nothing.
+
+Seeding ahead is the point. You can set `kind` and write the real story for a
+track days before anyone sees it. Edit its file in `scheduled/` and it goes out
+that way.
 
 Listening stays daily. That is what the playlist is for.
 
 **Nothing ever repeats.** Before picking, `scripts/make_drop.py` reads every
-file in `drops/` and rules out anything already used, matching both on YouTube
-video ID and on a normalized artist and title, so the same song cannot come back
-through a different upload or a remaster.
+file in `drops/` *and* `scheduled/` and rules out anything already used or
+already lined up, matching both on YouTube video ID and on a normalized artist
+and title, so the same song cannot come back through a different upload or a
+remaster. At two or three a week, a ninety track playlist is about eight months
+of Mondays, and it keeps growing faster than that.
 
 Automatic picks land as `kind: unsorted` with no writeup, which the validator
 flags until a curator calls it forgotten or obscure and writes the story.
 
-Build one by hand any time:
+Line up more weeks, or check what is due, any time:
 
-    python3 scripts/make_drop.py --date 2026-08-30 --minutes 30
+    python3 scripts/seed_weeks.py --weeks 8
+    python3 scripts/publish_due.py --dry-run
 
 To turn it on, create an API key at
 [console.cloud.google.com](https://console.cloud.google.com) with the YouTube
@@ -111,12 +120,15 @@ Leave it out and nothing breaks.
 
     submissions/      one YAML file per participant
     inbox/            submitted picks waiting to be placed in a drop
+    scheduled/        weeks lined up but not yet published
     drops/            one YAML file per published drop
     data/drops.json   built from drops/, read by the site
     scripts/build.py  validates everything and builds data/drops.json
     scripts/intake.py turns a submitted issue into a file in the repository
     scripts/pull_playlist.py reads participants' public YouTube playlists
     scripts/make_drop.py builds a drop without ever repeating a track
+    scripts/seed_weeks.py lines up future Mondays in scheduled/
+    scripts/publish_due.py releases a week once its moment has passed
     index.html        the site, served from the repository root
     submit.html       the submission form
 

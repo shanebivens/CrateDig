@@ -5,11 +5,11 @@ Nothing that has appeared in any file in drops/ can be picked again. That is
 checked two ways, by YouTube video id and by artist and title, so the same song
 cannot slip back in through a different upload.
 
-Picks fill a runtime rather than a track count, since the whole idea is thirty
-minutes of music.
+By default a drop is two or three tracks, decided from the date so a rerun for
+the same day lands on the same answer. Pass --minutes to fill a runtime instead.
 
-    python3 scripts/make_drop.py --date 2026-08-30 --minutes 30
-    python3 scripts/make_drop.py --date 2026-08-30 --count 2
+    python3 scripts/make_drop.py --date 2026-08-31
+    python3 scripts/make_drop.py --date 2026-08-31 --minutes 30
 
 Writes drops/<date>.yml and does nothing if that file already exists.
 """
@@ -28,6 +28,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 DROPS = ROOT / "drops"
+SCHEDULED = ROOT / "scheduled"
 POOL = ROOT / "data" / "pool.json"
 
 PLACEHOLDER = "Pulled from the daily thirty minutes. No writeup yet."
@@ -46,9 +47,15 @@ def track_key(artist, title):
     return " ".join(text.split())
 
 
+def drop_files():
+    """Published drops and the ones waiting their turn. A track lined up for a
+    future week is spent, otherwise seeding would hand it out twice."""
+    return sorted(DROPS.glob("*.yml")) + sorted(SCHEDULED.glob("*.yml"))
+
+
 def already_used():
     ids, keys = set(), set()
-    for path in sorted(DROPS.glob("*.yml")):
+    for path in drop_files():
         data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         for track in data.get("tracks") or []:
             if not isinstance(track, dict):
@@ -63,7 +70,7 @@ def already_used():
 
 def next_number():
     highest = 0
-    for path in sorted(DROPS.glob("*.yml")):
+    for path in drop_files():
         data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         try:
             highest = max(highest, int(data.get("number") or 0))
@@ -75,21 +82,29 @@ def next_number():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", required=True, help="YYYY-MM-DD")
-    parser.add_argument("--minutes", type=int, default=30,
-                        help="fill roughly this many minutes of runtime")
+    parser.add_argument("--minutes", type=int, default=0,
+                        help="fill roughly this many minutes instead of counting tracks")
     parser.add_argument("--count", type=int, default=0,
-                        help="pick exactly this many tracks instead of filling a runtime")
+                        help="pick exactly this many tracks")
+    parser.add_argument("--min-count", type=int, default=2)
+    parser.add_argument("--max-count", type=int, default=3)
     parser.add_argument("--max-tracks", type=int, default=12,
                         help="stop here however short the drop is")
+    parser.add_argument("--out-dir", default=str(DROPS),
+                        help="where to write it. scheduled/ holds future weeks")
+    parser.add_argument("--publish-at", default="",
+                        help="when this drop should become visible")
     args = parser.parse_args()
 
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", args.date):
         sys.exit("--date must look like 2026-08-27")
 
-    path = DROPS / f"{args.date}.yml"
-    if path.exists():
-        print(f"{path.relative_to(ROOT)} already exists. Nothing to do.")
-        return 0
+    out_dir = Path(args.out_dir)
+    path = out_dir / f"{args.date}.yml"
+    for existing in (DROPS / f"{args.date}.yml", SCHEDULED / f"{args.date}.yml"):
+        if existing.exists():
+            print(f"{existing.relative_to(ROOT)} already exists. Nothing to do.")
+            return 0
 
     if not POOL.exists():
         print("No data/pool.json yet. Run scripts/pull_playlist.py first.")
@@ -110,10 +125,17 @@ def main():
         return 0
 
     # Seeded on the date, so a rerun for the same day picks the same tracks.
-    random.Random(args.date).shuffle(fresh)
+    rng = random.Random(args.date)
+    rng.shuffle(fresh)
 
-    target = 0 if args.count else max(0, args.minutes) * 60
-    limit = args.count or args.max_tracks
+    target = max(0, args.minutes) * 60 if args.minutes else 0
+    if args.count:
+        limit = args.count
+    elif target:
+        limit = args.max_tracks
+    else:
+        limit = rng.randint(min(args.min_count, args.max_count),
+                            max(args.min_count, args.max_count))
 
     picked = []
     seen_here = set()
@@ -158,13 +180,15 @@ def main():
         })
 
     number = next_number()
+    out_dir.mkdir(parents=True, exist_ok=True)
     path.write_text(
-        "# Pulled automatically. Set kind and write a real why before this ages.\n"
+        "# Pulled automatically. Set kind and write a real why before this lands.\n"
         + yaml.safe_dump(
             {
                 "date": args.date,
                 "number": number,
                 "title": f"Drop {number:03d}",
+                "publish_at": args.publish_at or None,
                 "target_minutes": args.minutes if target else None,
                 "blurb": "",
                 "tracks": tracks,

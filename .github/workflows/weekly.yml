@@ -1,24 +1,23 @@
-name: Weekly drop
+name: Monday drop
 
 on:
   schedule:
-    # Sunday 12:00 UTC. Change this line to move when the drop lands.
-    - cron: "0 12 * * 0"
+    # 12:01pm Eastern, both halves of the year. Daylight saving is handled in
+    # the script, so an early run publishes nothing and simply waits.
+    - cron: "1 16 * * 1"
+    - cron: "1 17 * * 1"
   workflow_dispatch:
     inputs:
-      date:
-        description: "Which day to build, YYYY-MM-DD. Blank means today."
+      weeks:
+        description: "How many weeks to keep lined up."
         required: false
-      minutes:
-        description: "How much runtime to fill."
-        required: false
-        default: "30"
+        default: "8"
 
 permissions:
   contents: write
 
 concurrency:
-  group: weekly-drop
+  group: monday-drop
   cancel-in-progress: false
 
 jobs:
@@ -34,31 +33,32 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --quiet pyyaml
 
+      - name: Publish anything whose Monday has come
+        run: python scripts/publish_due.py
+
       - name: Refresh the pool from participants' public playlists
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/pull_playlist.py
 
-      - name: Build the drop
+      - name: Top the queue back up
         run: |
-          DAY="${{ github.event.inputs.date }}"
-          if [ -z "$DAY" ]; then DAY="$(date -u +%F)"; fi
-          MINUTES="${{ github.event.inputs.minutes }}"
-          if [ -z "$MINUTES" ]; then MINUTES=30; fi
-          python scripts/make_drop.py --date "$DAY" --minutes "$MINUTES"
+          WEEKS="${{ github.event.inputs.weeks }}"
+          if [ -z "$WEEKS" ]; then WEEKS=8; fi
+          python scripts/seed_weeks.py --weeks "$WEEKS"
 
       - name: Rebuild site data
         run: python scripts/build.py
 
       - name: Commit
         run: |
-          if [ -z "$(git status --porcelain --untracked-files=all drops data)" ]; then
-            echo "Nothing new this week."
+          if [ -z "$(git status --porcelain --untracked-files=all drops scheduled data)" ]; then
+            echo "Nothing to do this week."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add drops data
-          git commit -m "Weekly drop for $(date -u +%F)"
+          git add drops scheduled data
+          git commit -m "Monday drop for $(date -u +%F)"
           git pull --rebase --autostash origin main
           git push

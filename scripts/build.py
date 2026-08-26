@@ -313,6 +313,12 @@ def main():
     if waiting:
         print(f"\n{waiting} pick(s) waiting in inbox/ to be placed in a drop.")
 
+    lined_up = len([path for path in (ROOT / "scheduled").glob("*.yml")])
+    if lined_up:
+        print(f"{lined_up} week(s) lined up in scheduled/, not yet published.")
+    else:
+        print("\nNothing lined up in scheduled/. Run scripts/seed_weeks.py.")
+
     total_tracks = sum(len(drop["tracks"]) for drop in drops)
     print(
         f"\nok. {len(drops)} drop(s), {total_tracks} track(s), "
