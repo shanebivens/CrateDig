@@ -64,7 +64,7 @@ def main():
     parser.add_argument("--pause", type=float, default=0.4)
     args = parser.parse_args()
 
-    checked = ok = 0
+    checked = ok = blocked = 0
     broken = []
 
     for folder in FOLDERS:
@@ -93,6 +93,12 @@ def main():
                         changed = True
                     continue
 
+                # YouTube answers a datacenter address with a bot challenge.
+                # That says nothing about the video, so it does not count.
+                if "not a bot" in reason.lower():
+                    blocked += 1
+                    continue
+
                 broken.append((path.stem, track.get("artist", "?"),
                                track.get("title", "?"), video_id, status, reason))
                 print(f"  {status:<16} {video_id}  {track.get('artist')} - "
@@ -110,6 +116,14 @@ def main():
                     encoding="utf-8")
 
     print(f"\n{ok} of {checked} play. {len(broken)} need replacing.")
+    if blocked:
+        print(f"{blocked} could not be checked. YouTube answers a datacenter "
+              f"address with a bot challenge, so this is usually high in CI and "
+              f"zero on a laptop.")
+        if blocked > checked / 2:
+            print("Most of this run was challenged, so it tells us nothing. "
+                  "Not failing the build on it.")
+            return 0
     return 1 if broken else 0
 
 

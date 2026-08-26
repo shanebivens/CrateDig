@@ -93,10 +93,17 @@ YOUTUBE_ID = re.compile(
     r"([A-Za-z0-9_-]{11})"
 )
 PLAYABILITY = re.compile(r'"playabilityStatus":\{"status":"([A-Z_]+)"')
+PLAY_REASON = re.compile(
+    r'"playabilityStatus":\{"status":"[A-Z_]+","reason":"([^"]{0,140})"')
 
 
 def plays(url):
     """For a YouTube link, whether a signed out visitor can actually watch it.
+
+    Fails open. YouTube treats datacenter addresses as bots and answers a CI
+    runner with a sign-in challenge, so only an unambiguous refusal counts as
+    dead. Turning away somebody's real submission is worse than letting a
+    questionable one through, which check_links.py catches later anyway.
 
     Everything else is taken on trust, since only YouTube exposes this. See
     scripts/check_links.py for why the API and oembed are not good enough.
@@ -115,7 +122,14 @@ def plays(url):
     except Exception:                                          # noqa: BLE001
         return True          # a network blip is not evidence the video is dead
     found = PLAYABILITY.search(body)
-    return found.group(1) == "OK" if found else True
+    if not found or found.group(1) == "OK":
+        return True
+
+    reason_match = PLAY_REASON.search(body)
+    reason = (reason_match.group(1) if reason_match else "").lower()
+    if "not a bot" in reason:
+        return True                # the checker is being challenged, not the video
+    return found.group(1) not in ("UNPLAYABLE", "ERROR", "LOGIN_REQUIRED")
 
 
 NOISE = re.compile(
