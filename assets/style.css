@@ -193,7 +193,7 @@ a { color: inherit; }
 }
 
 .sticker--forgotten { background: var(--forgotten); transform: rotate(1deg); }
-.sticker--sideways  { background: var(--sideways); color: #fff; transform: rotate(-0.5deg); }
+.sticker--sideways  { background: var(--sideways); color: #15150f; transform: rotate(-0.5deg); }
 .sticker--unsorted  { background: var(--card); color: var(--ink-faint);
                       border: 1px dashed var(--ink-faint); transform: none;
                       box-shadow: none; }
@@ -324,13 +324,16 @@ a { color: inherit; }
 .field-row { display: flex; gap: 1rem; flex-wrap: wrap; }
 .field-row .field { flex: 1 1 12rem; }
 
-button.chip {
-  cursor: pointer;
-  font-family: var(--type);
+button.chip { cursor: pointer; font-family: var(--type); }
+
+form button.chip {
   font-size: 0.8rem;
   padding: 0.85rem 1.6rem;
   margin-top: 0.5rem;
 }
+
+/* handing on a whole drop is a plain offer, not a shout */
+.crate-play button.chip { border-style: solid; color: var(--ink); }
 .form-error { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
               color: var(--obscure); margin: 0 0 1rem; }
 

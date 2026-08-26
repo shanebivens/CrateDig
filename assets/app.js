@@ -58,6 +58,29 @@
       encodeURIComponent(track.artist + " " + track.title);
   }
 
+  /* This page's own address, hash stripped, for handing on. */
+  var PAGE_URL = location.origin + location.pathname;
+
+  /* The native share sheet where there is one, the clipboard where there is
+     not. The site's word for sharing is handing it on. */
+  function shareChip(label, payload) {
+    var button = el("button", "chip chip--quiet", label);
+    button.type = "button";
+    button.addEventListener("click", function () {
+      if (navigator.share) {
+        navigator.share(payload).catch(function () {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(payload.url).then(function () {
+          button.textContent = "Link copied";
+          window.setTimeout(function () { button.textContent = label; }, 1600);
+        });
+      } else {
+        window.prompt("Copy this link", payload.url);
+      }
+    });
+    return button;
+  }
+
   /* Catalogue number, the way a label stamps a release: drop and position. */
   function catalogue(drop, index) {
     var number = String(drop.number || 0);
@@ -67,6 +90,7 @@
 
   function renderTrack(track, index, drop) {
     var sleeve = el("article", "sleeve");
+    sleeve.id = catalogue(drop, index).toLowerCase().replace("/", "-");
     sleeve.appendChild(el("span", "sleeve-cat", catalogue(drop, index)));
 
     var kind = track.kind || "unsorted";
@@ -120,6 +144,13 @@
       links.appendChild(link("chip chip--quiet", "Search for it", searchUrl(track)));
     }
 
+    links.appendChild(shareChip("Hand it on", {
+      title: "CrateDig",
+      text: '"' + track.title + '" \u2014 ' + track.artist +
+            ". One track. Press it and let it run.",
+      url: PAGE_URL + "#" + sleeve.id
+    }));
+
     sleeve.appendChild(links);
     return sleeve;
   }
@@ -149,7 +180,13 @@
       var href = safeHref(drop.playlists[service]);
       if (href) play.appendChild(link("chip", SERVICE_LABELS[service] || service, href));
     });
-    if (play.childNodes.length) head.appendChild(play);
+    play.appendChild(shareChip("Hand this drop to somebody", {
+      title: "CrateDig \u2014 " + (drop.title || "this week's drop"),
+      text: "One track a day. Press it and let it run. " +
+            "Thirty minutes later you are somewhere you have never been.",
+      url: PAGE_URL
+    }));
+    head.appendChild(play);
 
     target.appendChild(head);
     drop.tracks.forEach(function (track, index) {
@@ -206,6 +243,13 @@
       renderDrop(drops[0], document.getElementById("latest"));
       renderArchive(drops.slice(1), document.getElementById("archive"));
       renderCredit(data.contributors, document.getElementById("credit"));
+
+      /* A handed-on link names its track. Content renders after load, so the
+         browser cannot honour the fragment on its own. */
+      if (location.hash) {
+        var handed = document.getElementById(location.hash.slice(1));
+        if (handed) handed.scrollIntoView();
+      }
     })
     .catch(function () {
       fail("Could not open the crate. Run scripts/build.py to rebuild data/drops.json.");
