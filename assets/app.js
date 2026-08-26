@@ -136,6 +136,8 @@
         " end to end, and a great deal longer if you fall in";
     }
     head.appendChild(runtime);
+    head.appendChild(el("p", "crate-cadence",
+      drop.tracks.length + " tracks. One a day carries you to the next drop."));
 
     /* No play-it-all link on purpose. Each track opens its own radio, and
        queueing the drop stops any of them from starting. */

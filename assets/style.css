@@ -435,3 +435,11 @@ button.chip { cursor: pointer; font-family: var(--type); }
   .mantra span { flex: 1 1 100%; padding: 0.5rem 0; }
   .mantra span + span { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
 }
+
+.crate-cadence {
+  margin: 0.35rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--obscure);
+}

@@ -7,8 +7,12 @@ and everything here exists to make it easy to keep.
 
 Five to seven tracks a week that almost nobody plays. Each one is a doorway
 rather than a playlist: press it and the radio carries you into an hour of music
-you have never heard. Do not work through the list. Fall through one of them,
-then bring back whatever you found in there.
+you have never heard.
+
+It does not refresh daily and does not need to. Five to seven tracks is one for
+each day until the next drop. Take one a day, fall in, let it run thirty
+minutes, and bring back whatever you found in there. Nobody gets the same radio,
+so the same drop sends everybody somewhere different.
 
 It grew out of a habit, and a post about that habit called *30 Minutes of Rare
 Tracks*: every day, roughly thirty minutes of music never heard before, or not
