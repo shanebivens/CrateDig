@@ -1,91 +1,75 @@
-# Drop 001. Starter list, edit or replace it with your own picks.
-#
-# kind:         forgotten (was popular once, nobody plays it now)
-#               obscure   (never surfaced in the first place)
-# duration:     M:SS, or null if you have not checked yet
-# submitted_by: a handle from submissions/, or "curator"
-# links:        optional. With none, the site links to a search instead.
-
-date: 2026-08-26
+# The first drop, pulled from the playlist this whole thing came out of.
+date: '2026-08-26'
 number: 1
 title: Drop 001
 target_minutes: 30
-blurb: >
-  Seven records that fell through the floor. Two were hits somewhere once,
-  the rest never got the chance.
-
+blurb: Six doors. Funk, a record with a hundred and ninety three plays, and a band from Dallas
+  with mariachi horns and a body count.
 tracks:
-  - artist: Connie Converse
-    title: Talkin' Like You (Two Tall Mountains)
-    year: 1954
-    duration: null
-    kind: obscure
-    submitted_by: curator
-    why: >
-      Recorded on a home tape machine in Greenwich Village years before anyone
-      was calling this singer-songwriter music. She never got a record out, quit,
-      and in 1974 packed a car and drove off. Nobody has seen her since.
-
-  - artist: Sibylle Baier
-    title: Tonight
-    year: 1971
-    duration: null
-    kind: obscure
-    submitted_by: curator
-    why: >
-      Made at home in Germany in the early seventies and then put in a drawer.
-      Her son found the tapes decades later and pressed them. Listen to how
-      close the microphone is.
-
-  - artist: Lewis
-    title: I Thought The World Of You
-    year: 1983
-    duration: null
-    kind: obscure
-    submitted_by: curator
-    why: >
-      A private press record so faint it barely registers as sound. For years
-      nobody knew who made it or whether he was still alive. Play it louder than
-      feels right.
-
-  - artist: Bobb Trimble
-    title: Killed By The Hands Of An Unknown Rock Star
-    year: 1982
-    duration: null
-    kind: obscure
-    submitted_by: curator
-    why: >
-      Massachusetts, self-financed, a few hundred copies. It sounds like it was
-      recorded inside a different decade than the one it came out in.
-
-  - artist: Mort Garson
-    title: Plantasia
-    year: 1976
-    duration: null
-    kind: forgotten
-    submitted_by: curator
-    why: >
-      Moog music written for houseplants and given away with a purchase at a
-      Los Angeles plant store. It sat forgotten for forty years before anyone
-      reissued it.
-
-  - artist: Dorothy Ashby
-    title: Soul Vibrations
-    year: 1968
-    duration: null
-    kind: forgotten
-    submitted_by: curator
-    why: >
-      Jazz harp, which should not work and completely does. Sampled to death by
-      producers who never credited where it came from.
-
-  - artist: The Shaggs
-    title: My Pal Foot Foot
-    year: 1969
-    duration: null
-    kind: obscure
-    submitted_by: curator
-    why: >
-      Three sisters whose father was certain they were destined for this. The
-      drums and the guitars are in different rooms of the same house. Stay with
-      it past the first minute, it starts to make its own kind of sense.
+- artist: Funkadelic
+  title: Maggot Brain
+  year: 1971
+  duration: '10:24'
+  kind: sideways
+  submitted_by: shanebivens
+  why: George Clinton reportedly told Eddie Hazel to play like he had just learned his mother
+    died, then wiped most of the band out of the mix. What is left is ten minutes of guitar
+    and almost nothing else. Every guitarist you like has heard this. Almost nobody else has.
+  links:
+    youtube: https://www.youtube.com/watch?v=JOKn33-q4Ao
+- artist: Tim Fite
+  title: Big Mistake (feat. Christian Ulmen, Bonaparte)
+  year: null
+  duration: '3:28'
+  kind: obscure
+  submitted_by: shanebivens
+  why: One hundred and ninety three views. Tim Fite spent years giving records away for nothing
+    on his own site while the industry went the other direction. This one turned up on a German
+    film soundtrack, which is a strange place for it to end up and probably why it exists
+    at all.
+  links:
+    youtube: https://www.youtube.com/watch?v=5_Wa7ZptsFQ
+- artist: Catfish Haven
+  title: Tell Me
+  year: 2006
+  duration: '3:30'
+  kind: obscure
+  submitted_by: shanebivens
+  why: A Chicago trio, one album on Secretly Canadian in 2006, gone not long after. People
+    who reviewed it at the time called it a break up record, and the voice on it does sound
+    like a man who has been shouting somewhere else all night.
+  links:
+    youtube: https://www.youtube.com/watch?v=kZ1-TNCpWlg
+- artist: Kanga
+  title: Something Dangerous
+  year: null
+  duration: '5:22'
+  kind: obscure
+  submitted_by: shanebivens
+  why: Industrial pop with the pop left in, which is rarer than it sounds. Seventeen thousand
+    views, and the kind of thing streaming services will happily play after it if you let
+    them.
+  links:
+    youtube: https://www.youtube.com/watch?v=pi-VvNMDbvA
+- artist: Brother Dege
+  title: Too Old to Die Young
+  year: null
+  duration: '3:45'
+  kind: sideways
+  submitted_by: shanebivens
+  why: 'Delta slide blues out of Louisiana, and you have probably already heard it without
+    knowing: Tarantino put it in Django Unchained. Almost nobody went looking for the rest
+    of the record afterwards.'
+  links:
+    youtube: https://www.youtube.com/watch?v=GCEo5vbabt8
+- artist: Ghoultown
+  title: Drink with the Living Dead
+  year: 1999
+  duration: '6:12'
+  kind: sideways
+  submitted_by: shanebivens
+  why: Dallas, formed in 1999 by a man who calls himself Count Lyle and came out of a doom
+    metal band. Horror punk crossed with spaghetti western, complete with mariachi horns.
+    In 2002 a horror film used four of their songs and rewrote the script to give them a cameo.
+  links:
+    youtube: https://www.youtube.com/watch?v=Zwjs45s8BSQ
