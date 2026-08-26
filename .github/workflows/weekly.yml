@@ -41,6 +41,12 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/pull_playlist.py
 
+      - name: Look up Spotify links where they can be matched
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: python scripts/resolve_spotify.py
+
       - name: Put the newest submissions into the next week
         run: python scripts/place_inbox.py
 

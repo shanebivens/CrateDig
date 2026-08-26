@@ -13,6 +13,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 try:
     import yaml
@@ -44,6 +45,8 @@ QUEUE_URL = "https://www.youtube.com/watch_videos?video_ids="
 # The point of a pick is where it leads. RD<id> is YouTube's mix, which keeps
 # playing things it thinks are like the seed once the seed finishes.
 RADIO_URL = "https://www.youtube.com/watch?v={id}&list=RD{id}"
+# No key needed and never wrong, for anything resolve_spotify could not match.
+SPOTIFY_SEARCH = "https://open.spotify.com/search/"
 QUEUE_LIMIT = 50
 
 errors = []
@@ -251,6 +254,7 @@ def load_drops(people):
                 "why": why,
                 "links": links,
                 "radio": radio,
+                "spotify_search": SPOTIFY_SEARCH + quote(f"{artist} {title}"),
             })
 
         # The pool owner fills whatever submissions do not, so the variety cap

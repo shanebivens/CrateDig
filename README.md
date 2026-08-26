@@ -1,10 +1,16 @@
 # CrateDig
 
-**30 Minutes of Rare Tracks.**
+**One song in, an afternoon out.**
 
-Every day, roughly thirty minutes of music you have never heard, or have not
-heard in a very long time. That is the whole ritual. This repository collects
-what people are finding and publishes a new drop from it.
+Five to seven records a week that almost nobody plays. Each one is a doorway
+rather than a playlist: press it and the mix carries you into an hour of music
+you have never heard. You are not meant to work through the list. You are meant
+to fall through one of them.
+
+It grew out of a habit, and a post about that habit called *30 Minutes of Rare
+Tracks*: every day, roughly thirty minutes of music never heard before, or not
+heard in a very long time. The habit is still daily. The site publishes weekly
+from what everyone is finding.
 
 The ask is not for great music. It is not even for music you personally like.
 What genre, album, artist, or song do you think almost nobody has heard, or
@@ -113,10 +119,18 @@ Each drop targets about thirty minutes of runtime, not a fixed track count.
 
 ## Every pick is a doorway
 
-A drop is not a playlist to sit through. Each track links to its YouTube mix,
-`watch?v=<id>&list=RD<id>`, which plays the song and then keeps going into
-whatever the recommender thinks it resembles. One song becomes an afternoon of
-music you have never heard, which is the entire point.
+A drop is not a playlist to sit through. The **Fall in** link on each track goes
+to `youtube.com/watch?v=<id>&list=RD<id>`. The `RD` prefix is YouTube's own mix:
+it plays the song and then keeps going, pulling in whatever it decides the track
+resembles, for as long as you leave it running. No account, no API, no playlist
+created. One song becomes an afternoon of music you have never heard, which is
+the entire point.
+
+Spotify has no equivalent URL, so a Spotify link plays the track and lets
+autoplay carry on from there. Exact Spotify links come from
+`scripts/resolve_spotify.py` when `SPOTIFY_CLIENT_ID` and
+`SPOTIFY_CLIENT_SECRET` are set as repository secrets, and every track falls
+back to a prefilled Spotify search, which needs no key and is never wrong.
 
 That is why a drop is five to seven tracks rather than a fixed runtime. You are
 being handed starting points, and you are not expected to use all of them.
@@ -149,6 +163,7 @@ Leave it out and nothing breaks.
     scripts/make_drop.py builds a drop without ever repeating a track
     scripts/seed_weeks.py lines up future Mondays in scheduled/
     scripts/place_inbox.py puts submitted picks into the spots held for them
+    scripts/resolve_spotify.py finds exact Spotify links, optional
     scripts/publish_due.py releases a week once its moment has passed
     index.html        the site, served from the repository root
     submit.html       the submission form

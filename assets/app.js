@@ -80,19 +80,27 @@
       links.appendChild(hole);
     }
 
-    var services = Object.keys(track.links || {});
-    if (services.length && services.some(function (s) { return safeHref(track.links[s]); })) {
-      services.forEach(function (service) {
-        var href = safeHref(track.links[service]);
-        if (!href) return;
-        var anchor = el("a", null, SERVICE_LABELS[service] || service);
-        anchor.href = href;
-        anchor.rel = "noopener";
-        anchor.target = "_blank";
-        links.appendChild(anchor);
-      });
-    } else {
-      var search = el("a", "is-search", radio ? "Find it elsewhere" : "Search for it");
+    var services = Object.keys(track.links || {}).filter(function (service) {
+      return safeHref(track.links[service]);
+    });
+    services.forEach(function (service) {
+      var anchor = el("a", null, SERVICE_LABELS[service] || service);
+      anchor.href = safeHref(track.links[service]);
+      anchor.rel = "noopener";
+      anchor.target = "_blank";
+      links.appendChild(anchor);
+    });
+
+    if (services.indexOf("spotify") === -1) {
+      var spotify = el("a", "is-search", "Find on Spotify");
+      spotify.href = safeHref(track.spotify_search) || searchUrl(track);
+      spotify.rel = "noopener";
+      spotify.target = "_blank";
+      links.appendChild(spotify);
+    }
+
+    if (!services.length && !radio) {
+      var search = el("a", "is-search", "Search for it");
       search.href = searchUrl(track);
       search.rel = "noopener";
       search.target = "_blank";

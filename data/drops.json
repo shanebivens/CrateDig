@@ -18,7 +18,8 @@
           "links": {
             "youtube": "https://www.youtube.com/watch?v=JOKn33-q4Ao"
           },
-          "radio": "https://www.youtube.com/watch?v=JOKn33-q4Ao&list=RDJOKn33-q4Ao"
+          "radio": "https://www.youtube.com/watch?v=JOKn33-q4Ao&list=RDJOKn33-q4Ao",
+          "spotify_search": "https://open.spotify.com/search/Funkadelic%20Maggot%20Brain"
         },
         {
           "artist": "Tim Fite",
@@ -32,7 +33,8 @@
           "links": {
             "youtube": "https://www.youtube.com/watch?v=5_Wa7ZptsFQ"
           },
-          "radio": "https://www.youtube.com/watch?v=5_Wa7ZptsFQ&list=RD5_Wa7ZptsFQ"
+          "radio": "https://www.youtube.com/watch?v=5_Wa7ZptsFQ&list=RD5_Wa7ZptsFQ",
+          "spotify_search": "https://open.spotify.com/search/Tim%20Fite%20Big%20Mistake%20%28feat.%20Christian%20Ulmen%2C%20Bonaparte%29"
         },
         {
           "artist": "Catfish Haven",
@@ -46,7 +48,8 @@
           "links": {
             "youtube": "https://www.youtube.com/watch?v=kZ1-TNCpWlg"
           },
-          "radio": "https://www.youtube.com/watch?v=kZ1-TNCpWlg&list=RDkZ1-TNCpWlg"
+          "radio": "https://www.youtube.com/watch?v=kZ1-TNCpWlg&list=RDkZ1-TNCpWlg",
+          "spotify_search": "https://open.spotify.com/search/Catfish%20Haven%20Tell%20Me"
         },
         {
           "artist": "Kanga",
@@ -60,7 +63,8 @@
           "links": {
             "youtube": "https://www.youtube.com/watch?v=pi-VvNMDbvA"
           },
-          "radio": "https://www.youtube.com/watch?v=pi-VvNMDbvA&list=RDpi-VvNMDbvA"
+          "radio": "https://www.youtube.com/watch?v=pi-VvNMDbvA&list=RDpi-VvNMDbvA",
+          "spotify_search": "https://open.spotify.com/search/Kanga%20Something%20Dangerous"
         },
         {
           "artist": "Brother Dege",
@@ -74,7 +78,8 @@
           "links": {
             "youtube": "https://www.youtube.com/watch?v=GCEo5vbabt8"
           },
-          "radio": "https://www.youtube.com/watch?v=GCEo5vbabt8&list=RDGCEo5vbabt8"
+          "radio": "https://www.youtube.com/watch?v=GCEo5vbabt8&list=RDGCEo5vbabt8",
+          "spotify_search": "https://open.spotify.com/search/Brother%20Dege%20Too%20Old%20to%20Die%20Young"
         },
         {
           "artist": "Ghoultown",
@@ -88,7 +93,8 @@
           "links": {
             "youtube": "https://www.youtube.com/watch?v=Zwjs45s8BSQ"
           },
-          "radio": "https://www.youtube.com/watch?v=Zwjs45s8BSQ&list=RDZwjs45s8BSQ"
+          "radio": "https://www.youtube.com/watch?v=Zwjs45s8BSQ&list=RDZwjs45s8BSQ",
+          "spotify_search": "https://open.spotify.com/search/Ghoultown%20Drink%20with%20the%20Living%20Dead"
         }
       ],
       "seconds": 1961,
