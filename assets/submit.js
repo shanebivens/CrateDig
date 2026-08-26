@@ -125,10 +125,33 @@
 
   var lastLooked = "";
 
+  /* What the last lookup put in each field. A value we put there is ours to
+     replace when the link changes. A value the person typed is not. Without
+     this, pasting a second link leaves the first track's details sitting
+     underneath it. */
+  var filledIn = { artist: "", track: "" };
+
+  function releaseOurs(form) {
+    ["artist", "track"].forEach(function (name) {
+      if (filledIn[name] && form[name].value.trim() === filledIn[name]) {
+        form[name].value = "";
+        filledIn[name] = "";
+      }
+    });
+  }
+
+  /* A shared link carries a share token and sometimes a radio queue. Ignore
+     those when deciding whether this is the same link as last time. */
+  function linkKey(link) {
+    var match = link.match(/[?&]v=([A-Za-z0-9_-]{11})/);
+    return match ? match[1] : link.trim();
+  }
+
   function lookup(form) {
     var link = form.link.value.trim();
-    if (!link || link === lastLooked) return;
-    lastLooked = link;
+    if (!link || linkKey(link) === lastLooked) return;
+    lastLooked = linkKey(link);
+    releaseOurs(form);
 
     var endpoint = oembedUrl(link);
     if (!endpoint) {
@@ -149,10 +172,12 @@
         var filled = [];
         if (found.artist && !form.artist.value.trim()) {
           form.artist.value = found.artist;
+          filledIn.artist = found.artist;
           filled.push("artist");
         }
         if (found.title && !form.track.value.trim()) {
           form.track.value = found.title;
+          filledIn.track = found.title;
           filled.push("track");
         }
         if (filled.length) {
@@ -172,10 +197,25 @@
   var form = document.getElementById("form-track");
   if (!form) return;
 
+  /* Coming back from the issue tab, browsers restore what was in the form.
+     Start clean rather than leaving the last submission lying around. */
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      form.reset();
+      lastLooked = "";
+      filledIn = { artist: "", track: "" };
+      say("");
+    }
+  });
+
   form.link.addEventListener("change", function () { lookup(form); });
   form.link.addEventListener("blur", function () { lookup(form); });
   form.link.addEventListener("paste", function () {
     window.setTimeout(function () { lookup(form); }, 0);
+  });
+  form.link.addEventListener("input", function () {
+    window.clearTimeout(form.link.dataset.timer);
+    form.link.dataset.timer = window.setTimeout(function () { lookup(form); }, 600);
   });
 
   form.addEventListener("submit", function (event) {

@@ -409,7 +409,7 @@ button.chip { cursor: pointer; font-family: var(--type); }
   border-bottom: 2px solid var(--ink);
 }
 
-.mantra span {
+.mantra a {
   flex: 1 1 auto;
   padding: 0.85rem 1rem 0.9rem 0;
   font-family: var(--display);
@@ -417,10 +417,13 @@ button.chip { cursor: pointer; font-family: var(--type); }
   letter-spacing: 0.02em;
   text-transform: uppercase;
   white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
 }
 
-.mantra span + span { padding-left: 1rem; border-left: 1px solid var(--rule); }
-.mantra span:last-child { color: var(--obscure); }
+.mantra a + a { padding-left: 1rem; border-left: 1px solid var(--rule); }
+.mantra a:last-child { color: var(--obscure); }
+.mantra a:hover { border-bottom-color: var(--obscure); }
 
 .pitch-lead { font-size: 1.05rem; }
 .pitch-lead b, .pitch b { font-weight: 400; background: var(--forgotten);
@@ -432,8 +435,8 @@ button.chip { cursor: pointer; font-family: var(--type); }
 .starting .aside { color: var(--ink-faint); margin: 0; font-size: 0.88rem; }
 
 @media (max-width: 30rem) {
-  .mantra span { flex: 1 1 100%; padding: 0.5rem 0; }
-  .mantra span + span { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+  .mantra a { flex: 1 1 100%; padding: 0.5rem 0; }
+  .mantra a + a { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
 }
 
 .crate-cadence {
