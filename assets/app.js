@@ -1,19 +1,22 @@
-/* CrateDig site. Reads data/drops.json, which scripts/build.py writes. */
+/* CrateDig. Reads data/drops.json, which scripts/build.py writes. */
 
 (function () {
   "use strict";
 
   var SERVICE_LABELS = {
     youtube: "YouTube",
-    "youtube-music": "YouTube Music",
+    "youtube-music": "YT Music",
     spotify: "Spotify",
-    "apple-music": "Apple Music",
+    "apple-music": "Apple",
     bandcamp: "Bandcamp",
     soundcloud: "SoundCloud",
     tidal: "Tidal",
     discogs: "Discogs",
-    archive: "Archive.org"
+    archive: "Archive"
   };
+
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function el(tag, className, text) {
     var node = document.createElement(tag);
@@ -22,151 +25,129 @@
     return node;
   }
 
+  function link(className, text, href) {
+    var anchor = el("a", className, text);
+    anchor.href = href;
+    anchor.rel = "noopener";
+    anchor.target = "_blank";
+    return anchor;
+  }
+
+  /* Submissions come from strangers. Only http(s) goes near an href. */
+  function safeHref(url) {
+    return /^https?:\/\//i.test(String(url || "")) ? String(url) : "";
+  }
+
   function formatDate(iso) {
     var parts = String(iso).split("-");
     if (parts.length !== 3) return iso;
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var month = months[parseInt(parts[1], 10) - 1] || parts[1];
-    return month + " " + parseInt(parts[2], 10) + ", " + parts[0];
+    return parseInt(parts[2], 10) + " " +
+      (MONTHS[parseInt(parts[1], 10) - 1] || parts[1]) + " " + parts[0];
   }
 
   function formatRuntime(seconds) {
     var minutes = Math.floor(seconds / 60);
-    var rest = seconds % 60;
-    return minutes + "m " + (rest < 10 ? "0" : "") + rest + "s";
-  }
-
-  function safeHref(url) {
-    /* Submissions come from strangers. Only http(s) is allowed near an href. */
-    return /^https?:\/\//i.test(String(url || "")) ? String(url) : "";
+    return minutes + "m " + (seconds % 60 < 10 ? "0" : "") + (seconds % 60) + "s";
   }
 
   function searchUrl(track) {
-    var query = track.artist + " " + track.title;
-    return "https://music.youtube.com/search?q=" + encodeURIComponent(query);
+    return "https://music.youtube.com/search?q=" +
+      encodeURIComponent(track.artist + " " + track.title);
   }
 
-  function renderTrack(track, index) {
-    var row = el("article", "track");
-    row.appendChild(el("div", "track-number", String(index + 1).padStart(2, "0")));
+  /* Catalogue number, the way a label stamps a release: drop and position. */
+  function catalogue(drop, index) {
+    var number = String(drop.number || 0);
+    while (number.length < 3) number = "0" + number;
+    return "CD-" + number + "/" + (index + 1 < 10 ? "0" : "") + (index + 1);
+  }
 
-    var body = el("div", "track-body");
-    body.appendChild(el("p", "track-artist", track.artist));
-    body.appendChild(el("h3", "track-title", track.title));
+  function renderTrack(track, index, drop) {
+    var sleeve = el("article", "sleeve");
+    sleeve.appendChild(el("span", "sleeve-cat", catalogue(drop, index)));
 
-    var tags = el("div", "track-tags");
-    if (track.kind) {
-      tags.appendChild(el("span", "tag-kind " + track.kind, track.kind));
+    var kind = track.kind || "unsorted";
+    sleeve.appendChild(el("span", "sticker sticker--" + kind,
+      kind === "unsorted" ? "not yet sorted" : kind));
+
+    sleeve.appendChild(el("h3", "sleeve-artist", track.artist));
+    sleeve.appendChild(el("p", "sleeve-title", track.title));
+
+    var meta = [];
+    if (track.year) meta.push(track.year);
+    meta.push(track.duration || "unmeasured");
+    /* Pulled from the crate's own playlist, so nobody sent it in. */
+    if (track.submitted_by && track.submitted_by !== "curator" && !track.pooled) {
+      meta.push("sent in by " + track.submitted_by);
     }
-    if (track.year) tags.appendChild(el("span", null, track.year));
-    tags.appendChild(el("span", null, track.duration || "--:--"));
-    if (track.submitted_by && track.submitted_by !== "curator") {
-      tags.appendChild(el("span", null, "via " + track.submitted_by));
-    }
-    body.appendChild(tags);
+    sleeve.appendChild(el("p", "sleeve-meta", meta.join("  ·  ")));
 
-    if (track.why) body.appendChild(el("p", "track-why", track.why));
+    if (track.why) sleeve.appendChild(el("p", "sleeve-note", track.why));
 
-    var links = el("div", "track-links");
-
+    var links = el("div", "sleeve-links");
     var radio = safeHref(track.radio);
     if (radio) {
-      var hole = el("a", "is-radio", "Fall in");
-      hole.href = radio;
-      hole.rel = "noopener";
-      hole.target = "_blank";
-      hole.title = "Plays this, then keeps going into whatever it leads to";
-      links.appendChild(hole);
+      var fall = link("chip chip--fall", "Fall in", radio);
+      fall.title = "Plays this, then keeps going into whatever it leads to";
+      links.appendChild(fall);
     }
 
     var services = Object.keys(track.links || {}).filter(function (service) {
       return safeHref(track.links[service]);
     });
     services.forEach(function (service) {
-      var anchor = el("a", null, SERVICE_LABELS[service] || service);
-      anchor.href = safeHref(track.links[service]);
-      anchor.rel = "noopener";
-      anchor.target = "_blank";
-      links.appendChild(anchor);
+      links.appendChild(link("chip", SERVICE_LABELS[service] || service,
+        safeHref(track.links[service])));
     });
 
     if (services.indexOf("spotify") === -1) {
-      var spotify = el("a", "is-search", "Find on Spotify");
-      spotify.href = safeHref(track.spotify_search) || searchUrl(track);
-      spotify.rel = "noopener";
-      spotify.target = "_blank";
-      links.appendChild(spotify);
+      links.appendChild(link("chip chip--quiet", "Find on Spotify",
+        safeHref(track.spotify_search) || searchUrl(track)));
     }
-
     if (!services.length && !radio) {
-      var search = el("a", "is-search", "Search for it");
-      search.href = searchUrl(track);
-      search.rel = "noopener";
-      search.target = "_blank";
-      links.appendChild(search);
+      links.appendChild(link("chip chip--quiet", "Search for it", searchUrl(track)));
     }
-    body.appendChild(links);
 
-    row.appendChild(body);
-    return row;
+    sleeve.appendChild(links);
+    return sleeve;
   }
 
   function renderDrop(drop, target) {
     target.className = "";
     target.innerHTML = "";
 
-    var head = el("div", "drop-head");
-    var meta = el("div", "drop-meta");
-    meta.appendChild(el("span", null, formatDate(drop.date)));
-    meta.appendChild(el("span", null, drop.tracks.length + " tracks"));
-    head.appendChild(meta);
-    head.appendChild(el("h2", "drop-title", drop.title || "Drop"));
-    if (drop.blurb) head.appendChild(el("p", "drop-blurb", drop.blurb));
+    var head = el("div", "crate-head");
+    head.appendChild(el("span", "stamp",
+      formatDate(drop.date) + "  ·  " + drop.tracks.length + " tracks"));
 
-    var runtime = el("div", "runtime");
-    if (drop.unknown_durations) {
-      runtime.textContent = drop.unknown_durations === drop.tracks.length
-        ? "Runtime not measured yet"
-        : formatRuntime(drop.seconds) + " so far, " + drop.unknown_durations + " track(s) unmeasured";
-    } else if (drop.target_seconds) {
-      runtime.textContent = formatRuntime(drop.seconds) +
-        " of about " + Math.round(drop.target_seconds / 60) + "m";
-      var bar = el("div", "runtime-bar");
-      var fill = el("div", "runtime-fill");
-      var pct = Math.min(100, Math.round((drop.seconds / drop.target_seconds) * 100));
-      fill.style.width = pct + "%";
-      bar.appendChild(fill);
-      runtime.appendChild(bar);
+    /* The number is the headline. The blurb is a sentence and reads as
+       shouting if it goes into the display face. */
+    head.appendChild(el("h2", "crate-title", drop.title || "In the crate"));
+    if (drop.blurb) head.appendChild(el("p", "crate-blurb", drop.blurb));
+
+    var runtime = el("p", "crate-runtime");
+    if (drop.unknown_durations === drop.tracks.length) {
+      runtime.textContent = "Runtime not measured";
+    } else if (drop.unknown_durations) {
+      runtime.textContent = formatRuntime(drop.seconds) + " so far, " +
+        drop.unknown_durations + " unmeasured";
     } else {
-      runtime.textContent = formatRuntime(drop.seconds);
+      runtime.textContent = formatRuntime(drop.seconds) + " end to end, and a lot longer if you let it run";
     }
     head.appendChild(runtime);
 
-    var play = el("div", "play-row");
+    var play = el("div", "crate-play");
     var queue = safeHref(drop.queue_url);
-    if (queue) {
-      var all = el("a", "button button-play", "Play them back to back");
-      all.href = queue;
-      all.rel = "noopener";
-      all.target = "_blank";
-      play.appendChild(all);
-    }
+    if (queue) play.appendChild(link("chip", "Play the crate back to back", queue));
     Object.keys(drop.playlists || {}).forEach(function (service) {
       var href = safeHref(drop.playlists[service]);
-      if (!href) return;
-      var anchor = el("a", "button button-quiet button-play", SERVICE_LABELS[service] || service);
-      anchor.href = href;
-      anchor.rel = "noopener";
-      anchor.target = "_blank";
-      play.appendChild(anchor);
+      if (href) play.appendChild(link("chip", SERVICE_LABELS[service] || service, href));
     });
     if (play.childNodes.length) head.appendChild(play);
 
     target.appendChild(head);
-
     drop.tracks.forEach(function (track, index) {
-      target.appendChild(renderTrack(track, index));
+      target.appendChild(renderTrack(track, index, drop));
     });
   }
 
@@ -174,37 +155,34 @@
     target.className = "";
     target.innerHTML = "";
     if (!drops.length) {
-      target.className = "archive-empty";
-      target.textContent = "Nothing here yet. The next drop lands soon.";
+      target.className = "empty";
+      target.textContent = "Nothing behind this one yet. The next drop lands Monday.";
       return;
     }
     drops.forEach(function (drop) {
-      var item = el("div", "archive-item");
-      item.appendChild(el("strong", null, drop.title || formatDate(drop.date)));
-      item.appendChild(el("span", null, formatDate(drop.date)));
-      item.appendChild(el("span", null, drop.tracks.length + " tracks"));
-      target.appendChild(item);
+      var row = el("div", "back-row");
+      row.appendChild(el("b", null, drop.title));
+      row.appendChild(el("span", null, formatDate(drop.date)));
+      row.appendChild(el("span", null, drop.tracks.length + " tracks"));
+      target.appendChild(row);
     });
   }
 
-  function renderContributors(people, target) {
+  function renderCredit(people, target) {
     if (!people || !people.length) return;
-    var box = el("p", "participants-list");
-    box.appendChild(el("span", null, "Picks so far from: "));
-    box.appendChild(document.createTextNode(
+    var line = el("p", "credit", "Tracks so far from " +
       people.map(function (person) {
         return person.handle + (person.picks > 1 ? " (" + person.picks + ")" : "");
-      }).join(", ")
-    ));
-    target.appendChild(box);
+      }).join(", ") + ".");
+    target.appendChild(line);
   }
 
   function fail(message) {
-    var latest = document.getElementById("latest-drop");
-    latest.className = "archive-empty";
+    var latest = document.getElementById("latest");
+    latest.className = "empty";
     latest.textContent = message;
-    var archive = document.getElementById("archive-list");
-    archive.className = "archive-empty";
+    var archive = document.getElementById("archive");
+    archive.className = "empty";
     archive.textContent = "";
   }
 
@@ -216,14 +194,14 @@
     .then(function (data) {
       var drops = data.drops || [];
       if (!drops.length) {
-        fail("No drops published yet.");
+        fail("The crate is empty. The first drop lands Monday.");
         return;
       }
-      renderDrop(drops[0], document.getElementById("latest-drop"));
-      renderArchive(drops.slice(1), document.getElementById("archive-list"));
-      renderContributors(data.contributors, document.getElementById("participants"));
+      renderDrop(drops[0], document.getElementById("latest"));
+      renderArchive(drops.slice(1), document.getElementById("archive"));
+      renderCredit(data.contributors, document.getElementById("credit"));
     })
     .catch(function () {
-      fail("Could not load the drops. Run scripts/build.py to rebuild data/drops.json.");
+      fail("Could not open the crate. Run scripts/build.py to rebuild data/drops.json.");
     });
 })();

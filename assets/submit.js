@@ -6,6 +6,29 @@
 
   var REPO = "https://github.com/shanebivens/CrateDig";
 
+  /* Somewhere the track actually plays. Mirrors MUSIC_HOSTS in scripts/intake.py,
+     so the form and the bot agree about what counts. */
+  var MUSIC_HOSTS = [
+    "youtube.com", "youtu.be", "open.spotify.com", "spotify.com",
+    "bandcamp.com", "soundcloud.com", "music.apple.com", "itunes.apple.com",
+    "tidal.com", "deezer.com", "discogs.com", "archive.org", "last.fm",
+    "mixcloud.com", "audiomack.com", "hearthis.at", "jamendo.com"
+  ];
+
+  function musicHost(value) {
+    var url;
+    try {
+      url = new URL(value.trim());
+    } catch (error) {
+      return false;
+    }
+    if (url.protocol !== "http:" && url.protocol !== "https:") return false;
+    var host = url.hostname.toLowerCase().replace(/^www\./, "");
+    return MUSIC_HOSTS.some(function (known) {
+      return host === known || host.slice(-(known.length + 1)) === "." + known;
+    });
+  }
+
   function issueUrl(template, title, fields) {
     var parts = ["template=" + encodeURIComponent(template)];
     if (title) parts.push("title=" + encodeURIComponent(title));
@@ -52,6 +75,13 @@
         .replace(" optional", "").trim().toLowerCase();
       flash(form, "Fill in " + label + " first.");
       missing.focus();
+      return;
+    }
+
+    if (!musicHost(form.link.value)) {
+      flash(form, "That link needs to point at a music site: YouTube, Spotify, "
+        + "Bandcamp, SoundCloud, Apple Music, Tidal, Discogs or Archive.org.");
+      form.link.focus();
       return;
     }
 

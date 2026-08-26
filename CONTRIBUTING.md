@@ -50,6 +50,8 @@ Fields:
 - `duration` is `M:SS`. Leave it `null` if you do not know it yet, the
   validator will tell you which tracks are missing one.
 - `why` is the part people actually read. Two sentences beats two paragraphs.
+  It is optional on the form: leave it blank and a writeup gets added before
+  the track goes out. Words you do write are never rewritten.
 - `links` needs at least one. A YouTube link also becomes the doorway, since
   the site turns it into a mix that keeps playing past the track. Prefer a link
   where the artist gets paid, such as Bandcamp, when one exists.
@@ -63,7 +65,7 @@ allowed and it is more interesting than pretending otherwise.
 - Anything that requires an account, a cookie, or a credential to read.
 - A wall of submissions from one person at once. Two spots a week go to
   submitted picks, newest first, and the rest keep for the following week.
-- Picks with no `why`. The writeup is the reason anyone plays it.
+- Links to a search page, a shortener, or anywhere the track does not play.
 
 ## Code contributions
 

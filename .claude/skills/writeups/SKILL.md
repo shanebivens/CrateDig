@@ -12,9 +12,12 @@ Everything that has to happen between one Monday and the next. Run it in order.
     python3 scripts/place_inbox.py
 
 This moves the two most recent submitted picks out of `inbox/` and into the next
-week, which holds two spots open for them. Submitted picks arrive with the
-submitter's own kind and writeup, so they need placing, not rewriting. Leave
-their words alone. Fix a typo, nothing more.
+week, which holds two spots open for them.
+
+**Never rewrite a submitter's words.** Fix a typo, nothing more. But the writeup
+is optional on the form, so a submitted pick can arrive with `why` empty. Those
+are yours to write, same as an automatic pick: research it and write the story.
+The rule is only about words somebody actually wrote.
 
 If the inbox has a backlog, say so and offer `--oldest-first` or `--slots 0`.
 Do not silently place more than the two spots.

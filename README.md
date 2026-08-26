@@ -2,7 +2,7 @@
 
 **One song in, an afternoon out.**
 
-Five to seven records a week that almost nobody plays. Each one is a doorway
+Five to seven tracks a week that almost nobody plays. Each one is a doorway
 rather than a playlist: press it and the mix carries you into an hour of music
 you have never heard. You are not meant to work through the list. You are meant
 to fall through one of them.

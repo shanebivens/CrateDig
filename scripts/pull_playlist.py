@@ -185,7 +185,7 @@ def main():
                 "views": extra.get("views"),
                 "submitted_by": handle,
                 "position": item["position"],
-                "url": f"https://www.youtube.com/watch?v={video_id}",
+                "url": f"https://music.youtube.com/watch?v={video_id}",
             }
 
     ordered = sorted(tracks.values(), key=lambda track: (track["submitted_by"], track["position"]))

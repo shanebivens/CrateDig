@@ -21,6 +21,7 @@ import argparse
 import os
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 
 try:
@@ -34,7 +35,16 @@ SUBMISSIONS = ROOT / "submissions"
 COMMENT = ROOT / ".intake-comment.md"
 
 NO_RESPONSE = "_No response_"
-KINDS = {"obscure", "forgotten"}
+KINDS = {"obscure", "forgotten", "sideways"}
+
+# Somewhere the track can actually be played or looked up. Keeps out search
+# pages, shortener links and whatever someone copied out of a chat window.
+MUSIC_HOSTS = (
+    "youtube.com", "youtu.be", "open.spotify.com", "spotify.com",
+    "bandcamp.com", "soundcloud.com", "music.apple.com", "itunes.apple.com",
+    "tidal.com", "deezer.com", "discogs.com", "archive.org", "last.fm",
+    "mixcloud.com", "audiomack.com", "hearthis.at", "jamendo.com",
+)
 LIMITS = {"short": 200, "long": 1200}
 HANDLE_RE = re.compile(r"[^a-z0-9-]+")
 
@@ -76,6 +86,13 @@ def safe_link(value):
     return url
 
 
+def music_host(url):
+    """True when the link points somewhere the track can be played."""
+    host = urllib.parse.urlparse(url).netloc.lower().split(":")[0]
+    host = host[4:] if host.startswith("www.") else host
+    return any(host == known or host.endswith("." + known) for known in MUSIC_HOSTS)
+
+
 def checked(value):
     return "[x]" in (value or "").lower()
 
@@ -110,17 +127,27 @@ def dump(path, data):
 def handle_track(fields, number, author):
     artist = clean(fields.get("Artist"))
     title = clean(fields.get("Track or album"))
-    why = clean(fields.get("Why this one"), "long")
+    why = clean(fields.get("Why this one"), "long")   # optional
 
     missing = [
         name for name, value in
-        (("Artist", artist), ("Track or album", title), ("Why this one", why))
+        (("Artist", artist), ("Track or album", title))
         if not value
     ]
     if missing:
         return fail(
             "Some required fields came through empty.",
             [f"Fill in **{name}**." for name in missing],
+        )
+
+    raw_link = (fields.get("A link to the track") or "").strip()
+    if not raw_link:
+        return fail(
+            "This one needs a link.",
+            ["Paste a link to somewhere the track plays: YouTube, Spotify, "
+             "Bandcamp, SoundCloud, Apple Music, Tidal, Discogs or Archive.org.",
+             "The link is what people press, so it is the one thing that "
+             "cannot be left out."],
         )
 
     kind = clean(fields.get("Which kind of find is this")).lower()
@@ -131,7 +158,21 @@ def handle_track(fields, number, author):
     match = re.search(r"(1[89]\d{2}|20\d{2})", year)
     year_value = int(match.group(1)) if match else None
 
-    link = safe_link(fields.get("A public link"))
+    link = safe_link(raw_link)
+    if not link:
+        return fail(
+            "That link did not look like a web address.",
+            ["Paste the whole thing, starting with `https://`."],
+        )
+    if not music_host(link):
+        return fail(
+            "That link does not point at a music site.",
+            ["Use YouTube, Spotify, Bandcamp, SoundCloud, Apple Music, Tidal, "
+             "Discogs or Archive.org.",
+             "A search page or a shortened link will not work, since the site "
+             "needs the track itself to build the doorway."],
+        )
+
     links = {}
     if link:
         service = "other"
@@ -152,8 +193,10 @@ def handle_track(fields, number, author):
             service = "archive"
         links[service] = link
 
-    if checked(fields.get("Disclosure")):
+    if why and checked(fields.get("Disclosure")):
         why = why.rstrip() + " (Submitter has a stake in this record.)"
+    elif checked(fields.get("Disclosure")):
+        why = "Submitter has a stake in this record."
 
     path = INBOX / f"{number:05d}-{slugify(artist)}.yml"
     dump(path, {
@@ -168,8 +211,8 @@ def handle_track(fields, number, author):
         "source_issue": number,
     })
 
-    note = "" if link else (
-        "\nNo link came through, so the site will point at a search until one is added."
+    note = "" if why else (
+        "\nNo writeup came with it, so one gets written before it goes out."
     )
     write_comment([
         f"Filed as `{path.relative_to(ROOT)}`.",

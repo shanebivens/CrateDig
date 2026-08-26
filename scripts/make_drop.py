@@ -35,7 +35,7 @@ POOL = ROOT / "data" / "pool.json"
 
 PLACEHOLDER = "Pulled from the daily thirty minutes. No writeup yet."
 YOUTUBE_ID_RE = re.compile(
-    r"(?:youtube\.com/watch\?(?:[^#]*&)?v=|youtu\.be/|youtube\.com/embed/)"
+    r"(?:(?:music\.|www\.)?youtube\.com/watch\?(?:[^#]*&)?v=|youtu\.be/|youtube\.com/embed/)"
     r"([A-Za-z0-9_-]{11})"
 )
 

@@ -4,90 +4,118 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CrateDig | One song in, an afternoon out</title>
-<meta name="description" content="Five to seven records a week that almost nobody plays. Each one is a doorway: press it and the mix carries you somewhere you have never been.">
+<meta name="description" content="Five to seven tracks a week that almost nobody plays. Each one is a doorway: press it and the mix carries you somewhere you have never been.">
 <meta property="og:title" content="CrateDig">
-<meta property="og:description" content="Records nobody plays, and wherever they lead. A new set every Monday.">
+<meta property="og:description" content="Tracks nobody plays, and wherever they lead. A new drop every Monday.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header class="masthead">
-  <div class="wrap">
-    <a class="wordmark" href="./">
-      <span class="wordmark-crate">Crate</span><span class="wordmark-dig">Dig</span>
-    </a>
-    <p class="tagline">One song in, an afternoon out</p>
-    <nav class="nav">
-      <a href="#latest">Latest</a>
-      <a href="#archive">Archive</a>
-      <a href="submit.html">Submit</a>
-      <a href="https://github.com/shanebivens/CrateDig">GitHub</a>
-    </nav>
-  </div>
+<header class="divider" data-tab="Now digging">
+  <a class="wordmark" href="./">CrateDig</a>
+  <p class="tagline">One song in, an afternoon out</p>
+  <nav class="nav">
+    <a href="#crate">This week</a>
+    <a href="#back">Back issues</a>
+    <a href="submit.html">Send one in</a>
+    <a href="https://github.com/shanebivens/CrateDig">Source</a>
+  </nav>
 </header>
 
 <main class="wrap">
 
-  <section class="manifesto">
+  <section class="pitch">
     <p>
-      Every track here is a doorway, not a playlist. Press <em>Fall in</em> and
-      it plays, then keeps going into whatever the machine decides it is like.
-      One song can turn into an afternoon. You are not meant to work through the
-      list, you are meant to fall through one of them.
+      Every track here is a doorway, not a playlist. Press <strong>Fall in</strong>
+      and it plays, then keeps going into whatever the machine decides it is
+      like. One song can turn into an afternoon. You are not meant to work
+      through the list, you are meant to fall through one of them.
     </p>
     <p>
-      A new set lands every Monday at 12:01pm Eastern, five to seven records
+      A new drop lands every Monday at 12:01pm Eastern. Five to seven tracks
       almost nobody plays, pulled from what everyone has been finding.
     </p>
-    <p>
-      What genre, album, artist, or song do you think almost nobody has heard,
-      or nobody has played in years? It does not have to be great. It does not
-      even have to be something you like. Weird, mainstream, sideways, all of
-      it counts.
-    </p>
-    <p>
-      It started as a daily habit: about thirty minutes of music never heard
-      before, or not heard in a very long time. That part is still daily.
-    </p>
-    <p class="rule">
-      One rule: do not judge people by what they submit. Doing that misses the
-      point of the experiment.
+    <p class="aside">
+      It does not have to be great. It does not even have to be something you
+      like. Weird, mainstream, sideways, all of it counts. One rule: do not
+      judge people by what they send in. That misses the point.
     </p>
   </section>
 
-  <section id="latest" class="drop-section">
-    <div id="latest-drop" class="loading">Loading the latest drop.</div>
+  <section id="crate">
+    <div id="latest" class="empty">Opening the crate.</div>
   </section>
 
-  <section id="archive" class="archive">
-    <h2 class="section-heading">Archive</h2>
-    <div id="archive-list" class="loading">Loading.</div>
+  <section id="back">
+    <h2 class="heading">Back issues</h2>
+    <div id="archive" class="empty">Looking.</div>
   </section>
 
   <section id="join" class="join">
-    <h2 class="section-heading">Join in</h2>
-    <p>
-      Fill in four fields and you are done. The form hands you a filled-out
-      submission, you press one button, and a bot files it into the repository
-      within a minute. No git, no pull request, nothing to learn.
+    <h2 class="heading">How to dig</h2>
+
+    <ol class="loop">
+      <li>
+        <span class="loop-n">1</span>
+        <div class="loop-body">
+          <h3>Send in a track</h3>
+          <p>
+            One you think almost nobody has heard, or nobody has played in
+            years. Four fields. It goes out in your words, with your name on
+            it, in a drop within a week or two.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="loop-n">2</span>
+        <div class="loop-body">
+          <h3>Pick one and fall in</h3>
+          <p>
+            Press <b>Fall in</b> on any track below, or open it in your own app
+            and start the radio from there. Then leave it alone. The point is
+            where it goes without you steering.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="loop-n">3</span>
+        <div class="loop-body">
+          <h3>Come back with one or two you found</h3>
+          <p>
+            Whatever turned up in there that you had never heard. Those go into
+            a future drop, and somebody else falls into them.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="loop-again">Then round again, once a week.</p>
+
+    <p class="join-actions">
+      <a class="chip chip--fall" href="submit.html">Send one in</a>
+      <a class="chip" href="https://github.com/shanebivens/CrateDig/blob/main/CONTRIBUTING.md">How it works</a>
     </p>
-    <p>
-      One track at a time. Every drop holds two spots for what people send in,
-      newest first, and your writeup goes out in your words with your name on it.
-    </p>
-    <p>
-      You send public links, nothing else. No password, no cookie, no access to
-      your listening account, not now and not later.
-    </p>
-    <p class="join-links">
-      <a class="button" href="submit.html">Submit a track</a>
-      <a class="button button-quiet" href="https://github.com/shanebivens/CrateDig">See how it works</a>
-    </p>
-    <div id="participants"></div>
+
+    <div class="starting">
+      <h3>Never done this before</h3>
+      <p>
+        Start small. Thirty minutes a day is the whole habit, and it does not
+        have to be difficult. Put on a random new release in a genre you never
+        touch. Play the thing you assume you will hate. Let one album run all
+        the way through while you do something else.
+      </p>
+      <p>
+        Or make it somebody else's problem: tell people you are after tracks for
+        a thirty minute a day playlist and send them here to do the same. Half
+        of what is worth hearing arrives because somebody handed it to you.
+      </p>
+    </div>
+
+    <div id="credit"></div>
   </section>
 
 </main>
@@ -98,10 +126,10 @@
       CrateDig links to music. It does not host it or copy it. Every recording
       belongs to whoever made it.
     </p>
-    <p class="fine">
-      Code AGPL-3.0. See
-      <a href="https://github.com/shanebivens/CrateDig/blob/main/COMMERCIAL-LICENSE.md">COMMERCIAL-LICENSE.md</a>
-      and <a href="https://github.com/shanebivens/CrateDig/blob/main/CLA.md">CLA.md</a>.
+    <p>
+      Code AGPL-3.0.
+      <a href="https://github.com/shanebivens/CrateDig/blob/main/COMMERCIAL-LICENSE.md">Commercial terms</a>,
+      <a href="https://github.com/shanebivens/CrateDig/blob/main/CLA.md">CLA</a>.
     </p>
   </div>
 </footer>

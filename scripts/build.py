@@ -36,15 +36,18 @@ HANDLE_RE = re.compile(r"^[a-z0-9][a-z0-9-]{1,38}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 DURATION_RE = re.compile(r"^(?:(\d+):)?([0-5]?\d):([0-5]\d)$")
 YOUTUBE_ID_RE = re.compile(
-    r"(?:youtube\.com/watch\?(?:[^#]*&)?v=|youtu\.be/|youtube\.com/embed/)"
+    r"(?:(?:music\.|www\.)?youtube\.com/watch\?(?:[^#]*&)?v=|youtu\.be/|youtube\.com/embed/)"
     r"([A-Za-z0-9_-]{11})"
 )
 # youtube.com/watch_videos builds a temporary queue from video ids, with no
 # account and no playlist created. Fifty is as many as it accepts.
 QUEUE_URL = "https://www.youtube.com/watch_videos?video_ids="
-# The point of a pick is where it leads. RD<id> is YouTube's mix, which keeps
-# playing things it thinks are like the seed once the seed finishes.
-RADIO_URL = "https://www.youtube.com/watch?v={id}&list=RD{id}"
+# The point of a pick is where it leads. RDAMVM<id> is YouTube Music's song
+# radio: a fifty track queue built out from the seed. These are mostly
+# auto-generated audio uploads, so music.youtube.com is where they belong.
+# youtube.com shows them as a still image, or as nothing at all.
+RADIO_URL = "https://music.youtube.com/watch?v={id}&list=RDAMVM{id}"
+TRACK_URL = "https://music.youtube.com/watch?v={id}"
 # No key needed and never wrong, for anything resolve_spotify could not match.
 SPOTIFY_SEARCH = "https://open.spotify.com/search/"
 QUEUE_LIMIT = 50
@@ -207,7 +210,7 @@ def load_drops(people):
 
             why = (track.get("why") or "").strip()
             if not why:
-                err(spot, "why is required, it is the part people read")
+                warn(spot, "no writeup yet, it is the part people read")
             elif why == PLACEHOLDER_WHY:
                 warn(spot, "still needs a real writeup")
             elif len(why) > 600:
@@ -236,10 +239,15 @@ def load_drops(people):
                 if not check_url(f"{spot} {service}", url):
                     links.pop(service)
             radio = ""
-            for url in links.values():
+            for url in list(links.values()):
                 found = youtube_id(url)
                 if found:
-                    radio = radio or RADIO_URL.format(id=found)
+                    if not radio:
+                        radio = RADIO_URL.format(id=found)
+                        # Point the plain link at YouTube Music too, since that
+                        # is where an audio-only upload actually plays.
+                        links.pop("youtube", None)
+                        links["youtube-music"] = TRACK_URL.format(id=found)
                     if found not in video_ids:
                         video_ids.append(found)
 
@@ -251,6 +259,7 @@ def load_drops(people):
                 "seconds": seconds,
                 "kind": kind,
                 "submitted_by": by,
+                "pooled": bool(people.get(by, {}).get("pool")),
                 "why": why,
                 "links": links,
                 "radio": radio,
@@ -322,7 +331,7 @@ def main():
     for drop in drops:
         for track in drop["tracks"]:
             who = track.get("submitted_by")
-            if who and who != "curator":
+            if who and who != "curator" and not track.get("pooled"):
                 counts[who] = counts.get(who, 0) + 1
     contributors = [
         {"handle": handle, "picks": count}

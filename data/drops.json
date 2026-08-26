@@ -4,7 +4,7 @@
       "date": "2026-08-26",
       "number": 1,
       "title": "Drop 001",
-      "blurb": "Six doors. Funk, a record with a hundred and ninety three plays, and a band from Dallas with mariachi horns and a body count.",
+      "blurb": "Six doors. Funk, a track with a hundred and ninety three plays, and a band from Dallas with mariachi horns and a body count.",
       "tracks": [
         {
           "artist": "Funkadelic",
@@ -14,11 +14,12 @@
           "seconds": 624,
           "kind": "sideways",
           "submitted_by": "shanebivens",
+          "pooled": true,
           "why": "George Clinton reportedly told Eddie Hazel to play like he had just learned his mother died, then wiped most of the band out of the mix. What is left is ten minutes of guitar and almost nothing else. Every guitarist you like has heard this. Almost nobody else has.",
           "links": {
-            "youtube": "https://www.youtube.com/watch?v=JOKn33-q4Ao"
+            "youtube-music": "https://music.youtube.com/watch?v=JOKn33-q4Ao"
           },
-          "radio": "https://www.youtube.com/watch?v=JOKn33-q4Ao&list=RDJOKn33-q4Ao",
+          "radio": "https://music.youtube.com/watch?v=JOKn33-q4Ao&list=RDAMVMJOKn33-q4Ao",
           "spotify_search": "https://open.spotify.com/search/Funkadelic%20Maggot%20Brain"
         },
         {
@@ -29,11 +30,12 @@
           "seconds": 208,
           "kind": "obscure",
           "submitted_by": "shanebivens",
+          "pooled": true,
           "why": "One hundred and ninety three views. Tim Fite spent years giving records away for nothing on his own site while the industry went the other direction. This one turned up on a German film soundtrack, which is a strange place for it to end up and probably why it exists at all.",
           "links": {
-            "youtube": "https://www.youtube.com/watch?v=5_Wa7ZptsFQ"
+            "youtube-music": "https://music.youtube.com/watch?v=5_Wa7ZptsFQ"
           },
-          "radio": "https://www.youtube.com/watch?v=5_Wa7ZptsFQ&list=RD5_Wa7ZptsFQ",
+          "radio": "https://music.youtube.com/watch?v=5_Wa7ZptsFQ&list=RDAMVM5_Wa7ZptsFQ",
           "spotify_search": "https://open.spotify.com/search/Tim%20Fite%20Big%20Mistake%20%28feat.%20Christian%20Ulmen%2C%20Bonaparte%29"
         },
         {
@@ -44,11 +46,12 @@
           "seconds": 210,
           "kind": "obscure",
           "submitted_by": "shanebivens",
+          "pooled": true,
           "why": "A Chicago trio, one album on Secretly Canadian in 2006, gone not long after. People who reviewed it at the time called it a break up record, and the voice on it does sound like a man who has been shouting somewhere else all night.",
           "links": {
-            "youtube": "https://www.youtube.com/watch?v=kZ1-TNCpWlg"
+            "youtube-music": "https://music.youtube.com/watch?v=kZ1-TNCpWlg"
           },
-          "radio": "https://www.youtube.com/watch?v=kZ1-TNCpWlg&list=RDkZ1-TNCpWlg",
+          "radio": "https://music.youtube.com/watch?v=kZ1-TNCpWlg&list=RDAMVMkZ1-TNCpWlg",
           "spotify_search": "https://open.spotify.com/search/Catfish%20Haven%20Tell%20Me"
         },
         {
@@ -59,11 +62,12 @@
           "seconds": 322,
           "kind": "obscure",
           "submitted_by": "shanebivens",
+          "pooled": true,
           "why": "Industrial pop with the pop left in, which is rarer than it sounds. Seventeen thousand views, and the kind of thing streaming services will happily play after it if you let them.",
           "links": {
-            "youtube": "https://www.youtube.com/watch?v=pi-VvNMDbvA"
+            "youtube-music": "https://music.youtube.com/watch?v=pi-VvNMDbvA"
           },
-          "radio": "https://www.youtube.com/watch?v=pi-VvNMDbvA&list=RDpi-VvNMDbvA",
+          "radio": "https://music.youtube.com/watch?v=pi-VvNMDbvA&list=RDAMVMpi-VvNMDbvA",
           "spotify_search": "https://open.spotify.com/search/Kanga%20Something%20Dangerous"
         },
         {
@@ -74,11 +78,12 @@
           "seconds": 225,
           "kind": "sideways",
           "submitted_by": "shanebivens",
+          "pooled": true,
           "why": "Delta slide blues out of Louisiana, and you have probably already heard it without knowing: Tarantino put it in Django Unchained. Almost nobody went looking for the rest of the record afterwards.",
           "links": {
-            "youtube": "https://www.youtube.com/watch?v=GCEo5vbabt8"
+            "youtube-music": "https://music.youtube.com/watch?v=GCEo5vbabt8"
           },
-          "radio": "https://www.youtube.com/watch?v=GCEo5vbabt8&list=RDGCEo5vbabt8",
+          "radio": "https://music.youtube.com/watch?v=GCEo5vbabt8&list=RDAMVMGCEo5vbabt8",
           "spotify_search": "https://open.spotify.com/search/Brother%20Dege%20Too%20Old%20to%20Die%20Young"
         },
         {
@@ -89,11 +94,12 @@
           "seconds": 372,
           "kind": "sideways",
           "submitted_by": "shanebivens",
+          "pooled": true,
           "why": "Dallas, formed in 1999 by a man who calls himself Count Lyle and came out of a doom metal band. Horror punk crossed with spaghetti western, complete with mariachi horns. In 2002 a horror film used four of their songs and rewrote the script to give them a cameo.",
           "links": {
-            "youtube": "https://www.youtube.com/watch?v=Zwjs45s8BSQ"
+            "youtube-music": "https://music.youtube.com/watch?v=Zwjs45s8BSQ"
           },
-          "radio": "https://www.youtube.com/watch?v=Zwjs45s8BSQ&list=RDZwjs45s8BSQ",
+          "radio": "https://music.youtube.com/watch?v=Zwjs45s8BSQ&list=RDAMVMZwjs45s8BSQ",
           "spotify_search": "https://open.spotify.com/search/Ghoultown%20Drink%20with%20the%20Living%20Dead"
         }
       ],
@@ -104,11 +110,6 @@
       "playlists": {}
     }
   ],
-  "contributors": [
-    {
-      "handle": "shanebivens",
-      "picks": 6
-    }
-  ],
+  "contributors": [],
   "target_seconds": 1800
 }
