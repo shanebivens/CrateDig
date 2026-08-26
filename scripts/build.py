@@ -39,9 +39,6 @@ YOUTUBE_ID_RE = re.compile(
     r"(?:(?:music\.|www\.)?youtube\.com/watch\?(?:[^#]*&)?v=|youtu\.be/|youtube\.com/embed/)"
     r"([A-Za-z0-9_-]{11})"
 )
-# youtube.com/watch_videos builds a temporary queue from video ids, with no
-# account and no playlist created. Fifty is as many as it accepts.
-QUEUE_URL = "https://www.youtube.com/watch_videos?video_ids="
 # The point of a pick is where it leads. RDAMVM<id> is YouTube Music's song
 # radio: a fifty track queue built out from the seed. These are mostly
 # auto-generated audio uploads, so music.youtube.com is where they belong.
@@ -50,7 +47,6 @@ RADIO_URL = "https://music.youtube.com/watch?v={id}&list=RDAMVM{id}"
 TRACK_URL = "https://music.youtube.com/watch?v={id}"
 # No key needed and never wrong, for anything resolve_spotify could not match.
 SPOTIFY_SEARCH = "https://open.spotify.com/search/"
-QUEUE_LIMIT = 50
 
 errors = []
 warnings = []
@@ -183,7 +179,6 @@ def load_drops(people):
         clean_tracks = []
         total = 0
         unknown_durations = 0
-        video_ids = []
 
         for index, track in enumerate(tracks, start=1):
             spot = f"{where} track {index}"
@@ -241,15 +236,13 @@ def load_drops(people):
             radio = ""
             for url in list(links.values()):
                 found = youtube_id(url)
-                if found:
-                    if not radio:
-                        radio = RADIO_URL.format(id=found)
-                        # Point the plain link at YouTube Music too, since that
-                        # is where an audio-only upload actually plays.
-                        links.pop("youtube", None)
-                        links["youtube-music"] = TRACK_URL.format(id=found)
-                    if found not in video_ids:
-                        video_ids.append(found)
+                if found and not radio:
+                    radio = RADIO_URL.format(id=found)
+                    # Point the plain link at YouTube Music too, since that is
+                    # where an audio-only upload actually plays. youtube.com
+                    # shows these as a still image or as nothing at all.
+                    links.pop("youtube", None)
+                    links["youtube-music"] = TRACK_URL.format(id=found)
 
             clean_tracks.append({
                 "artist": artist,
@@ -274,17 +267,9 @@ def load_drops(people):
             if count > 3:
                 warn(where, f"{who} has {count} picks, three per drop keeps it varied")
 
-        # One link that plays the whole drop, built from whatever YouTube links
-        # the tracks carry. Anything else has to be a real playlist someone made
-        # by hand, so it comes from the drop file.
-        queue_url = ""
-        if len(video_ids) >= 2:
-            queue_url = QUEUE_URL + ",".join(video_ids[:QUEUE_LIMIT])
-            if len(video_ids) > QUEUE_LIMIT:
-                warn(where, f"queue link covers the first {QUEUE_LIMIT} tracks only")
-        elif len(clean_tracks) >= 2:
-            warn(where, "no queue link yet, tracks need YouTube links for that")
-
+        # A drop is not a playlist to sit through, so there is no play-it-all
+        # link. Each track opens its own radio. Anything else has to be a real
+        # playlist someone made by hand, so it comes from the drop file.
         made_playlists = {}
         for service, url in (data.get("playlists") or {}).items():
             if check_url(f"{where} playlist {service}", url):
@@ -299,7 +284,6 @@ def load_drops(people):
             "seconds": total,
             "unknown_durations": unknown_durations,
             "target_seconds": target,
-            "queue_url": queue_url,
             "playlists": made_playlists,
         })
 

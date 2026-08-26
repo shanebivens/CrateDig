@@ -6,41 +6,6 @@ publish_at: '2026-08-31T12:01:00-04:00'
 target_minutes: null
 blurb: Five doorways. One of them has been played thirty one times in its entire life.
 tracks:
-- artist: Juan Arias
-  title: Cobra Funk
-  year: null
-  duration: '4:38'
-  kind: obscure
-  submitted_by: shanebivens
-  why: 'Thirty one views. Searching turns up nothing: no label, no band page, no interview,
-    not even a wrong answer. Whatever this is, you are one of a few dozen people alive who
-    have heard it. Start here and see where the machine takes you, because it has almost nothing
-    to go on.'
-  links:
-    youtube: https://www.youtube.com/watch?v=SqD8gGubMiY
-- artist: Superhumanoids
-  title: March of the Pigs
-  year: null
-  duration: '2:53'
-  kind: obscure
-  submitted_by: shanebivens
-  why: A Los Angeles synth pop band covering the most abrasive single Nine Inch Nails ever
-    released, and filing it away as a B side. The original is all teeth. This one keeps the
-    panic and takes the distortion off, which somehow makes it worse.
-  links:
-    youtube: https://www.youtube.com/watch?v=5TPpIQSxVVg
-- artist: Bars of Death
-  title: Boombap Kanuragan
-  year: 2020
-  duration: '2:09'
-  kind: obscure
-  submitted_by: shanebivens
-  why: 'Bandung, Indonesia. Three former members of Homicide got back together in 2014 meaning
-    to cut an EP, then took six years to finish it. Morbid Funk came out on Grimloc Records
-    in 2020: hardcore bars over sample heavy boom bap, and turntablism with no interest in
-    being tasteful.'
-  links:
-    youtube: https://www.youtube.com/watch?v=X13vbOnFR8Q
 - artist: GoGo Penguin
   title: Protest (Live at Abbey Road)
   year: 2020
@@ -51,7 +16,7 @@ tracks:
     recorded in the room where the Beatles made most of their records. Not rare, just quietly
     skipped by anyone who has decided they do not like jazz.
   links:
-    youtube: https://www.youtube.com/watch?v=CKFQ8ZMBOwI
+    youtube-music: https://music.youtube.com/watch?v=CKFQ8ZMBOwI
 - artist: Schaffer The Darklord
   title: F*ck This Song
   year: null
@@ -62,7 +27,7 @@ tracks:
     than any city's scene. It is a joke record that is genuinely well built, which is the
     harder of the two things to pull off.
   links:
-    youtube: https://www.youtube.com/watch?v=NKNLqoZJ-ZM
+    youtube-music: https://music.youtube.com/watch?v=NKNLqoZJ-ZM
 - artist: Connie Converse
   title: Talkin' Like You (Two Tall Mountains)
   year: 1954
@@ -74,3 +39,36 @@ tracks:
     and drove off. Nobody has seen her since.
 
     '
+- artist: Little Stranger
+  title: Fly Guy
+  year: null
+  duration: '3:15'
+  kind: obscure
+  submitted_by: shanebivens
+  why: Nine thousand plays for a duo who have been quietly putting out records for years without
+    anybody deciding they are a thing yet. Funk, rap and a sense of humour, which is a combination
+    most people get wrong.
+  links:
+    youtube-music: https://music.youtube.com/watch?v=sLZMHfyDXng
+- artist: Man Man
+  title: Whalebones
+  year: null
+  duration: '7:15'
+  kind: obscure
+  submitted_by: shanebivens
+  why: 'Philadelphia, and a band who treat a song like a junk drawer: horns, clattering percussion,
+    a voice that sounds like it is being dragged somewhere. It should collapse and it never
+    quite does.'
+  links:
+    youtube-music: https://music.youtube.com/watch?v=fT9RydqGPD0
+- artist: Tesla
+  title: Signs (Live At The Trocadero / 1990)
+  year: 1990
+  duration: '3:10'
+  kind: sideways
+  submitted_by: shanebivens
+  why: 'A hair metal band playing an acoustic set in 1990, covering a protest song a Canadian
+    group put out in 1971. The crowd knows every word, which is the strange part: almost nobody
+    can name who wrote it.'
+  links:
+    youtube-music: https://music.youtube.com/watch?v=epbOHloSpZM

@@ -15,7 +15,7 @@ tracks:
   why: Rap about rap, which is either the most tedious subgenre going or the funniest, depending
     entirely on execution. Worth hearing once before you decide which.
   links:
-    youtube: https://www.youtube.com/watch?v=kOdzV3B8GWQ
+    youtube-music: https://music.youtube.com/watch?v=kOdzV3B8GWQ
 - artist: Modest Mouse
   title: Float On
   year: null
@@ -25,19 +25,7 @@ tracks:
   why: Eighty million views and somehow still underplayed. If you only know this one from
     an advert, the album around it is a far odder record than this track lets on.
   links:
-    youtube: https://www.youtube.com/watch?v=88XhEqgmRhM
-- artist: David Dondero
-  title: Brownsville Revival
-  year: null
-  duration: '3:04'
-  kind: obscure
-  submitted_by: shanebivens
-  why: Eight hundred and sixty five views. A folk singer who has spent decades touring the
-    country out of a van, admired by people who went on to sell many more records than he
-    ever has. The gap between how good this is and how few have played it is the whole reason
-    this list exists.
-  links:
-    youtube: https://www.youtube.com/watch?v=VnQMbeXrjbQ
+    youtube-music: https://music.youtube.com/watch?v=88XhEqgmRhM
 - artist: Between The Buried And Me
   title: Bicycle Race
   year: null
@@ -48,7 +36,7 @@ tracks:
     bells are still in there. It sits on a covers record most of their own listeners have
     never bothered with.
   links:
-    youtube: https://www.youtube.com/watch?v=BI8njtbPwdk
+    youtube-music: https://music.youtube.com/watch?v=BI8njtbPwdk
 - artist: PJ Morton
   title: Smoke and Mirrors
   year: null
@@ -59,7 +47,7 @@ tracks:
     world and has won Grammys under his own name. The solo work lives in a completely different
     room from the day job.
   links:
-    youtube: https://www.youtube.com/watch?v=XY8OzsxY7HU
+    youtube-music: https://music.youtube.com/watch?v=XY8OzsxY7HU
 - artist: Lewis
   title: I Thought The World Of You
   year: 1983
@@ -70,3 +58,14 @@ tracks:
     who made it or whether he was still alive. Play it louder than feels right.
 
     '
+- artist: Portico Quartet
+  title: Ruins
+  year: null
+  duration: '5:35'
+  kind: sideways
+  submitted_by: shanebivens
+  why: London, and a band built around a hang, the steel instrument that looks like a flying
+    saucer and sounds like a tuned raindrop. Filed under jazz, which puts off exactly the
+    people who would like it most.
+  links:
+    youtube-music: https://music.youtube.com/watch?v=rzinvvhMrbA

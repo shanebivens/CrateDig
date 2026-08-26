@@ -137,9 +137,9 @@
     }
     head.appendChild(runtime);
 
+    /* No play-it-all link on purpose. Each track opens its own radio, and
+       queueing the drop stops any of them from starting. */
     var play = el("div", "crate-play");
-    var queue = safeHref(drop.queue_url);
-    if (queue) play.appendChild(link("chip", "Play the drop back to back", queue));
     Object.keys(drop.playlists || {}).forEach(function (service) {
       var href = safeHref(drop.playlists[service]);
       if (href) play.appendChild(link("chip", SERVICE_LABELS[service] || service, href));

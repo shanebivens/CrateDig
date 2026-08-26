@@ -56,6 +56,9 @@ jobs:
           if [ -z "$WEEKS" ]; then WEEKS=8; fi
           python scripts/seed_weeks.py --weeks "$WEEKS" --reserve 2
 
+      - name: Check every track still plays
+        run: python scripts/check_links.py
+
       - name: Rebuild site data
         run: python scripts/build.py
 

@@ -7,15 +7,6 @@ reserved: 2
 target_minutes: null
 blurb: ''
 tracks:
-- artist: Caamp
-  title: By and By
-  year: null
-  duration: '4:42'
-  kind: unsorted
-  submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
-  links:
-    youtube: https://www.youtube.com/watch?v=d-aFQPEuIVY
 - artist: Yung Craka
   title: Buy U
   year: null
@@ -24,7 +15,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=tyKewixD-B4
+    youtube-music: https://music.youtube.com/watch?v=tyKewixD-B4
 - artist: Rainbow Kitten Surprise
   title: Hide
   year: null
@@ -33,7 +24,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=e8edMH8DgTA
+    youtube-music: https://music.youtube.com/watch?v=e8edMH8DgTA
 - artist: The Decemberists
   title: Once In My Life
   year: null
@@ -42,7 +33,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=xEZV9tsV3dM
+    youtube-music: https://music.youtube.com/watch?v=xEZV9tsV3dM
 - artist: Dorothy Ashby
   title: Soul Vibrations
   year: 1968

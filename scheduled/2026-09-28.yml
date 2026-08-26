@@ -15,7 +15,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=AQFWAXNQzAA
+    youtube-music: https://music.youtube.com/watch?v=AQFWAXNQzAA
 - artist: Human Nature
   title: Runaround Sue
   year: null
@@ -24,16 +24,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=EupgJxxW0ZU
-- artist: Professor Elemental
-  title: I'm British
-  year: null
-  duration: '2:59'
-  kind: unsorted
-  submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
-  links:
-    youtube: https://www.youtube.com/watch?v=6kn9mCeCZzQ
+    youtube-music: https://music.youtube.com/watch?v=EupgJxxW0ZU
 - artist: Middle Ages
   title: Never Gonna Give You Up
   year: null
@@ -42,7 +33,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=lcOGtsfs1SA
+    youtube-music: https://music.youtube.com/watch?v=lcOGtsfs1SA
 - artist: Mort Garson
   title: Plantasia
   year: 1976

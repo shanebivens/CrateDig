@@ -28,6 +28,13 @@ ROOT = Path(__file__).resolve().parent.parent
 SUBMISSIONS = ROOT / "submissions"
 POOL = ROOT / "data" / "pool.json"
 API = "https://www.googleapis.com/youtube/v3/"
+WATCH = "https://www.youtube.com/watch?v="
+PLAYABILITY = re.compile(r'"playabilityStatus":\{"status":"([A-Z_]+)"')
+BROWSER_HEADERS = {
+    "Accept-Language": "en-US,en;q=0.9",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36",
+}
 
 # Auto-generated YouTube Music uploads name the channel "Artist - Topic".
 TOPIC_RE = re.compile(r"\s*-\s*Topic$")
@@ -115,6 +122,24 @@ def fetch_playlist(list_id, key):
     return items
 
 
+def is_playable(video_id):
+    """Whether a signed out visitor can actually watch it.
+
+    The API happily returns a title, a duration and a view count for videos
+    nobody can play, so this reads the watch page's own playabilityStatus, the
+    same thing a player checks before it starts. Roughly a quarter of an
+    average YouTube Music playlist fails this.
+    """
+    request = urllib.request.Request(WATCH + video_id, headers=BROWSER_HEADERS)
+    try:
+        with urllib.request.urlopen(request, timeout=25) as response:
+            body = response.read().decode("utf-8", "replace")
+    except Exception:                                          # noqa: BLE001
+        return True          # a network blip is not evidence the video is dead
+    found = PLAYABILITY.search(body)
+    return found.group(1) == "OK" if found else True
+
+
 def fetch_details(video_ids, key):
     details = {}
     for start in range(0, len(video_ids), 50):
@@ -181,12 +206,17 @@ def main():
                 "video_id": video_id,
                 "artist": artist,
                 "title": title,
+                "playable": is_playable(video_id),
                 "seconds": extra.get("seconds"),
                 "views": extra.get("views"),
                 "submitted_by": handle,
                 "position": item["position"],
                 "url": f"https://music.youtube.com/watch?v={video_id}",
             }
+
+    dead = len([t for t in tracks.values() if not t["playable"]])
+    if dead:
+        print(f"\n{dead} of {len(tracks)} will not play for a signed out visitor.")
 
     ordered = sorted(tracks.values(), key=lambda track: (track["submitted_by"], track["position"]))
     POOL.parent.mkdir(parents=True, exist_ok=True)

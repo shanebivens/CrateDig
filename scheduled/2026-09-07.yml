@@ -17,7 +17,7 @@ tracks:
     hit twenty years later. Follow that thread instead of this one if you want the stranger
     trip.
   links:
-    youtube: https://www.youtube.com/watch?v=Hq_J-XVOucg
+    youtube-music: https://music.youtube.com/watch?v=Hq_J-XVOucg
 - artist: Murder by Death
   title: Brother
   year: null
@@ -27,19 +27,7 @@ tracks:
   why: An Indiana band named after a 1976 murder mystery film, playing something closer to
     gothic country than the name suggests. The cello is doing most of the work here.
   links:
-    youtube: https://www.youtube.com/watch?v=r0uPjg63XmQ
-- artist: Zebra Katz
-  title: MOOR
-  year: null
-  duration: '2:24'
-  kind: obscure
-  submitted_by: shanebivens
-  why: Zebra Katz got noticed when a fashion designer played an earlier track on repeat through
-    a Paris runway show and the room started asking what it was. This comes from the album
-    that arrived years after that moment, colder and stranger than the thing that made his
-    name.
-  links:
-    youtube: https://www.youtube.com/watch?v=DH4B5VOH_J8
+    youtube-music: https://music.youtube.com/watch?v=r0uPjg63XmQ
 - artist: Eilen Jewell
   title: One of Those Days
   year: null
@@ -49,7 +37,7 @@ tracks:
   why: Retro country blues played straight, with no wink about it. If your idea of this music
     is stadium country, this is the other branch, the one that never got the radio money.
   links:
-    youtube: https://www.youtube.com/watch?v=oX1Usoy7lfQ
+    youtube-music: https://music.youtube.com/watch?v=oX1Usoy7lfQ
 - artist: Dubioza kolektiv
   title: U.S.A.
   year: null
@@ -60,7 +48,7 @@ tracks:
     visa when you carry the wrong passport. Twenty eight million views and almost nobody in
     America has heard of them.
   links:
-    youtube: https://www.youtube.com/watch?v=0a5BJxrarL0
+    youtube-music: https://music.youtube.com/watch?v=0a5BJxrarL0
 - artist: Sibylle Baier
   title: Tonight
   year: 1971
@@ -71,3 +59,14 @@ tracks:
     the tapes decades later and pressed them. Listen to how close the microphone is.
 
     '
+- artist: Princess Nokia
+  title: Harley Quinn
+  year: null
+  duration: '2:24'
+  kind: sideways
+  submitted_by: shanebivens
+  why: New York, and a rapper who built an audience entirely outside the usual machinery before
+    anyone in it noticed. Play this one first, then go backwards through the earlier mixtapes,
+    which is where it gets strange.
+  links:
+    youtube-music: https://music.youtube.com/watch?v=XbmSsAXUYkw

@@ -15,16 +15,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=TNw98SoNAeo
-- artist: Panic! At The Disco
-  title: (Fuck A) Silver Lining
-  year: null
-  duration: '2:49'
-  kind: unsorted
-  submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
-  links:
-    youtube: https://www.youtube.com/watch?v=uDlEYegta-8
+    youtube-music: https://music.youtube.com/watch?v=TNw98SoNAeo
 - artist: HOLY MOLY
   title: Hillbillies Can't Drive on Meth
   year: null
@@ -33,16 +24,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=dDyyy-hpFYQ
-- artist: Mötley Crüe
-  title: Dr. Feelgood
-  year: null
-  duration: '4:51'
-  kind: unsorted
-  submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
-  links:
-    youtube: https://www.youtube.com/watch?v=k2szSrVx5lo
+    youtube-music: https://music.youtube.com/watch?v=dDyyy-hpFYQ
 - artist: Obzesion
   title: Mi Trokita Cumbia
   year: null
@@ -51,7 +33,7 @@ tracks:
   submitted_by: shanebivens
   why: Pulled from the daily thirty minutes. No writeup yet.
   links:
-    youtube: https://www.youtube.com/watch?v=BGNVOr-LIGE
+    youtube-music: https://music.youtube.com/watch?v=BGNVOr-LIGE
 - artist: The Shaggs
   title: My Pal Foot Foot
   year: 1969

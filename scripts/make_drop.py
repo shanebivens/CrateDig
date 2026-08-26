@@ -120,6 +120,10 @@ def main():
     used_ids, used_keys = already_used()
 
     def usable(track):
+        # The API returns a title, a duration and a view count for videos nobody
+        # can watch. playable comes from the page's own playabilityStatus.
+        if track.get("playable") is False:
+            return False
         if track.get("video_id") in used_ids:
             return False
         if track_key(track.get("artist", ""), track.get("title", "")) in used_keys:
@@ -132,9 +136,12 @@ def main():
 
     oversize = len([t for t in pool if isinstance(t.get("seconds"), int)
                     and t["seconds"] > args.max_seconds])
+    dead = len([t for t in pool if t.get("playable") is False])
     fresh = [track for track in pool if usable(track)]
     if oversize:
         print(f"{oversize} too long to be a track, skipped.")
+    if dead:
+        print(f"{dead} will not play for a signed out visitor, skipped.")
 
     print(f"{len(pool)} in the pool, {len(pool) - len(fresh)} already used, {len(fresh)} left.")
     if not fresh:

@@ -23,22 +23,6 @@
           "spotify_search": "https://open.spotify.com/search/Funkadelic%20Maggot%20Brain"
         },
         {
-          "artist": "Tim Fite",
-          "title": "Big Mistake (feat. Christian Ulmen, Bonaparte)",
-          "year": null,
-          "duration": "3:28",
-          "seconds": 208,
-          "kind": "obscure",
-          "submitted_by": "shanebivens",
-          "pooled": true,
-          "why": "One hundred and ninety three views. Tim Fite spent years giving records away for nothing on his own site while the industry went the other direction. This one turned up on a German film soundtrack, which is a strange place for it to end up and probably why it exists at all.",
-          "links": {
-            "youtube-music": "https://music.youtube.com/watch?v=5_Wa7ZptsFQ"
-          },
-          "radio": "https://music.youtube.com/watch?v=5_Wa7ZptsFQ&list=RDAMVM5_Wa7ZptsFQ",
-          "spotify_search": "https://open.spotify.com/search/Tim%20Fite%20Big%20Mistake%20%28feat.%20Christian%20Ulmen%2C%20Bonaparte%29"
-        },
-        {
           "artist": "Catfish Haven",
           "title": "Tell Me",
           "year": 2006,
@@ -101,12 +85,27 @@
           },
           "radio": "https://music.youtube.com/watch?v=Zwjs45s8BSQ&list=RDAMVMZwjs45s8BSQ",
           "spotify_search": "https://open.spotify.com/search/Ghoultown%20Drink%20with%20the%20Living%20Dead"
+        },
+        {
+          "artist": "Daf",
+          "title": "Co Co Pino",
+          "year": 1980,
+          "duration": "3:26",
+          "seconds": 206,
+          "kind": "obscure",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "German electronic punk from the turn of the eighties, made by people who had decided guitars were finished. Seven thousand plays. Half the machine music you have heard since owes it something, and almost nobody goes back to the source.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=JuFttYWy3yk"
+          },
+          "radio": "https://music.youtube.com/watch?v=JuFttYWy3yk&list=RDAMVMJuFttYWy3yk",
+          "spotify_search": "https://open.spotify.com/search/Daf%20Co%20Co%20Pino"
         }
       ],
-      "seconds": 1961,
+      "seconds": 1959,
       "unknown_durations": 0,
       "target_seconds": 1800,
-      "queue_url": "https://www.youtube.com/watch_videos?video_ids=JOKn33-q4Ao,5_Wa7ZptsFQ,kZ1-TNCpWlg,pi-VvNMDbvA,GCEo5vbabt8,Zwjs45s8BSQ",
       "playlists": {}
     }
   ],

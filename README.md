@@ -138,14 +138,27 @@ back to a prefilled Spotify search, which needs no key and is never wrong.
 That is why a drop is five to seven tracks rather than a fixed runtime. You are
 being handed starting points, and you are not expected to use all of them.
 
-## Playing a whole drop
+## Every link has to actually play
 
-If the tracks in a drop carry YouTube links, the build script collects the video
-IDs into a single `watch_videos` link that plays the drop straight through. It
-creates no playlist and needs no account or API key.
+About a quarter of an average YouTube Music playlist will not play for a signed
+out visitor. The API is no help here: it returns a title, a duration and a view
+count for videos nobody can watch, and so does oembed. The only honest test is
+the watch page's own `playabilityStatus`, which is what a player reads before it
+starts.
 
-Nothing equivalent exists for Spotify or Apple Music, where a real playlist has
-to be made by someone signed in. Make one by hand and add it to the drop file
+So `scripts/pull_playlist.py` marks every track `playable`, `make_drop.py` skips
+the dead ones, and `scripts/check_links.py` runs in the weekly workflow and fails
+the build rather than shipping a link that goes nowhere. Run it any time:
+
+    python3 scripts/check_links.py
+
+There is no play-it-all link. Each track opens its own radio, and queueing the
+whole drop stops any of them from starting.
+
+## A drop on Spotify or Apple
+
+Nothing equivalent to the YouTube Music radio exists there, and a real playlist
+has to be made by someone signed in. Make one by hand, add it to the drop file,
 and a button appears:
 
     playlists:

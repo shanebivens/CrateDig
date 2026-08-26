@@ -16,19 +16,7 @@ tracks:
     died, then wiped most of the band out of the mix. What is left is ten minutes of guitar
     and almost nothing else. Every guitarist you like has heard this. Almost nobody else has.
   links:
-    youtube: https://www.youtube.com/watch?v=JOKn33-q4Ao
-- artist: Tim Fite
-  title: Big Mistake (feat. Christian Ulmen, Bonaparte)
-  year: null
-  duration: '3:28'
-  kind: obscure
-  submitted_by: shanebivens
-  why: One hundred and ninety three views. Tim Fite spent years giving records away for nothing
-    on his own site while the industry went the other direction. This one turned up on a German
-    film soundtrack, which is a strange place for it to end up and probably why it exists
-    at all.
-  links:
-    youtube: https://www.youtube.com/watch?v=5_Wa7ZptsFQ
+    youtube-music: https://music.youtube.com/watch?v=JOKn33-q4Ao
 - artist: Catfish Haven
   title: Tell Me
   year: 2006
@@ -39,7 +27,7 @@ tracks:
     who reviewed it at the time called it a break up record, and the voice on it does sound
     like a man who has been shouting somewhere else all night.
   links:
-    youtube: https://www.youtube.com/watch?v=kZ1-TNCpWlg
+    youtube-music: https://music.youtube.com/watch?v=kZ1-TNCpWlg
 - artist: Kanga
   title: Something Dangerous
   year: null
@@ -50,7 +38,7 @@ tracks:
     views, and the kind of thing streaming services will happily play after it if you let
     them.
   links:
-    youtube: https://www.youtube.com/watch?v=pi-VvNMDbvA
+    youtube-music: https://music.youtube.com/watch?v=pi-VvNMDbvA
 - artist: Brother Dege
   title: Too Old to Die Young
   year: null
@@ -61,7 +49,7 @@ tracks:
     knowing: Tarantino put it in Django Unchained. Almost nobody went looking for the rest
     of the record afterwards.'
   links:
-    youtube: https://www.youtube.com/watch?v=GCEo5vbabt8
+    youtube-music: https://music.youtube.com/watch?v=GCEo5vbabt8
 - artist: Ghoultown
   title: Drink with the Living Dead
   year: 1999
@@ -72,4 +60,15 @@ tracks:
     metal band. Horror punk crossed with spaghetti western, complete with mariachi horns.
     In 2002 a horror film used four of their songs and rewrote the script to give them a cameo.
   links:
-    youtube: https://www.youtube.com/watch?v=Zwjs45s8BSQ
+    youtube-music: https://music.youtube.com/watch?v=Zwjs45s8BSQ
+- artist: Daf
+  title: Co Co Pino
+  year: 1980
+  duration: '3:26'
+  kind: obscure
+  submitted_by: shanebivens
+  why: German electronic punk from the turn of the eighties, made by people who had decided
+    guitars were finished. Seven thousand plays. Half the machine music you have heard since
+    owes it something, and almost nobody goes back to the source.
+  links:
+    youtube-music: https://music.youtube.com/watch?v=JuFttYWy3yk

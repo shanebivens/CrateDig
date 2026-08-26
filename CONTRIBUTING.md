@@ -40,7 +40,7 @@ an issue with the submission template and someone will place it.
         One or two sentences. What is the story, why did it disappear,
         what should someone listen for.
       links:
-        youtube: https://www.youtube.com/watch?v=XXXXXXXXXXX
+        youtube-music: https://music.youtube.com/watch?v=XXXXXXXXXXX
 
 Fields:
 
