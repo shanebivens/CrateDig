@@ -1,0 +1,10 @@
+.DS_Store
+
+# Local Claude Code preview config
+.claude/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/

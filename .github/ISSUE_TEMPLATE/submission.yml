@@ -1,0 +1,61 @@
+name: Submit a track
+description: A record almost nobody has heard, or nobody has played in years.
+title: "[pick] ARTIST - TITLE"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No account access, no credentials, ever. Public links only.
+        By submitting you agree to [CLA.md](https://github.com/shanebivens/CrateDig/blob/main/CLA.md).
+
+  - type: input
+    id: artist
+    attributes:
+      label: Artist
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Track title
+    validations:
+      required: true
+
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      description: Recording or release year, whichever tells the better story.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Which kind of find is this?
+      options:
+        - obscure (it never surfaced in the first place)
+        - forgotten (it was popular once and nobody plays it now)
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this one
+      description: What is the story, why did it disappear, what should someone listen for. Two sentences beats two paragraphs.
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: A public link
+      description: Bandcamp if the artist sells it directly, otherwise whatever works.
+
+  - type: checkboxes
+    id: stake
+    attributes:
+      label: Disclosure
+      options:
+        - label: I have a stake in this track (my band, my label, a friend's record). Saying so is allowed and encouraged.

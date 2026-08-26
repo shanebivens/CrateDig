@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrateDig | 30 Minutes of Rare Tracks</title>
+<meta name="description" content="Thirty minutes a day of music you have never heard, or have not heard in a very long time. A running list of forgotten and obscure records.">
+<meta property="og:title" content="CrateDig">
+<meta property="og:description" content="30 minutes of rare tracks, every day.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="./">
+      <span class="wordmark-crate">Crate</span><span class="wordmark-dig">Dig</span>
+    </a>
+    <p class="tagline">30 minutes of rare tracks</p>
+    <nav class="nav">
+      <a href="#latest">Latest</a>
+      <a href="#archive">Archive</a>
+      <a href="#join">Join in</a>
+      <a href="https://github.com/shanebivens/CrateDig">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="manifesto">
+    <p>
+      Every day, about thirty minutes of music I have never heard, or have not
+      heard in a very long time. That is the whole ritual.
+    </p>
+    <p>
+      What genre, album, artist, or song do you think almost nobody has heard,
+      or nobody has played in years? It does not have to be great. It does not
+      even have to be something you like. Weird, mainstream, sideways, all of
+      it counts.
+    </p>
+    <p class="rule">
+      One rule: do not judge people by what they submit. Doing that misses the
+      point of the experiment.
+    </p>
+  </section>
+
+  <section id="latest" class="drop-section">
+    <div id="latest-drop" class="loading">Loading the latest drop.</div>
+  </section>
+
+  <section id="archive" class="archive">
+    <h2 class="section-heading">Archive</h2>
+    <div id="archive-list" class="loading">Loading.</div>
+  </section>
+
+  <section id="join" class="join">
+    <h2 class="section-heading">Join in</h2>
+    <p>
+      Two ways in. Open a pull request adding a file to
+      <code>submissions/</code>, or open an issue with the submission template
+      and it gets picked up the same way.
+    </p>
+    <p>
+      You submit public playlist links, nothing else. No password, no cookie, no
+      access to your account, not now and not later.
+    </p>
+    <p class="join-links">
+      <a class="button" href="https://github.com/shanebivens/CrateDig/blob/main/CONTRIBUTING.md">How to submit</a>
+      <a class="button button-quiet" href="https://github.com/shanebivens/CrateDig/issues/new?template=submission.yml">Submit a track</a>
+    </p>
+    <div id="participants"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>
+      CrateDig links to music. It does not host it or copy it. Every recording
+      belongs to whoever made it.
+    </p>
+    <p class="fine">
+      Code AGPL-3.0. See
+      <a href="https://github.com/shanebivens/CrateDig/blob/main/COMMERCIAL-LICENSE.md">COMMERCIAL-LICENSE.md</a>
+      and <a href="https://github.com/shanebivens/CrateDig/blob/main/CLA.md">CLA.md</a>.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

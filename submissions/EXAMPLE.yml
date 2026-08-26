@@ -1,0 +1,21 @@
+# Copy this file to submissions/<your-handle>.yml and edit it.
+# The filename must match the handle below.
+#
+# Everything here is public. No emails, no real names, nothing you would not
+# post on a forum. Playlists must be public or nobody else can open them.
+
+handle: example-handle
+
+# The day you joined in. YYYY-MM-DD.
+joined: 2026-08-26
+
+# One line about what you tend to dig for. Optional, but it helps people
+# recognize your picks when they show up in a drop.
+bio: Mostly 60s and 70s private press, plus whatever the algorithm refuses to show me.
+
+# Public playlist links. Add as many as you want.
+# service: youtube-music | spotify | apple-music | bandcamp | soundcloud | other
+playlists:
+  - url: https://music.youtube.com/playlist?list=PLxxxxxxxxxxxxxxxxxxxxxxxx
+    service: youtube-music
+    note: Running list of everything from my daily thirty minutes.
