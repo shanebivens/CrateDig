@@ -397,3 +397,41 @@ button.chip { cursor: pointer; font-family: var(--type); }
   .loop-n { font-size: 1.9rem; }
   .loop-again { padding-left: 3.15rem; }
 }
+
+/* the practice, said out loud */
+
+.mantra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 2.75rem 0 2.5rem;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.mantra span {
+  flex: 1 1 auto;
+  padding: 0.85rem 1rem 0.9rem 0;
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mantra span + span { padding-left: 1rem; border-left: 1px solid var(--rule); }
+.mantra span:last-child { color: var(--obscure); }
+
+.pitch-lead { font-size: 1.05rem; }
+.pitch-lead b, .pitch b { font-weight: 400; background: var(--forgotten);
+                          color: #15150f; padding: 0 0.2em; }
+
+.starters { margin: 0 0 1rem; padding-left: 1.1rem; color: var(--ink-soft); }
+.starters li { margin-bottom: 0.35rem; }
+.starters b { font-weight: 400; background: var(--forgotten); color: #15150f; padding: 0 0.2em; }
+.starting .aside { color: var(--ink-faint); margin: 0; font-size: 0.88rem; }
+
+@media (max-width: 30rem) {
+  .mantra span { flex: 1 1 100%; padding: 0.5rem 0; }
+  .mantra span + span { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+}

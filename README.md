@@ -1,11 +1,14 @@
 # CrateDig
 
-**One song in, an afternoon out.**
+**Dig. Fall in. Bring one back.**
+
+Thirty minutes a day of music you have never heard. That is the whole practice,
+and everything here exists to make it easy to keep.
 
 Five to seven tracks a week that almost nobody plays. Each one is a doorway
-rather than a playlist: press it and the mix carries you into an hour of music
-you have never heard. You are not meant to work through the list. You are meant
-to fall through one of them.
+rather than a playlist: press it and the radio carries you into an hour of music
+you have never heard. Do not work through the list. Fall through one of them,
+then bring back whatever you found in there.
 
 It grew out of a habit, and a post about that habit called *30 Minutes of Rare
 Tracks*: every day, roughly thirty minutes of music never heard before, or not

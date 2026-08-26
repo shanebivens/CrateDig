@@ -132,13 +132,14 @@
       runtime.textContent = formatRuntime(drop.seconds) + " so far, " +
         drop.unknown_durations + " unmeasured";
     } else {
-      runtime.textContent = formatRuntime(drop.seconds) + " end to end, and a lot longer if you let it run";
+      runtime.textContent = formatRuntime(drop.seconds) +
+        " end to end, and a great deal longer if you fall in";
     }
     head.appendChild(runtime);
 
     var play = el("div", "crate-play");
     var queue = safeHref(drop.queue_url);
-    if (queue) play.appendChild(link("chip", "Play the crate back to back", queue));
+    if (queue) play.appendChild(link("chip", "Play the drop back to back", queue));
     Object.keys(drop.playlists || {}).forEach(function (service) {
       var href = safeHref(drop.playlists[service]);
       if (href) play.appendChild(link("chip", SERVICE_LABELS[service] || service, href));
@@ -170,7 +171,7 @@
 
   function renderCredit(people, target) {
     if (!people || !people.length) return;
-    var line = el("p", "credit", "Tracks so far from " +
+    var line = el("p", "credit", "Brought back so far by " +
       people.map(function (person) {
         return person.handle + (person.picks > 1 ? " (" + person.picks + ")" : "");
       }).join(", ") + ".");
