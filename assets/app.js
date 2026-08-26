@@ -18,6 +18,14 @@
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+  /* The stickers carry meaning a first visit has no way to know. */
+  var KIND_TIPS = {
+    obscure: "Obscure. It never surfaced.",
+    forgotten: "Forgotten. Popular once, nobody plays it now.",
+    sideways: "Sideways. Not rare, just never crossed your path.",
+    unsorted: "Not sorted yet. Somebody decides at writeup time."
+  };
+
   function el(tag, className, text) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -62,8 +70,13 @@
     sleeve.appendChild(el("span", "sleeve-cat", catalogue(drop, index)));
 
     var kind = track.kind || "unsorted";
-    sleeve.appendChild(el("span", "sticker sticker--" + kind,
-      kind === "unsorted" ? "not yet sorted" : kind));
+    var sticker = el("span", "sticker sticker--" + kind,
+      kind === "unsorted" ? "not yet sorted" : kind);
+    if (KIND_TIPS[kind]) {
+      sticker.title = KIND_TIPS[kind];
+      sticker.setAttribute("aria-label", KIND_TIPS[kind]);
+    }
+    sleeve.appendChild(sticker);
 
     sleeve.appendChild(el("h3", "sleeve-artist", track.artist));
     sleeve.appendChild(el("p", "sleeve-title", track.title));
