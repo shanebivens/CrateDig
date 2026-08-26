@@ -52,8 +52,29 @@ can revoke.
 3. A curator moves inbox picks into the current file in `drops/`.
 4. Pushing that rebuilds `data/drops.json` and the site updates.
 
-Picks are chosen by hand right now. Automated scoring comes later, once there
-are enough submissions to tune it against. When it arrives, the plan is to
+## The daily pull
+
+A scheduled workflow builds a drop every day from participants' public
+YouTube playlists, two tracks by default. It reads them through the official
+YouTube Data API with a plain API key: public playlist data only, no OAuth and
+no listening history.
+
+**Nothing ever repeats.** Before picking, `scripts/make_drop.py` reads every
+file in `drops/` and rules out anything already used, matching both on YouTube
+video ID and on a normalized artist and title, so the same song cannot come back
+through a different upload or a remaster.
+
+Automatic picks land as `kind: unsorted` with no writeup, which the validator
+flags until a curator calls it forgotten or obscure and writes the story.
+
+To turn it on, create an API key at
+[console.cloud.google.com](https://console.cloud.google.com) with the YouTube
+Data API v3 enabled, then add it as the repository secret `YOUTUBE_API_KEY`.
+Without the secret the workflow runs, finds nothing to pull, and changes
+nothing.
+
+Picks are otherwise chosen by hand. Automated obscurity scoring comes later,
+once there are enough submissions to tune it against. When it arrives, the plan is to
 score obscurity from open sources (Last.fm listener and play counts,
 MusicBrainz release dates) rather than raw view counts, since a track uploaded
 last week has few views without being rare at all.
@@ -83,6 +104,8 @@ Leave it out and nothing breaks.
     data/drops.json   built from drops/, read by the site
     scripts/build.py  validates everything and builds data/drops.json
     scripts/intake.py turns a submitted issue into a file in the repository
+    scripts/pull_playlist.py reads participants' public YouTube playlists
+    scripts/make_drop.py builds a day's drop without ever repeating a track
     index.html        the site, served from the repository root
     submit.html       the submission form
 

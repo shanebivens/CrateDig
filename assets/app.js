@@ -110,14 +110,17 @@
       runtime.textContent = drop.unknown_durations === drop.tracks.length
         ? "Runtime not measured yet"
         : formatRuntime(drop.seconds) + " so far, " + drop.unknown_durations + " track(s) unmeasured";
-    } else {
-      runtime.textContent = formatRuntime(drop.seconds) + " of about 30m";
+    } else if (drop.target_seconds) {
+      runtime.textContent = formatRuntime(drop.seconds) +
+        " of about " + Math.round(drop.target_seconds / 60) + "m";
       var bar = el("div", "runtime-bar");
       var fill = el("div", "runtime-fill");
-      var pct = Math.min(100, Math.round((drop.seconds / 1800) * 100));
+      var pct = Math.min(100, Math.round((drop.seconds / drop.target_seconds) * 100));
       fill.style.width = pct + "%";
       bar.appendChild(fill);
       runtime.appendChild(bar);
+    } else {
+      runtime.textContent = formatRuntime(drop.seconds);
     }
     head.appendChild(runtime);
 

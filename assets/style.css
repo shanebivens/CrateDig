@@ -478,3 +478,5 @@ button.button { border: 0; cursor: pointer; font-family: var(--mono); }
 .handoff li { margin-bottom: 0.5rem; }
 .handoff strong { color: var(--ink); }
 .handoff .fine { font-size: 0.85rem; color: var(--ink-faint); line-height: 1.6; }
+
+.tag-kind.unsorted { color: var(--ink-faint); }

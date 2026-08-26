@@ -25,7 +25,8 @@ DROPS = ROOT / "drops"
 OUT = ROOT / "data" / "drops.json"
 
 TARGET_SECONDS = 30 * 60
-KINDS = {"forgotten", "obscure"}
+KINDS = {"forgotten", "obscure", "unsorted"}
+PLACEHOLDER_WHY = "Pulled from the daily thirty minutes. No writeup yet."
 SERVICES = {
     "youtube-music", "youtube", "spotify", "apple-music",
     "bandcamp", "soundcloud", "tidal", "other",
@@ -157,6 +158,12 @@ def load_drops(people):
         if date != path.stem:
             warn(where, "filename does not match the date inside")
 
+        try:
+            target = int(data.get("target_minutes") or 0) * 60
+        except (TypeError, ValueError):
+            err(where, "target_minutes must be a whole number of minutes")
+            target = 0
+
         tracks = data.get("tracks") or []
         if not isinstance(tracks, list) or not tracks:
             err(where, "a drop needs at least one track")
@@ -183,6 +190,8 @@ def load_drops(people):
             kind = track.get("kind")
             if kind not in KINDS:
                 err(spot, f"kind must be one of {sorted(KINDS)}")
+            elif kind == "unsorted":
+                warn(spot, "still needs to be called forgotten or obscure")
 
             by = track.get("submitted_by", "curator")
             if by != "curator" and by not in people:
@@ -192,6 +201,8 @@ def load_drops(people):
             why = (track.get("why") or "").strip()
             if not why:
                 err(spot, "why is required, it is the part people read")
+            elif why == PLACEHOLDER_WHY:
+                warn(spot, "still needs a real writeup")
             elif len(why) > 600:
                 warn(spot, "why is very long, two sentences usually lands better")
 
@@ -262,14 +273,16 @@ def load_drops(people):
             "tracks": clean_tracks,
             "seconds": total,
             "unknown_durations": unknown_durations,
+            "target_seconds": target,
             "queue_url": queue_url,
             "playlists": made_playlists,
         })
 
         if unknown_durations:
             warn(where, f"{unknown_durations} of {len(clean_tracks)} tracks have no duration yet")
-        elif abs(total - TARGET_SECONDS) > 300:
-            warn(where, f"runs {total // 60}m{total % 60:02d}s, the target is about 30m")
+        elif target and abs(total - target) > 300:
+            warn(where, f"runs {total // 60}m{total % 60:02d}s against a "
+                        f"{target // 60}m target")
 
     return drops
 

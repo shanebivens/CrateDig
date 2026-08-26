@@ -86,6 +86,7 @@
       ],
       "seconds": 0,
       "unknown_durations": 7,
+      "target_seconds": 1800,
       "queue_url": "",
       "playlists": {}
     }
