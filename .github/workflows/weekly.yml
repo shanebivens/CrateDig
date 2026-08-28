@@ -47,14 +47,14 @@ jobs:
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
         run: python scripts/resolve_spotify.py
 
-      - name: Put the newest submissions into the next week
-        run: python scripts/place_inbox.py
-
       - name: Top the queue back up
         run: |
           WEEKS="${{ github.event.inputs.weeks }}"
           if [ -z "$WEEKS" ]; then WEEKS=8; fi
           python scripts/seed_weeks.py --weeks "$WEEKS" --reserve 2
+
+      - name: Put the newest submissions into the next week
+        run: python scripts/place_inbox.py
 
       - name: Check every track still plays
         run: python scripts/check_links.py

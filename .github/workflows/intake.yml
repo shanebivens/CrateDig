@@ -17,8 +17,9 @@ concurrency:
 jobs:
   file-it:
     if: >-
-      contains(github.event.issue.labels.*.name, 'submission') ||
-      contains(github.event.issue.body, '### A link to the track')
+      (contains(github.event.issue.labels.*.name, 'submission') ||
+       contains(github.event.issue.body, '### A link to the track')) &&
+      !contains(github.event.issue.labels.*.name, 'filed')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -63,8 +63,20 @@ def main():
         print("No week lined up in scheduled/. Run scripts/seed_weeks.py first.")
         return 1
 
-    target = weeks[0]
-    drop = yaml.safe_load(target.read_text(encoding="utf-8")) or {}
+    # The first week with room, not blindly the first week. A full week of
+    # hand-written tracks has nothing to bump, and overfilling breaks the
+    # six-a-week shape.
+    target = None
+    for candidate in weeks:
+        data = yaml.safe_load(candidate.read_text(encoding="utf-8")) or {}
+        if len(data.get("tracks") or []) < args.max_tracks:
+            target = candidate
+            drop = data
+            break
+    if target is None:
+        print("Every scheduled week is full. Submissions keep for the next "
+              "seeded week.")
+        return 0
     tracks = drop.get("tracks") or []
 
     placed, skipped = [], []
