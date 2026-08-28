@@ -177,7 +177,7 @@
        drop, you are taking one track and letting its radio run. Each track
        carries its own length in the line under the title. */
     head.appendChild(el("p", "crate-cadence",
-      "One a day until Monday. The days are a suggestion, the order is yours."));
+      "One a day through Saturday, in any order. Sunday you bring one back."));
 
     /* No play-it-all link on purpose. Each track opens its own radio, and
        queueing the drop stops any of them from starting. */

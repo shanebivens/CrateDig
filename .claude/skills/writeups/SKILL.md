@@ -117,9 +117,10 @@ Read the existing writeups in `drops/2026-08-26.yml` for the register.
 
 ## The shape of a week
 
-Seven tracks at the very most. The order is a shuffle, not a ranking: the site
-labels tracks Mon through Sun as a suggested one-a-day, and says the order is
-the listener's, so never agonize over sequence.
+Six tracks, no more. One for each day through Saturday; Sunday is for bringing
+one back, and Monday the next crate lands. The order is a shuffle, not a
+ranking: the site labels tracks Mon through Sat as a suggested one-a-day and
+says the order is the listener's, so never agonize over sequence.
 
 ## Finish
 

@@ -30,7 +30,7 @@ INBOX = ROOT / "inbox"
 SCHEDULED = ROOT / "scheduled"
 
 PLACEHOLDER = "Pulled from the daily thirty minutes. No writeup yet."
-MAX_TRACKS = 7
+MAX_TRACKS = 6
 SLOTS = 2
 
 

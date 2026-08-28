@@ -709,3 +709,11 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .sleeve:hover, .sleeve:focus-within { transform: none; }
 }
+
+.lede-week {
+  margin-top: 0.9rem !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}

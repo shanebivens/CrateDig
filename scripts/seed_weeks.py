@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Line up future weeks in scheduled/, one file per Monday.
 
-Each week gets five to seven tracks from the pool, minus whatever is held open
-for people to fill. Nothing is ever handed out twice: seeding checks published
+Each week gets six tracks from the pool, minus whatever is held open for
+people to fill. Nothing is ever handed out twice: seeding checks published
 drops and already-scheduled weeks together.
 
 Files here do not reach the site. scripts/publish_due.py moves one into drops/

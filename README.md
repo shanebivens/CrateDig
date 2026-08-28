@@ -5,14 +5,14 @@
 Thirty minutes a day of music you have never heard. That is the whole practice,
 and everything here exists to make it easy to keep.
 
-Five to seven tracks a week that almost nobody plays. Each one is a doorway
+Six tracks a week that almost nobody plays. Each one is a doorway
 rather than a playlist: press it and the radio carries you into an hour of music
 you have never heard.
 
-It does not refresh daily and does not need to. Five to seven tracks is one for
-each day until the next drop. Take one a day, fall in, let it run thirty
-minutes, and bring back whatever you found in there. Nobody gets the same radio,
-so the same drop sends everybody somewhere different.
+It does not refresh daily and does not need to. Six tracks is one for each day
+through Saturday. Take one a day, fall in, let it run thirty minutes. Sunday you
+bring back whatever you found in there, and Monday the next crate lands. Nobody
+gets the same radio, so the same drop sends everybody somewhere different.
 
 It grew out of a habit, and a post about that habit called *30 Minutes of Rare
 Tracks*: every day, roughly thirty minutes of music never heard before, or not
@@ -89,7 +89,7 @@ cookie, or access to your listening account, and it never will.
 
 ## Mondays at 12:01pm Eastern
 
-Weeks are lined up in advance in `scheduled/`, five to seven tracks each. Two
+Weeks are lined up in advance in `scheduled/`, six tracks each. Two
 spots go to submitted picks and the rest are pulled from the maintainer's
 playlist so a week is never empty. Nothing there reaches the site. At
 12:01pm Eastern on its Monday, one week moves into `drops/` and appears. One at
@@ -152,8 +152,8 @@ autoplay carry on from there. Exact Spotify links come from
 `SPOTIFY_CLIENT_SECRET` are set as repository secrets, and every track falls
 back to a prefilled Spotify search, which needs no key and is never wrong.
 
-That is why a drop is five to seven tracks rather than a fixed runtime. You are
-being handed starting points, and you are not expected to use all of them.
+That is why a drop is six tracks rather than a fixed runtime. You are being
+handed starting points, and you are not expected to use all of them.
 
 ## Every link has to actually play
 

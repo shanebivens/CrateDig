@@ -5,10 +5,9 @@ Nothing that has appeared in any file in drops/ can be picked again. That is
 checked two ways, by YouTube video id and by artist and title, so the same song
 cannot slip back in through a different upload.
 
-By default a drop is five to seven tracks, decided from the date so a rerun for
-the same day lands on the same answer. Each one is meant as a starting point
-rather than a serving, so the count matters more than the runtime. Pass --minutes
-to fill a runtime instead.
+By default a drop is six tracks, one for each day through Saturday, with Sunday
+left for bringing one back. Each is a starting point rather than a serving. Pass
+--minutes to fill a runtime instead.
 
     python3 scripts/make_drop.py --date 2026-08-31
     python3 scripts/make_drop.py --date 2026-08-31 --minutes 30
@@ -91,8 +90,8 @@ def main():
                         help="fill roughly this many minutes instead of counting tracks")
     parser.add_argument("--count", type=int, default=0,
                         help="pick exactly this many tracks")
-    parser.add_argument("--min-count", type=int, default=5)
-    parser.add_argument("--max-count", type=int, default=7)
+    parser.add_argument("--min-count", type=int, default=6)
+    parser.add_argument("--max-count", type=int, default=6)
     parser.add_argument("--max-seconds", type=int, default=600,
                         help="skip anything longer. Concerts and mixes are not tracks")
     parser.add_argument("--reserve", type=int, default=0,
