@@ -8,8 +8,10 @@ permissions:
   contents: write
   issues: write
 
+# One group per issue: GitHub keeps only a single queued run per group, so a
+# burst of submissions in one shared group cancels its own backlog.
 concurrency:
-  group: intake-${{ github.ref }}
+  group: intake-${{ github.event.issue.number }}
   cancel-in-progress: false
 
 jobs:
