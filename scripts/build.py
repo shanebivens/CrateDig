@@ -287,11 +287,8 @@ def load_drops(people):
             "playlists": made_playlists,
         })
 
-        if unknown_durations:
-            warn(where, f"{unknown_durations} of {len(clean_tracks)} tracks have no duration yet")
-        elif target and abs(total - target) > 300:
-            warn(where, f"runs {total // 60}m{total % 60:02d}s against a "
-                        f"{target // 60}m target")
+        # Durations are not the point. The listener takes one track and the
+        # radio decides how long it lasts, so nothing warns about timing.
 
     return drops
 

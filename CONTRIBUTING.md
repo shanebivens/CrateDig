@@ -50,8 +50,8 @@ Fields:
   it: reach settles the clear cases on the way in, and a person settles the
   rest at writeup time.
 - `year` is the recording or release year, whichever tells the better story.
-- `duration` is `M:SS`. Leave it `null` if you do not know it yet, the
-  validator will tell you which tracks are missing one.
+- `duration` is ignored. The listener takes one track and the radio decides
+  how long it lasts. Leave it `null`.
 - `why` is the part people actually read. Two sentences beats two paragraphs.
   It is optional on the form: leave it blank and a writeup gets added before
   the track goes out. Words you do write are never rewritten.

@@ -19,6 +19,10 @@ is optional on the form, so a submitted pick can arrive with `why` empty. Those
 are yours to write, same as an automatic pick: research it and write the story.
 The rule is only about words somebody actually wrote.
 
+**Adding to their words is allowed.** Append a verified fact in parentheses when
+it is genuinely additive and not redundant with what they said, like the album
+and year. Their sentences stay verbatim and come first.
+
 If the inbox has a backlog, say so and offer `--oldest-first` or `--slots 0`.
 Do not silently place more than the two spots.
 
@@ -108,7 +112,14 @@ Read the existing writeups in `drops/2026-08-26.yml` for the register.
 - `year` if research turned up a reliable one
 - a better link in `links` if there is a Bandcamp page or an artist's own
   upload. Bandcamp first when the artist sells it directly
-- leave `duration` alone, the API set it
+- ignore `duration`. The site does not show it, the radio decides how long a
+  track lasts
+
+## The shape of a week
+
+Seven tracks at the very most. The order is a shuffle, not a ranking: the site
+labels tracks Mon through Sun as a suggested one-a-day, and says the order is
+the listener's, so never agonize over sequence.
 
 ## Finish
 

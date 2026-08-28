@@ -81,6 +81,8 @@
     return button;
   }
 
+  var DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
   /* Catalogue number, the way a label stamps a release: drop and position. */
   function catalogue(drop, index) {
     var number = String(drop.number || 0);
@@ -91,7 +93,11 @@
   function renderTrack(track, index, drop) {
     var sleeve = el("article", "sleeve");
     sleeve.id = catalogue(drop, index).toLowerCase().replace("/", "-");
-    sleeve.appendChild(el("span", "sleeve-cat", catalogue(drop, index)));
+    var corner = catalogue(drop, index);
+    if (index < DAYS.length) corner = DAYS[index] + "  \u00b7  " + corner;
+    var cat = el("span", "sleeve-cat", corner);
+    cat.title = "The day is a suggestion. The order is yours.";
+    sleeve.appendChild(cat);
 
     var kind = track.kind || "unsorted";
     var sticker = el("span", "sticker sticker--" + kind,
@@ -107,12 +113,11 @@
 
     var meta = [];
     if (track.year) meta.push(track.year);
-    meta.push(track.duration || "unmeasured");
     /* Pulled from the crate's own playlist, so nobody sent it in. */
     if (track.submitted_by && track.submitted_by !== "curator" && !track.pooled) {
       meta.push("sent in by " + track.submitted_by);
     }
-    sleeve.appendChild(el("p", "sleeve-meta", meta.join("  ·  ")));
+    if (meta.length) sleeve.appendChild(el("p", "sleeve-meta", meta.join("  \u00b7  ")));
 
     if (track.why) sleeve.appendChild(el("p", "sleeve-note", track.why));
 
@@ -171,7 +176,8 @@
     /* Total runtime is a red herring here. You are not sitting through the
        drop, you are taking one track and letting its radio run. Each track
        carries its own length in the line under the title. */
-    head.appendChild(el("p", "crate-cadence", "One a day until Monday."));
+    head.appendChild(el("p", "crate-cadence",
+      "One a day until Monday. The days are a suggestion, the order is yours."));
 
     /* No play-it-all link on purpose. Each track opens its own radio, and
        queueing the drop stops any of them from starting. */

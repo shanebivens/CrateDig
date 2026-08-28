@@ -16,16 +16,17 @@ tracks:
     entirely on execution. Worth hearing once before you decide which.
   links:
     youtube-music: https://music.youtube.com/watch?v=kOdzV3B8GWQ
-- artist: Modest Mouse
-  title: Float On
-  year: null
-  duration: '3:29'
+- artist: Anna Ash
+  title: Righteously
+  year: 2017
+  duration: null
   kind: sideways
   submitted_by: shanebivens
-  why: Eighty million views and somehow still underplayed. If you only know this one from
-    an advert, the album around it is a far odder record than this track lets on.
+  why: A Lucinda Williams song from 2003, covered hushed and smoky in 2017. Billions put it
+    on television and the cover quietly ran to twenty five million streams, which is how a
+    faithful cover of a twenty year old song becomes the version an algorithm hands you first.
   links:
-    youtube-music: https://music.youtube.com/watch?v=88XhEqgmRhM
+    youtube-music: https://music.youtube.com/watch?v=6Jd-iQW8cQ8
 - artist: Between The Buried And Me
   title: Bicycle Race
   year: null
@@ -37,6 +38,17 @@ tracks:
     never bothered with.
   links:
     youtube-music: https://music.youtube.com/watch?v=BI8njtbPwdk
+- artist: Starcrawler
+  title: I Love LA
+  year: 2017
+  duration: null
+  kind: sideways
+  submitted_by: shanebivens
+  why: Not the Randy Newman song. A Los Angeles band formed in 2015, fronted by Arrow de Wilde,
+    playing glam punk like the Sunset Strip never calmed down. Their first single, later pressed
+    to a Rough Trade seven inch.
+  links:
+    youtube-music: https://music.youtube.com/watch?v=u-4RbcVLfBA
 - artist: PJ Morton
   title: Smoke and Mirrors
   year: null
