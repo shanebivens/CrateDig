@@ -2,10 +2,14 @@ name: Monday drop
 
 on:
   schedule:
-    # 12:01pm Eastern, both halves of the year. Daylight saving is handled in
-    # the script, so an early run publishes nothing and simply waits.
-    - cron: "1 16 * * 1"
-    - cron: "1 17 * * 1"
+    # The target is 12:01pm Eastern, but GitHub cron is best effort and skips
+    # under load: on 2026-08-31 both single entries were skipped outright and
+    # the drop only went out by hand. So this fires hourly through Monday
+    # afternoon UTC, plus a Tuesday backstop. publish_due only moves what is
+    # due and the commit step no-ops when nothing changed, so the extra runs
+    # cost nothing.
+    - cron: "1 16-23 * * 1"
+    - cron: "1 12 * * 2"
   workflow_dispatch:
     inputs:
       weeks:
