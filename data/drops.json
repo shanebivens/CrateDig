@@ -1,6 +1,112 @@
 {
   "drops": [
     {
+      "date": "2026-08-31",
+      "number": 2,
+      "title": "Drop 002",
+      "blurb": "Five doorways. One of them has been played thirty one times in its entire life.",
+      "tracks": [
+        {
+          "artist": "GoGo Penguin",
+          "title": "Protest (Live at Abbey Road)",
+          "year": 2020,
+          "duration": "4:46",
+          "seconds": 286,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A Manchester piano trio playing what sounds like electronic music performed by hand, recorded in the room where the Beatles made most of their records. Not rare, just quietly skipped by anyone who has decided they do not like jazz.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=CKFQ8ZMBOwI"
+          },
+          "radio": "https://music.youtube.com/watch?v=CKFQ8ZMBOwI&list=RDAMVMCKFQ8ZMBOwI",
+          "spotify_search": "https://open.spotify.com/search/GoGo%20Penguin%20Protest%20%28Live%20at%20Abbey%20Road%29"
+        },
+        {
+          "artist": "Schaffer The Darklord",
+          "title": "F*ck This Song",
+          "year": null,
+          "duration": "4:33",
+          "seconds": 273,
+          "kind": "obscure",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Nerdcore, the corner of rap that grew out of conventions and message boards rather than any city's scene. It is a joke record that is genuinely well built, which is the harder of the two things to pull off.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=NKNLqoZJ-ZM"
+          },
+          "radio": "https://music.youtube.com/watch?v=NKNLqoZJ-ZM&list=RDAMVMNKNLqoZJ-ZM",
+          "spotify_search": "https://open.spotify.com/search/Schaffer%20The%20Darklord%20F%2Ack%20This%20Song"
+        },
+        {
+          "artist": "Connie Converse",
+          "title": "Talkin' Like You (Two Tall Mountains)",
+          "year": 1954,
+          "duration": null,
+          "seconds": null,
+          "kind": "obscure",
+          "submitted_by": "curator",
+          "pooled": false,
+          "why": "Recorded on a home tape machine in Greenwich Village years before anyone was calling this singer-songwriter music. She never got a record out, quit, and in 1974 packed a car and drove off. Nobody has seen her since.",
+          "links": {},
+          "radio": "",
+          "spotify_search": "https://open.spotify.com/search/Connie%20Converse%20Talkin%27%20Like%20You%20%28Two%20Tall%20Mountains%29"
+        },
+        {
+          "artist": "Hitsujibungaku",
+          "title": "cure",
+          "year": 2025,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "jakedeiwert",
+          "pooled": false,
+          "why": "Not objectively rare or forgotten, but lesser known to western audiences. Japanese indie rock with an element reminiscent of midwest emo in the mix. (From Don't Laugh It Off, the trio's fifth album, October 2025.)",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=F-K4wRApSKY"
+          },
+          "radio": "https://music.youtube.com/watch?v=F-K4wRApSKY&list=RDAMVMF-K4wRApSKY",
+          "spotify_search": "https://open.spotify.com/search/Hitsujibungaku%20cure"
+        },
+        {
+          "artist": "Little Stranger",
+          "title": "Fly Guy",
+          "year": null,
+          "duration": "3:15",
+          "seconds": 195,
+          "kind": "obscure",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Nine thousand plays for a duo who have been quietly putting out records for years without anybody deciding they are a thing yet. Funk, rap and a sense of humour, which is a combination most people get wrong.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=sLZMHfyDXng"
+          },
+          "radio": "https://music.youtube.com/watch?v=sLZMHfyDXng&list=RDAMVMsLZMHfyDXng",
+          "spotify_search": "https://open.spotify.com/search/Little%20Stranger%20Fly%20Guy"
+        },
+        {
+          "artist": "Man Man",
+          "title": "Whalebones",
+          "year": null,
+          "duration": "7:15",
+          "seconds": 435,
+          "kind": "obscure",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Philadelphia, and a band who treat a song like a junk drawer: horns, clattering percussion, a voice that sounds like it is being dragged somewhere. It should collapse and it never quite does.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=fT9RydqGPD0"
+          },
+          "radio": "https://music.youtube.com/watch?v=fT9RydqGPD0&list=RDAMVMfT9RydqGPD0",
+          "spotify_search": "https://open.spotify.com/search/Man%20Man%20Whalebones"
+        }
+      ],
+      "seconds": 1189,
+      "unknown_durations": 2,
+      "target_seconds": 0,
+      "playlists": {}
+    },
+    {
       "date": "2026-08-26",
       "number": 1,
       "title": "Drop 001",
@@ -109,6 +215,11 @@
       "playlists": {}
     }
   ],
-  "contributors": [],
+  "contributors": [
+    {
+      "handle": "jakedeiwert",
+      "picks": 1
+    }
+  ],
   "target_seconds": 1800
 }
