@@ -1,6 +1,112 @@
 {
   "drops": [
     {
+      "date": "2026-09-07",
+      "number": 3,
+      "title": "Drop 003",
+      "blurb": "A hundred million views next to ten thousand. Both are doors.",
+      "tracks": [
+        {
+          "artist": "KONGOS",
+          "title": "Come with Me Now",
+          "year": null,
+          "duration": "3:32",
+          "seconds": 212,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Four brothers, born in London, raised in South Africa. Their father is John Kongos, who had two hits in Britain in 1971, one of which got sampled into a completely different hit twenty years later. Follow that thread instead of this one if you want the stranger trip.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=Hq_J-XVOucg"
+          },
+          "radio": "https://music.youtube.com/watch?v=Hq_J-XVOucg&list=RDAMVMHq_J-XVOucg",
+          "spotify_search": "https://open.spotify.com/search/KONGOS%20Come%20with%20Me%20Now"
+        },
+        {
+          "artist": "Murder by Death",
+          "title": "Brother",
+          "year": null,
+          "duration": "3:49",
+          "seconds": 229,
+          "kind": "obscure",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "An Indiana band named after a 1976 murder mystery film, playing something closer to gothic country than the name suggests. The cello is doing most of the work here.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=r0uPjg63XmQ"
+          },
+          "radio": "https://music.youtube.com/watch?v=r0uPjg63XmQ&list=RDAMVMr0uPjg63XmQ",
+          "spotify_search": "https://open.spotify.com/search/Murder%20by%20Death%20Brother"
+        },
+        {
+          "artist": "Ryan Bingham",
+          "title": "Sunrise",
+          "year": 2007,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Buried at track thirteen on Mescalito, the debut he put out on Lost Highway in 2007. Three years later the same man had an Oscar for a Crazy Heart song and a different career. The rasp was already forty years older than he was.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=slXapoOyrzw"
+          },
+          "radio": "https://music.youtube.com/watch?v=slXapoOyrzw&list=RDAMVMslXapoOyrzw",
+          "spotify_search": "https://open.spotify.com/search/Ryan%20Bingham%20Sunrise"
+        },
+        {
+          "artist": "Eilen Jewell",
+          "title": "One of Those Days",
+          "year": null,
+          "duration": "3:57",
+          "seconds": 237,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Retro country blues played straight, with no wink about it. If your idea of this music is stadium country, this is the other branch, the one that never got the radio money.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=oX1Usoy7lfQ"
+          },
+          "radio": "https://music.youtube.com/watch?v=oX1Usoy7lfQ&list=RDAMVMoX1Usoy7lfQ",
+          "spotify_search": "https://open.spotify.com/search/Eilen%20Jewell%20One%20of%20Those%20Days"
+        },
+        {
+          "artist": "Shawn James",
+          "title": "Through the Valley",
+          "year": 2012,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A 2012 recording that got its second life four years later, when Ellie sang it in the announcement trailer for The Last of Us Part II, surrounded by what she had done. In the game she listens to this original through her headphones. Eleven million people came looking for where the song started.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=gRBq7fPITxw"
+          },
+          "radio": "https://music.youtube.com/watch?v=gRBq7fPITxw&list=RDAMVMgRBq7fPITxw",
+          "spotify_search": "https://open.spotify.com/search/Shawn%20James%20Through%20the%20Valley"
+        },
+        {
+          "artist": "Sibylle Baier",
+          "title": "Tonight",
+          "year": 1971,
+          "duration": null,
+          "seconds": null,
+          "kind": "obscure",
+          "submitted_by": "curator",
+          "pooled": false,
+          "why": "Made at home in Germany in the early seventies and then put in a drawer. Her son found the tapes decades later and pressed them. Listen to how close the microphone is.",
+          "links": {},
+          "radio": "",
+          "spotify_search": "https://open.spotify.com/search/Sibylle%20Baier%20Tonight"
+        }
+      ],
+      "seconds": 678,
+      "unknown_durations": 3,
+      "target_seconds": 0,
+      "playlists": {}
+    },
+    {
       "date": "2026-08-31",
       "number": 2,
       "title": "Drop 002",
