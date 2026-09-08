@@ -96,8 +96,10 @@
           "submitted_by": "curator",
           "pooled": false,
           "why": "Made at home in Germany in the early seventies and then put in a drawer. Her son found the tapes decades later and pressed them. Listen to how close the microphone is.",
-          "links": {},
-          "radio": "",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=sY_F0mPq7ec"
+          },
+          "radio": "https://music.youtube.com/watch?v=sY_F0mPq7ec&list=RDAMVMsY_F0mPq7ec",
           "spotify_search": "https://open.spotify.com/search/Sibylle%20Baier%20Tonight"
         }
       ],
