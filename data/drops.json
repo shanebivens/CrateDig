@@ -1,6 +1,112 @@
 {
   "drops": [
     {
+      "date": "2026-09-14",
+      "number": 4,
+      "title": "Drop 004",
+      "blurb": "Two you may know, three you almost certainly do not.",
+      "tracks": [
+        {
+          "artist": "Anna Ash",
+          "title": "Righteously",
+          "year": 2017,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A Lucinda Williams song from 2003, covered hushed and smoky in 2017. Billions put it on television and the cover quietly ran to twenty five million streams, which is how a faithful cover of a twenty year old song becomes the version an algorithm hands you first.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=6Jd-iQW8cQ8"
+          },
+          "radio": "https://music.youtube.com/watch?v=6Jd-iQW8cQ8&list=RDAMVM6Jd-iQW8cQ8",
+          "spotify_search": "https://open.spotify.com/search/Anna%20Ash%20Righteously"
+        },
+        {
+          "artist": "Between The Buried And Me",
+          "title": "Bicycle Race",
+          "year": null,
+          "duration": "3:10",
+          "seconds": 190,
+          "kind": "obscure",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A progressive metal band covering Queen, seriously rather than as a gag. The bicycle bells are still in there. It sits on a covers record most of their own listeners have never bothered with.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=BI8njtbPwdk"
+          },
+          "radio": "https://music.youtube.com/watch?v=BI8njtbPwdk&list=RDAMVMBI8njtbPwdk",
+          "spotify_search": "https://open.spotify.com/search/Between%20The%20Buried%20And%20Me%20Bicycle%20Race"
+        },
+        {
+          "artist": "Starcrawler",
+          "title": "I Love LA",
+          "year": 2017,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Not the Randy Newman song. A Los Angeles band formed in 2015, fronted by Arrow de Wilde, playing glam punk like the Sunset Strip never calmed down. Their first single, later pressed to a Rough Trade seven inch.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=u-4RbcVLfBA"
+          },
+          "radio": "https://music.youtube.com/watch?v=u-4RbcVLfBA&list=RDAMVMu-4RbcVLfBA",
+          "spotify_search": "https://open.spotify.com/search/Starcrawler%20I%20Love%20LA"
+        },
+        {
+          "artist": "PJ Morton",
+          "title": "Smoke and Mirrors",
+          "year": null,
+          "duration": "3:20",
+          "seconds": 200,
+          "kind": "obscure",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Twenty two thousand views for a man who plays keys in one of the biggest bands in the world and has won Grammys under his own name. The solo work lives in a completely different room from the day job.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=XY8OzsxY7HU"
+          },
+          "radio": "https://music.youtube.com/watch?v=XY8OzsxY7HU&list=RDAMVMXY8OzsxY7HU",
+          "spotify_search": "https://open.spotify.com/search/PJ%20Morton%20Smoke%20and%20Mirrors"
+        },
+        {
+          "artist": "Lewis",
+          "title": "I Thought The World Of You",
+          "year": 1983,
+          "duration": null,
+          "seconds": null,
+          "kind": "obscure",
+          "submitted_by": "curator",
+          "pooled": false,
+          "why": "A private press record so faint it barely registers as sound. For years nobody knew who made it or whether he was still alive. Play it louder than feels right.",
+          "links": {},
+          "radio": "",
+          "spotify_search": "https://open.spotify.com/search/Lewis%20I%20Thought%20The%20World%20Of%20You"
+        },
+        {
+          "artist": "Portico Quartet",
+          "title": "Ruins",
+          "year": null,
+          "duration": "5:35",
+          "seconds": 335,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "London, and a band built around a hang, the steel instrument that looks like a flying saucer and sounds like a tuned raindrop. Filed under jazz, which puts off exactly the people who would like it most.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=rzinvvhMrbA"
+          },
+          "radio": "https://music.youtube.com/watch?v=rzinvvhMrbA&list=RDAMVMrzinvvhMrbA",
+          "spotify_search": "https://open.spotify.com/search/Portico%20Quartet%20Ruins"
+        }
+      ],
+      "seconds": 725,
+      "unknown_durations": 3,
+      "target_seconds": 0,
+      "playlists": {}
+    },
+    {
       "date": "2026-09-07",
       "number": 3,
       "title": "Drop 003",
