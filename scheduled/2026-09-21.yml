@@ -7,15 +7,17 @@ reserved: 2
 target_minutes: null
 blurb: ''
 tracks:
-- artist: Julian Velard
-  title: Love Again For The First Time
+- artist: Anthony Vincent
+  title: Yeah! (in the style of Metallica)
   year: null
-  duration: '3:42'
-  kind: unsorted
+  duration: null
+  kind: sideways
   submitted_by: shanebivens
-  why: Pulled from the daily thirty minutes. No writeup yet.
+  why: 'Anthony Vincent''s whole channel is one premise: famous songs rebuilt in the style
+    of other bands. This is Usher put through Metallica, and it arrived here off the back
+    of a Facebook share, which is the hand-it-on loop working in the wild.'
   links:
-    youtube-music: https://music.youtube.com/watch?v=j1DwjYkbxGs
+    youtube-music: https://music.youtube.com/watch?v=9QvEmGPdpOw
 - artist: Little Stranger
   title: Kama Sumatra
   year: null
