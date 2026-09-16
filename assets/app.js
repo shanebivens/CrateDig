@@ -160,11 +160,18 @@
     return sleeve;
   }
 
-  function renderDrop(drop, target) {
+  function renderDrop(drop, target, isLatest) {
     target.className = "";
     target.innerHTML = "";
 
     var head = el("div", "crate-head");
+    if (!isLatest) {
+      var back = document.createElement("a");
+      back.className = "crate-back";
+      back.href = "#drop-latest";
+      back.textContent = "\u2190 This week's drop";
+      head.appendChild(back);
+    }
     head.appendChild(el("span", "stamp",
       formatDate(drop.date) + "  ·  " + drop.tracks.length + " tracks"));
 
@@ -176,8 +183,9 @@
     /* Total runtime is a red herring here. You are not sitting through the
        drop, you are taking one track and letting its radio run. Each track
        carries its own length in the line under the title. */
-    head.appendChild(el("p", "crate-cadence",
-      "One a day through Saturday, in any order. Sunday you bring one back."));
+    head.appendChild(el("p", "crate-cadence", isLatest
+      ? "One a day through Saturday, in any order. Sunday you bring one back."
+      : "From the back of the bin. Every door still opens."));
 
     /* No play-it-all link on purpose. Each track opens its own radio, and
        queueing the drop stops any of them from starting. */
@@ -190,7 +198,7 @@
       title: "CrateDig \u2014 " + (drop.title || "this week's drop"),
       text: "One track a day. Press it and let it run. " +
             "Thirty minutes later you are somewhere you have never been.",
-      url: PAGE_URL
+      url: PAGE_URL + "#drop-" + drop.number   /* still this drop after it rotates */
     }));
     head.appendChild(play);
 
@@ -231,13 +239,55 @@
       target.textContent = "Nothing behind this one yet. The next drop lands Monday.";
       return;
     }
+    drops.sort(function (a, b) { return Number(b.number) - Number(a.number); });
     drops.forEach(function (drop) {
-      var row = el("div", "back-row");
+      var row = document.createElement("a");
+      row.className = "back-row";
+      row.href = "#drop-" + drop.number;
       row.appendChild(el("b", null, drop.title));
       row.appendChild(el("span", null, formatDate(drop.date)));
       row.appendChild(el("span", null, drop.tracks.length + " tracks"));
       target.appendChild(row);
     });
+  }
+
+  /* ---- which drop is on the counter ------------------------------------ */
+
+  var DATA = null;
+
+  function findDrop(number) {
+    var drops = DATA.drops;
+    for (var i = 0; i < drops.length; i++) {
+      if (Number(drops[i].number) === Number(number)) return drops[i];
+    }
+    return null;
+  }
+
+  /* #drop-3 opens Drop 003. #cd-003-02 opens Drop 003 and lands on its
+     second sleeve, which is what every handed-on link points at. Anything
+     else is a plain anchor and the browser handles it. */
+  function show() {
+    var drops = DATA.drops;
+    var hash = location.hash.slice(1);
+    var wanted = drops[0];
+    var landOn = "";
+
+    var byDrop = /^drop-(\d+)$/.exec(hash);
+    var byTrack = /^cd-(\d+)-(\d+)$/.exec(hash);
+    if (byDrop) wanted = findDrop(byDrop[1]) || drops[0];
+    if (byTrack) {
+      wanted = findDrop(byTrack[1]) || drops[0];
+      landOn = hash;
+    }
+
+    renderDrop(wanted, document.getElementById("latest"), wanted === drops[0]);
+    renderArchive(drops.filter(function (d) { return d !== wanted; }),
+                  document.getElementById("archive"));
+
+    var target = landOn ? document.getElementById(landOn)
+               : byDrop || hash === "drop-latest" ? document.getElementById("crate")
+               : hash ? document.getElementById(hash) : null;
+    if (target) target.scrollIntoView();
   }
 
   function renderCredit(people, target) {
@@ -269,16 +319,10 @@
         fail("The crate is empty. The first drop lands Monday.");
         return;
       }
-      renderDrop(drops[0], document.getElementById("latest"));
-      renderArchive(drops.slice(1), document.getElementById("archive"));
+      DATA = data;
       renderCredit(data.contributors, document.getElementById("credit"));
-
-      /* A handed-on link names its track. Content renders after load, so the
-         browser cannot honour the fragment on its own. */
-      if (location.hash) {
-        var handed = document.getElementById(location.hash.slice(1));
-        if (handed) handed.scrollIntoView();
-      }
+      show();
+      window.addEventListener("hashchange", show);
     })
     .catch(function () {
       fail("Could not open the crate. Run scripts/build.py to rebuild data/drops.json.");

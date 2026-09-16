@@ -717,3 +717,29 @@ body {
   text-transform: uppercase;
   color: var(--ink-faint);
 }
+
+/* past drops open in the crate, so the rows are doors too */
+a.back-row { text-decoration: none; color: var(--ink-soft); }
+a.back-row:hover { color: var(--ink); }
+a.back-row:hover b { color: var(--obscure); }
+
+.crate-back {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border-bottom: 2px solid transparent;
+}
+.crate-back:hover { color: var(--ink); border-bottom-color: var(--obscure); }
+
+/* the roster sits with the crate, next to the slot that asks you to join it */
+#credit .credit {
+  margin: 1.1rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
