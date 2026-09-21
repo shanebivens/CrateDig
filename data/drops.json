@@ -1,6 +1,112 @@
 {
   "drops": [
     {
+      "date": "2026-09-21",
+      "number": 5,
+      "title": "Drop 005",
+      "blurb": "",
+      "tracks": [
+        {
+          "artist": "Anthony Vincent",
+          "title": "Yeah! (in the style of Metallica)",
+          "year": null,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Anthony Vincent's whole channel is one premise: famous songs rebuilt in the style of other bands. This is Usher put through Metallica, and it arrived here off the back of a Facebook share, which is the hand-it-on loop working in the wild.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=9QvEmGPdpOw"
+          },
+          "radio": "https://music.youtube.com/watch?v=9QvEmGPdpOw&list=RDAMVM9QvEmGPdpOw",
+          "spotify_search": "https://open.spotify.com/search/Anthony%20Vincent%20Yeah%21%20%28in%20the%20style%20of%20Metallica%29"
+        },
+        {
+          "artist": "Little Stranger",
+          "title": "Kama Sumatra",
+          "year": null,
+          "duration": "2:18",
+          "seconds": 138,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=PhK6v47c4Cw"
+          },
+          "radio": "https://music.youtube.com/watch?v=PhK6v47c4Cw&list=RDAMVMPhK6v47c4Cw",
+          "spotify_search": "https://open.spotify.com/search/Little%20Stranger%20Kama%20Sumatra"
+        },
+        {
+          "artist": "Modest Mouse",
+          "title": "Float On",
+          "year": null,
+          "duration": "3:29",
+          "seconds": 209,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Eighty million views and somehow still underplayed. If you only know this one from an advert, the album around it is a far odder record than this track lets on.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=88XhEqgmRhM"
+          },
+          "radio": "https://music.youtube.com/watch?v=88XhEqgmRhM&list=RDAMVM88XhEqgmRhM",
+          "spotify_search": "https://open.spotify.com/search/Modest%20Mouse%20Float%20On"
+        },
+        {
+          "artist": "Princess Nokia",
+          "title": "Harley Quinn",
+          "year": null,
+          "duration": "2:24",
+          "seconds": 144,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "New York, and a rapper who built an audience entirely outside the usual machinery before anyone in it noticed. Play this one first, then go backwards through the earlier mixtapes, which is where it gets strange.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=XbmSsAXUYkw"
+          },
+          "radio": "https://music.youtube.com/watch?v=XbmSsAXUYkw&list=RDAMVMXbmSsAXUYkw",
+          "spotify_search": "https://open.spotify.com/search/Princess%20Nokia%20Harley%20Quinn"
+        },
+        {
+          "artist": "Thomas Benjamin Wild Esq",
+          "title": "Well This Is Shit",
+          "year": null,
+          "duration": "3:25",
+          "seconds": 205,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=h8bJmealgtA"
+          },
+          "radio": "https://music.youtube.com/watch?v=h8bJmealgtA&list=RDAMVMh8bJmealgtA",
+          "spotify_search": "https://open.spotify.com/search/Thomas%20Benjamin%20Wild%20Esq%20Well%20This%20Is%20Shit"
+        },
+        {
+          "artist": "Bobb Trimble",
+          "title": "Killed By The Hands Of An Unknown Rock Star",
+          "year": 1982,
+          "duration": null,
+          "seconds": null,
+          "kind": "obscure",
+          "submitted_by": "curator",
+          "pooled": false,
+          "why": "Massachusetts, self-financed, a few hundred copies. It sounds like it was recorded inside a different decade than the one it came out in.",
+          "links": {},
+          "radio": "",
+          "spotify_search": "https://open.spotify.com/search/Bobb%20Trimble%20Killed%20By%20The%20Hands%20Of%20An%20Unknown%20Rock%20Star"
+        }
+      ],
+      "seconds": 696,
+      "unknown_durations": 2,
+      "target_seconds": 0,
+      "playlists": {}
+    },
+    {
       "date": "2026-09-14",
       "number": 4,
       "title": "Drop 004",
