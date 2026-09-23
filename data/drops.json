@@ -4,7 +4,7 @@
       "date": "2026-09-21",
       "number": 5,
       "title": "Drop 005",
-      "blurb": "",
+      "blurb": "Six doors. Usher rebuilt as Metallica, a Charleston duo with seven thousand plays, and a private press record from Massachusetts that sounds like it came from a different decade.",
       "tracks": [
         {
           "artist": "Anthony Vincent",
@@ -28,10 +28,10 @@
           "year": null,
           "duration": "2:18",
           "seconds": 138,
-          "kind": "unsorted",
+          "kind": "obscure",
           "submitted_by": "shanebivens",
           "pooled": true,
-          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "why": "Seven thousand plays. Two best friends from Philadelphia, now in Charleston, who are not related despite sharing a surname. This one moves through calypso, mambo, hip hop and soul without stopping, and it was written in response to the fight over transgender rights, which is not where the marimba leads you to expect it is going.",
           "links": {
             "youtube-music": "https://music.youtube.com/watch?v=PhK6v47c4Cw"
           },
@@ -73,13 +73,13 @@
         {
           "artist": "Thomas Benjamin Wild Esq",
           "title": "Well This Is Shit",
-          "year": null,
+          "year": 2020,
           "duration": "3:25",
           "seconds": 205,
-          "kind": "unsorted",
+          "kind": "sideways",
           "submitted_by": "shanebivens",
           "pooled": true,
-          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "why": "An English gentleman in tweed, accompanied by Tom Carradine on a music hall piano, summarising the whole of 2020 in four words. Released that November, when the joke still hurt. Two million people have agreed with it since.",
           "links": {
             "youtube-music": "https://music.youtube.com/watch?v=h8bJmealgtA"
           },
@@ -88,17 +88,19 @@
         },
         {
           "artist": "Bobb Trimble",
-          "title": "Killed By The Hands Of An Unknown Rock Star",
-          "year": 1982,
+          "title": "One Mile From Heaven (Long Version)",
+          "year": 1980,
           "duration": null,
           "seconds": null,
           "kind": "obscure",
           "submitted_by": "curator",
           "pooled": false,
-          "why": "Massachusetts, self-financed, a few hundred copies. It sounds like it was recorded inside a different decade than the one it came out in.",
-          "links": {},
-          "radio": "",
-          "spotify_search": "https://open.spotify.com/search/Bobb%20Trimble%20Killed%20By%20The%20Hands%20Of%20An%20Unknown%20Rock%20Star"
+          "why": "Massachusetts, December 1980, paid for out of his own pocket. Five hundred copies were pressed and a fire at the plant meant he only ever received three hundred of them. This is the song the record is built around, in the long version, and it sounds like it was recorded inside a different decade than the one it came out in.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=Kjzvc2Hx4FU"
+          },
+          "radio": "https://music.youtube.com/watch?v=Kjzvc2Hx4FU&list=RDAMVMKjzvc2Hx4FU",
+          "spotify_search": "https://open.spotify.com/search/Bobb%20Trimble%20One%20Mile%20From%20Heaven%20%28Long%20Version%29"
         }
       ],
       "seconds": 696,
