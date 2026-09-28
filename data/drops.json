@@ -1,6 +1,112 @@
 {
   "drops": [
     {
+      "date": "2026-09-28",
+      "number": 6,
+      "title": "Drop 006",
+      "blurb": "",
+      "tracks": [
+        {
+          "artist": "Paper Planes",
+          "title": "Street Sweeper Social Club",
+          "year": null,
+          "duration": "2:54",
+          "seconds": 174,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=AQFWAXNQzAA"
+          },
+          "radio": "https://music.youtube.com/watch?v=AQFWAXNQzAA&list=RDAMVMAQFWAXNQzAA",
+          "spotify_search": "https://open.spotify.com/search/Paper%20Planes%20Street%20Sweeper%20Social%20Club"
+        },
+        {
+          "artist": "Dubioza kolektiv",
+          "title": "U.S.A.",
+          "year": null,
+          "duration": "3:33",
+          "seconds": 213,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A Bosnian band playing ska, punk and dub, a lot of it about how hard it is to get a visa when you carry the wrong passport. Twenty eight million views and almost nobody in America has heard of them.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=0a5BJxrarL0"
+          },
+          "radio": "https://music.youtube.com/watch?v=0a5BJxrarL0&list=RDAMVM0a5BJxrarL0",
+          "spotify_search": "https://open.spotify.com/search/Dubioza%20kolektiv%20U.S.A."
+        },
+        {
+          "artist": "Tesla",
+          "title": "Signs (Live At The Trocadero / 1990)",
+          "year": 1990,
+          "duration": "3:10",
+          "seconds": 190,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A hair metal band playing an acoustic set in 1990, covering a protest song a Canadian group put out in 1971. The crowd knows every word, which is the strange part: almost nobody can name who wrote it.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=epbOHloSpZM"
+          },
+          "radio": "https://music.youtube.com/watch?v=epbOHloSpZM&list=RDAMVMepbOHloSpZM",
+          "spotify_search": "https://open.spotify.com/search/Tesla%20Signs%20%28Live%20At%20The%20Trocadero%20/%201990%29"
+        },
+        {
+          "artist": "Human Nature",
+          "title": "Runaround Sue",
+          "year": null,
+          "duration": "2:56",
+          "seconds": 176,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=EupgJxxW0ZU"
+          },
+          "radio": "https://music.youtube.com/watch?v=EupgJxxW0ZU&list=RDAMVMEupgJxxW0ZU",
+          "spotify_search": "https://open.spotify.com/search/Human%20Nature%20Runaround%20Sue"
+        },
+        {
+          "artist": "Middle Ages",
+          "title": "Never Gonna Give You Up",
+          "year": null,
+          "duration": "3:18",
+          "seconds": 198,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=lcOGtsfs1SA"
+          },
+          "radio": "https://music.youtube.com/watch?v=lcOGtsfs1SA&list=RDAMVMlcOGtsfs1SA",
+          "spotify_search": "https://open.spotify.com/search/Middle%20Ages%20Never%20Gonna%20Give%20You%20Up"
+        },
+        {
+          "artist": "Mort Garson",
+          "title": "Plantasia",
+          "year": 1976,
+          "duration": null,
+          "seconds": null,
+          "kind": "forgotten",
+          "submitted_by": "curator",
+          "pooled": false,
+          "why": "Moog music written for houseplants and given away with a purchase at a Los Angeles plant store. It sat forgotten for forty years before anyone reissued it.",
+          "links": {},
+          "radio": "",
+          "spotify_search": "https://open.spotify.com/search/Mort%20Garson%20Plantasia"
+        }
+      ],
+      "seconds": 951,
+      "unknown_durations": 1,
+      "target_seconds": 0,
+      "playlists": {}
+    },
+    {
       "date": "2026-09-21",
       "number": 5,
       "title": "Drop 005",
