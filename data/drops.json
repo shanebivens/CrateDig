@@ -1,6 +1,112 @@
 {
   "drops": [
     {
+      "date": "2026-10-12",
+      "number": 8,
+      "title": "Drop 008",
+      "blurb": "",
+      "tracks": [
+        {
+          "artist": "THE ANXIETY",
+          "title": "Meet Me At Our Spot",
+          "year": null,
+          "duration": "2:43",
+          "seconds": 163,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=TNw98SoNAeo"
+          },
+          "radio": "https://music.youtube.com/watch?v=TNw98SoNAeo&list=RDAMVMTNw98SoNAeo",
+          "spotify_search": "https://open.spotify.com/search/THE%20ANXIETY%20Meet%20Me%20At%20Our%20Spot"
+        },
+        {
+          "artist": "HOLY MOLY",
+          "title": "Hillbillies Can't Drive on Meth",
+          "year": null,
+          "duration": "3:34",
+          "seconds": 214,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=dDyyy-hpFYQ"
+          },
+          "radio": "https://music.youtube.com/watch?v=dDyyy-hpFYQ&list=RDAMVMdDyyy-hpFYQ",
+          "spotify_search": "https://open.spotify.com/search/HOLY%20MOLY%20Hillbillies%20Can%27t%20Drive%20on%20Meth"
+        },
+        {
+          "artist": "Obzesion",
+          "title": "Mi Trokita Cumbia",
+          "year": null,
+          "duration": "2:22",
+          "seconds": 142,
+          "kind": "unsorted",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Pulled from the daily thirty minutes. No writeup yet.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=BGNVOr-LIGE"
+          },
+          "radio": "https://music.youtube.com/watch?v=BGNVOr-LIGE&list=RDAMVMBGNVOr-LIGE",
+          "spotify_search": "https://open.spotify.com/search/Obzesion%20Mi%20Trokita%20Cumbia"
+        },
+        {
+          "artist": "The Shaggs",
+          "title": "My Pal Foot Foot",
+          "year": 1969,
+          "duration": null,
+          "seconds": null,
+          "kind": "obscure",
+          "submitted_by": "curator",
+          "pooled": false,
+          "why": "Three sisters whose father was certain they were destined for this. The drums and the guitars are in different rooms of the same house. Stay with it past the first minute, it starts to make its own kind of sense.",
+          "links": {},
+          "radio": "",
+          "spotify_search": "https://open.spotify.com/search/The%20Shaggs%20My%20Pal%20Foot%20Foot"
+        },
+        {
+          "artist": "Boosie Badazz",
+          "title": "Set It Off (but 70s)",
+          "year": null,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Somebody rebuilt Boosie as seventies soul and made the case in one sentence, verbatim: Torrence wouldve been hard with a James Brown band behind him, no cap. Two hundred seventy thousand plays say the argument landed.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=khkNAqznR04"
+          },
+          "radio": "https://music.youtube.com/watch?v=khkNAqznR04&list=RDAMVMkhkNAqznR04",
+          "spotify_search": "https://open.spotify.com/search/Boosie%20Badazz%20Set%20It%20Off%20%28but%2070s%29"
+        },
+        {
+          "artist": "Obscurest Vinyl",
+          "title": "You Look Like You Could Use A Fuckin' Lamp",
+          "year": null,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "This project started as fake vintage record covers, old clippings doctored into albums that never existed, until enough people asked where to buy the music that the records had to get made. A joke that worked backwards into being real.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=3gHl4P7AXt0"
+          },
+          "radio": "https://music.youtube.com/watch?v=3gHl4P7AXt0&list=RDAMVM3gHl4P7AXt0",
+          "spotify_search": "https://open.spotify.com/search/Obscurest%20Vinyl%20You%20Look%20Like%20You%20Could%20Use%20A%20Fuckin%27%20Lamp"
+        }
+      ],
+      "seconds": 519,
+      "unknown_durations": 3,
+      "target_seconds": 0,
+      "playlists": {}
+    },
+    {
       "date": "2026-10-05",
       "number": 7,
       "title": "Drop 007",
