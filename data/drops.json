@@ -1,6 +1,114 @@
 {
   "drops": [
     {
+      "date": "2026-10-26",
+      "number": 10,
+      "title": "Drop 010",
+      "blurb": "Six sent-in doors. A trailer factory, a band covering itself, and true crime with a house style.",
+      "tracks": [
+        {
+          "artist": "X-Ray Dog",
+          "title": "When the Good Go Bad",
+          "year": null,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Not a band. A Burbank production library, founded 1997, that scores Hollywood trailer campaigns: Harry Potter, Twilight and The Hunger Games among them. Music built to sell movies, escaped onto streaming, where people now play it on purpose.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=Rsx6spdFV0k"
+          },
+          "radio": "https://music.youtube.com/watch?v=Rsx6spdFV0k&list=RDAMVMRsx6spdFV0k",
+          "spotify_search": "https://open.spotify.com/search/X-Ray%20Dog%20When%20the%20Good%20Go%20Bad"
+        },
+        {
+          "artist": "Clutch",
+          "title": "Electric Worry (The Weathermaker Vault Series)",
+          "year": 2019,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "Clutch re-recording their own 2007 single in 2019 on their own label, stripped of the harmonica and keys. A band covering itself twelve years on, and arguing with the original in public.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=zYimr8692lA"
+          },
+          "radio": "https://music.youtube.com/watch?v=zYimr8692lA&list=RDAMVMzYimr8692lA",
+          "spotify_search": "https://open.spotify.com/search/Clutch%20Electric%20Worry%20%28The%20Weathermaker%20Vault%20Series%29"
+        },
+        {
+          "artist": "Saint Motel",
+          "title": "Fine Wine",
+          "year": 2023,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "An Elektra single from August 2023 that landed on Saint Motel and the Symphony in the Sky two years later. Six hundred thousand plays, which for a band this polished is the definition of never crossed your path.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=P2iErb5eAKU"
+          },
+          "radio": "https://music.youtube.com/watch?v=P2iErb5eAKU&list=RDAMVMP2iErb5eAKU",
+          "spotify_search": "https://open.spotify.com/search/Saint%20Motel%20Fine%20Wine"
+        },
+        {
+          "artist": "SonReal",
+          "title": "Can I Get a Witness",
+          "year": null,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A Canadian rapper at six million plays who is still a stranger to most playlists south of the border. Sideways is a border phenomenon too.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=wIZLMDX2nz0"
+          },
+          "radio": "https://music.youtube.com/watch?v=wIZLMDX2nz0&list=RDAMVMwIZLMDX2nz0",
+          "spotify_search": "https://open.spotify.com/search/SonReal%20Can%20I%20Get%20a%20Witness"
+        },
+        {
+          "artist": "Amigo the Devil",
+          "title": "Hell and You (Grotto Sessions)",
+          "year": null,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "The genre gets called murderfolk, and the name is accurate on both halves. This is the Grotto Sessions take on a fan favorite, a million plays deep.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=hWOC3X3cV8s"
+          },
+          "radio": "https://music.youtube.com/watch?v=hWOC3X3cV8s&list=RDAMVMhWOC3X3cV8s",
+          "spotify_search": "https://open.spotify.com/search/Amigo%20the%20Devil%20Hell%20and%20You%20%28Grotto%20Sessions%29"
+        },
+        {
+          "artist": "SKYND",
+          "title": "John Wayne Gacy",
+          "year": null,
+          "duration": null,
+          "seconds": null,
+          "kind": "sideways",
+          "submitted_by": "shanebivens",
+          "pooled": true,
+          "why": "A duo, singer Skynd and producer Father, who write only about true crime and name every song for a case. This one is exactly what the title says it is.",
+          "links": {
+            "youtube-music": "https://music.youtube.com/watch?v=FBrfhkj3V6U"
+          },
+          "radio": "https://music.youtube.com/watch?v=FBrfhkj3V6U&list=RDAMVMFBrfhkj3V6U",
+          "spotify_search": "https://open.spotify.com/search/SKYND%20John%20Wayne%20Gacy"
+        }
+      ],
+      "seconds": 0,
+      "unknown_durations": 6,
+      "target_seconds": 0,
+      "playlists": {}
+    },
+    {
       "date": "2026-10-19",
       "number": 9,
       "title": "Drop 009",
